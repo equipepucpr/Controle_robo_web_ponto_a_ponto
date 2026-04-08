@@ -1,12 +1,20 @@
 # Aplicação Flask com Socket.IO para receber eventos do navegador
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO, emit
-from controllers.robot_controller import RobotController, EchoController
+from controllers.robot_controller import RobotController, ROS2Controller
 import logging
 import os
 import json
 import time
+import atexit
 from logging.handlers import RotatingFileHandler
+
+# Controlador ROS2 — publica em /wheel_vel_setpoints via wheel_msgs/msg/WheelSpeeds.
+# Pré-requisito: source ~/ros2_ws/install/setup.bash antes de iniciar o servidor.
+controller: RobotController = ROS2Controller()
+
+# Encerra o nó ROS2 corretamente ao sair
+atexit.register(lambda: controller.shutdown() if hasattr(controller, 'shutdown') else None)
 
 # Instancia a aplicação web
 app = Flask(__name__)
@@ -19,9 +27,6 @@ socketio = SocketIO(
     engineio_logger=True,
     async_mode="eventlet",
 )
-
-# Escolha aqui qual controlador do robô usar (substituir EchoController por um real)
-controller: RobotController = EchoController()
 
 # Configuração básica de logs no terminal
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s] %(levelname)s: %(message)s')
