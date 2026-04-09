@@ -448,3 +448,2013 @@
 [2025-11-25 23:35:06] 192.168.1.7 Iniciar direita (code=ArrowRight) sid=5kO27KY-19gGTlljAAAN
 [2025-11-25 23:35:06] 192.168.1.7 Parar frente (code=ArrowUp) sid=5kO27KY-19gGTlljAAAN
 [2025-11-25 23:35:06] 192.168.1.7 Parar direita (code=ArrowRight) sid=5kO27KY-19gGTlljAAAN
+[2026-03-03 20:48:50] 127.0.0.1 Iniciar ré (code=ArrowDown) sid=aCibGRd2A2JRqWNTAAAB
+[2026-03-03 20:48:50] 127.0.0.1 Iniciar direita (code=ArrowRight) sid=aCibGRd2A2JRqWNTAAAB
+[2026-03-03 20:48:50] 127.0.0.1 Parar ré (code=ArrowDown) sid=aCibGRd2A2JRqWNTAAAB
+[2026-03-03 20:48:50] 127.0.0.1 Parar direita (code=ArrowRight) sid=aCibGRd2A2JRqWNTAAAB
+[2026-03-03 20:48:51] 127.0.0.1 Iniciar ré (code=ArrowDown) sid=aCibGRd2A2JRqWNTAAAB
+[2026-03-03 20:48:51] 127.0.0.1 Iniciar direita (code=ArrowRight) sid=aCibGRd2A2JRqWNTAAAB
+[2026-03-03 20:48:51] 127.0.0.1 Parar ré (code=ArrowDown) sid=aCibGRd2A2JRqWNTAAAB
+[2026-03-03 20:48:51] 127.0.0.1 Parar direita (code=ArrowRight) sid=aCibGRd2A2JRqWNTAAAB
+[2026-03-03 20:50:31] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:31] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:31] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:32] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:32] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:32] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:32] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:33] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:33] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:33] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:33] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:33] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:34] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:34] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:34] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:34] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:35] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:35] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:35] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:35] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:35] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:35] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:35] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:35] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:35] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:35] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:35] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:35] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:35] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:36] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:36] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:36] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:36] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:36] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:36] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:36] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:36] 10.75.249.207 Iniciar frente (code=ArrowUp) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:36] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:37] 10.75.249.207 Parar frente (code=ArrowUp) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:37] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:37] 10.75.249.207 Iniciar frente (code=ArrowUp) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:37] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:37] 10.75.249.207 Parar frente (code=ArrowUp) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:37] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:37] 10.75.249.207 Iniciar frente (code=ArrowUp) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:37] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:37] 10.75.249.207 Parar frente (code=ArrowUp) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:37] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:38] 10.75.249.207 Iniciar parar (code=Space) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:38] 10.75.249.207 Parar parar (code=Space) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:38] 10.75.249.207 Iniciar parar (code=Space) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:39] 10.75.249.207 Parar parar (code=Space) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:39] 10.75.249.207 Iniciar parar (code=Space) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:39] 10.75.249.207 Parar parar (code=Space) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:39] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:39] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:40] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:40] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:40] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:40] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:40] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:40] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:40] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:40] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:40] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:40] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:40] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:40] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:40] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:40] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:40] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:40] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:40] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:40] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:40] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:40] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:41] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:41] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:41] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:41] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:41] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:41] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:41] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:41] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:41] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:41] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:41] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:41] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:41] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:41] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:42] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:42] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:43] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:43] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:43] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:43] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:43] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:43] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:43] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:43] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:43] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:43] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:43] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:43] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:43] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:43] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:44] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:44] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:44] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:44] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:44] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:44] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:44] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:44] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:44] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:44] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:44] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:44] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:44] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:44] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:44] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:44] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:45] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:45] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:45] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:45] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:45] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:45] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:45] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:45] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:45] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:45] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:45] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:45] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:45] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:45] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:45] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:45] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:45] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:46] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:46] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:46] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:46] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:46] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:46] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:46] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:46] 10.75.249.207 Iniciar frente (code=ArrowUp) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:46] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:46] 10.75.249.207 Parar frente (code=ArrowUp) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:46] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:46] 10.75.249.207 Iniciar frente (code=ArrowUp) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:46] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:47] 10.75.249.207 Parar frente (code=ArrowUp) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:47] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:47] 10.75.249.207 Iniciar frente (code=ArrowUp) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:47] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:47] 10.75.249.207 Parar frente (code=ArrowUp) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:47] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:47] 10.75.249.207 Iniciar frente (code=ArrowUp) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:47] 10.75.249.207 Iniciar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:47] 10.75.249.207 Parar frente (code=ArrowUp) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:47] 10.75.249.207 Parar esquerda (code=ArrowLeft) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:47] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:47] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:47] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:47] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:48] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:48] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:48] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:48] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:48] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:48] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:48] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:48] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:48] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:48] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:49] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:49] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:49] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:49] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:49] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:49] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:49] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:49] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:49] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:49] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:49] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:49] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:49] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:49] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:49] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:49] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:49] 10.75.249.207 Iniciar frente (code=ArrowUp) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:49] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:49] 10.75.249.207 Parar frente (code=ArrowUp) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:49] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:50] 10.75.249.207 Iniciar parar (code=Space) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:50] 10.75.249.207 Parar parar (code=Space) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:50] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:50] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:55] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:55] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:56] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:56] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:56] 10.75.249.207 Iniciar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:56] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:57] 10.75.249.207 Parar ré (code=ArrowDown) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:57] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:59] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:59] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:59] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:50:59] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:51:00] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:51:00] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:51:00] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:51:00] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:51:00] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:51:00] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:51:00] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:51:00] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:51:00] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:51:00] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:51:00] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:51:00] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:51:00] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:51:00] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:51:00] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:51:01] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:51:01] 10.75.249.207 Iniciar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-03-03 20:51:01] 10.75.249.207 Parar direita (code=ArrowRight) sid=VTTQqIQs-IaVs8GrAAAD
+[2026-04-08 15:19:48] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:19:48] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:19:49] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:19:49] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:19:49] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:19:50] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:19:50] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:19:50] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:19:51] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:19:51] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:20:40] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:20:40] 127.0.0.1 Iniciar direita (code=ArrowRight) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:20:40] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:20:40] 127.0.0.1 Parar direita (code=ArrowRight) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:20:41] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:20:41] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:20:41] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:20:42] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:20:43] 127.0.0.1 Iniciar parar (code=Space) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:20:43] 127.0.0.1 Parar parar (code=Space) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:20:43] 127.0.0.1 Iniciar parar (code=Space) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:20:43] 127.0.0.1 Parar parar (code=Space) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:20:58] 127.0.0.1 down ShiftLeft sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:20:59] 127.0.0.1 down ControlLeft sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:24:38] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:24:38] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:24:38] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:24:39] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:24:39] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:24:39] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:24:41] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:24:41] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:24:42] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:24:42] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:24:43] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:24:44] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:24:44] 127.0.0.1 Iniciar esquerda (code=ArrowLeft) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:24:45] 127.0.0.1 Parar esquerda (code=ArrowLeft) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:24:45] 127.0.0.1 Iniciar ré (code=ArrowDown) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:24:47] 127.0.0.1 Parar ré (code=ArrowDown) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:24:47] 127.0.0.1 Iniciar ré (code=ArrowDown) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:24:47] 127.0.0.1 Parar ré (code=ArrowDown) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:24:48] 127.0.0.1 Iniciar ré (code=ArrowDown) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:24:48] 127.0.0.1 Parar ré (code=ArrowDown) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:25:02] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:25:02] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:25:02] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:25:05] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:25:05] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:25:05] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:25:05] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:25:05] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:25:06] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:25:06] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:25:06] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:25:06] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:25:06] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:25:06] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:25:07] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:25:07] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:00] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:01] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:02] 127.0.0.1 Iniciar parar (code=Space) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:02] 127.0.0.1 Parar parar (code=Space) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:03] 127.0.0.1 Iniciar parar (code=Space) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:03] 127.0.0.1 Parar parar (code=Space) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:03] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:05] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:05] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:07] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:08] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:08] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:08] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:09] 127.0.0.1 Iniciar esquerda (code=ArrowLeft) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:09] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:09] 127.0.0.1 Iniciar ré (code=ArrowDown) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:09] 127.0.0.1 Parar esquerda (code=ArrowLeft) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:10] 127.0.0.1 Iniciar esquerda (code=ArrowLeft) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:10] 127.0.0.1 Parar ré (code=ArrowDown) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:10] 127.0.0.1 Parar esquerda (code=ArrowLeft) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:10] 127.0.0.1 Iniciar esquerda (code=ArrowLeft) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:10] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:11] 127.0.0.1 Parar esquerda (code=ArrowLeft) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:11] 127.0.0.1 Iniciar direita (code=ArrowRight) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:11] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:11] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:12] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:12] 127.0.0.1 Parar direita (code=ArrowRight) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:12] 127.0.0.1 Iniciar ré (code=ArrowDown) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:12] 127.0.0.1 Parar ré (code=ArrowDown) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:12] 127.0.0.1 Iniciar esquerda (code=ArrowLeft) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:13] 127.0.0.1 Parar esquerda (code=ArrowLeft) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:13] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:13] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:13] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:13] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:13] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:13] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:13] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:13] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:13] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:14] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:14] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:14] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:15] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:16] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:16] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:16] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:16] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:16] 127.0.0.1 Parar frente (code=ArrowUp) sid=xajKQ-5wzjooz8rIAAAB
+[2026-04-08 15:26:54] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:26:54] 127.0.0.1 Parar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:26:54] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:26:56] 127.0.0.1 Parar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:26:56] 127.0.0.1 Iniciar esquerda (code=ArrowLeft) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:26:56] 127.0.0.1 Parar esquerda (code=ArrowLeft) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:26:56] 127.0.0.1 Iniciar ré (code=ArrowDown) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:26:57] 127.0.0.1 Parar ré (code=ArrowDown) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:26:57] 127.0.0.1 Iniciar direita (code=ArrowRight) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:26:58] 127.0.0.1 Parar direita (code=ArrowRight) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:26:58] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:27:01] 127.0.0.1 Parar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:27:16] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:27:17] 127.0.0.1 Parar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:27:17] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:27:18] 127.0.0.1 Parar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:27:19] 127.0.0.1 Iniciar ré (code=ArrowDown) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:27:19] 127.0.0.1 Parar ré (code=ArrowDown) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:27:20] 127.0.0.1 Iniciar esquerda (code=ArrowLeft) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:27:20] 127.0.0.1 Parar esquerda (code=ArrowLeft) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:27:20] 127.0.0.1 Iniciar direita (code=ArrowRight) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:27:21] 127.0.0.1 Parar direita (code=ArrowRight) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:27:21] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:27:21] 127.0.0.1 Parar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:31:55] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:31:55] 127.0.0.1 Parar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:31:56] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:31:57] 127.0.0.1 Parar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:31:57] 127.0.0.1 Iniciar ré (code=ArrowDown) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:31:58] 127.0.0.1 Parar ré (code=ArrowDown) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:31:59] 127.0.0.1 Iniciar esquerda (code=ArrowLeft) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:31:59] 127.0.0.1 Parar esquerda (code=ArrowLeft) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:00] 127.0.0.1 Iniciar direita (code=ArrowRight) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:01] 127.0.0.1 Parar direita (code=ArrowRight) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:38] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:39] 127.0.0.1 Parar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:39] 127.0.0.1 Iniciar esquerda (code=ArrowLeft) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:40] 127.0.0.1 Parar esquerda (code=ArrowLeft) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:40] 127.0.0.1 Iniciar direita (code=ArrowRight) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:41] 127.0.0.1 Parar direita (code=ArrowRight) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:41] 127.0.0.1 Iniciar ré (code=ArrowDown) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:41] 127.0.0.1 Parar ré (code=ArrowDown) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:42] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:42] 127.0.0.1 Parar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:42] 127.0.0.1 Iniciar esquerda (code=ArrowLeft) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:42] 127.0.0.1 Parar esquerda (code=ArrowLeft) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:42] 127.0.0.1 Iniciar direita (code=ArrowRight) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:43] 127.0.0.1 Parar direita (code=ArrowRight) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:43] 127.0.0.1 Iniciar esquerda (code=ArrowLeft) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:43] 127.0.0.1 Parar esquerda (code=ArrowLeft) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:43] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:44] 127.0.0.1 Parar frente (code=ArrowUp) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:44] 127.0.0.1 Iniciar ré (code=ArrowDown) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:32:44] 127.0.0.1 Parar ré (code=ArrowDown) sid=4sR_QYiA09jZMowHAAAB
+[2026-04-08 15:33:22] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:22] 10.137.214.141 Parar ré (code=ArrowDown) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:22] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:23] 10.137.214.141 Parar ré (code=ArrowDown) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:23] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:24] 10.137.214.141 Parar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:24] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:24] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:30] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:31] 10.137.214.141 Parar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:31] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:32] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:32] 10.137.214.141 Iniciar parar (code=Space) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:33] 10.137.214.141 Parar parar (code=Space) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:33] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:35] 10.137.214.141 Parar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:35] 10.137.214.141 Iniciar parar (code=Space) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:35] 10.137.214.141 Parar parar (code=Space) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:36] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:36] 10.137.214.141 Iniciar direita (code=ArrowRight) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:37] 10.137.214.141 Parar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:37] 10.137.214.141 Parar direita (code=ArrowRight) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:37] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:37] 10.137.214.141 Iniciar direita (code=ArrowRight) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:37] 10.137.214.141 Parar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:37] 10.137.214.141 Parar direita (code=ArrowRight) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:38] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:38] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:38] 10.137.214.141 Parar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:38] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:38] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:38] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:39] 10.137.214.141 Parar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:39] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:40] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:40] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:40] 10.137.214.141 Parar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:40] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:42] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:42] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:43] 10.137.214.141 Parar ré (code=ArrowDown) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:43] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:45] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:45] 10.137.214.141 Iniciar direita (code=ArrowRight) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:46] 10.137.214.141 Parar ré (code=ArrowDown) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:46] 10.137.214.141 Parar direita (code=ArrowRight) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:46] 10.137.214.141 Iniciar direita (code=ArrowRight) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:47] 10.137.214.141 Parar direita (code=ArrowRight) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:47] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:48] 10.137.214.141 Parar ré (code=ArrowDown) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:48] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:49] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:49] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:49] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:50] 10.137.214.141 Parar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:50] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:51] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:51] 10.137.214.141 Parar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:52] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:52] 10.137.214.141 Parar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:52] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:53] 10.137.214.141 Parar ré (code=ArrowDown) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:53] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:53] 10.137.214.141 Parar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:54] 10.137.214.141 Iniciar parar (code=Space) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:54] 10.137.214.141 Parar parar (code=Space) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:54] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:55] 10.137.214.141 Parar ré (code=ArrowDown) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:55] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:56] 10.137.214.141 Parar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:56] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:56] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:57] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:57] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:57] 10.137.214.141 Parar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:57] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:58] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:33:58] 10.137.214.141 Parar frente (code=ArrowUp) sid=j40FY9eFJuegbStpAAAD
+[2026-04-08 15:35:44] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Parar ré (code=ArrowDown) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Parar ré (code=ArrowDown) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Parar ré (code=ArrowDown) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Parar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Parar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Parar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Parar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Parar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Parar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Iniciar direita (code=ArrowRight) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Parar direita (code=ArrowRight) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Iniciar direita (code=ArrowRight) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Parar direita (code=ArrowRight) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Iniciar direita (code=ArrowRight) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Parar direita (code=ArrowRight) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Parar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Parar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Parar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:44] 10.137.214.141 Parar ré (code=ArrowDown) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:45] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:46] 10.137.214.141 Parar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:46] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:47] 10.137.214.141 Parar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:47] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:48] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:48] 10.137.214.141 Iniciar direita (code=ArrowRight) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:49] 10.137.214.141 Parar direita (code=ArrowRight) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:49] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:50] 10.137.214.141 Parar ré (code=ArrowDown) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:50] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:51] 10.137.214.141 Parar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:51] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:35:52] 10.137.214.141 Parar frente (code=ArrowUp) sid=p1edA5R4ZjGxaPStAAAE
+[2026-04-08 15:37:08] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=UiVoLTzBrCeXLOcBAAAB
+[2026-04-08 15:37:09] 10.137.214.141 Parar frente (code=ArrowUp) sid=UiVoLTzBrCeXLOcBAAAB
+[2026-04-08 15:37:09] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=UiVoLTzBrCeXLOcBAAAB
+[2026-04-08 15:37:10] 10.137.214.141 Parar ré (code=ArrowDown) sid=UiVoLTzBrCeXLOcBAAAB
+[2026-04-08 15:42:59] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=Uo_6XWBupYyfmlbDAAAB
+[2026-04-08 15:42:59] 10.137.214.141 Parar frente (code=ArrowUp) sid=Uo_6XWBupYyfmlbDAAAB
+[2026-04-08 15:42:59] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=Uo_6XWBupYyfmlbDAAAB
+[2026-04-08 15:42:59] 10.137.214.141 Parar frente (code=ArrowUp) sid=Uo_6XWBupYyfmlbDAAAB
+[2026-04-08 15:43:02] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=Uo_6XWBupYyfmlbDAAAB
+[2026-04-08 15:43:03] 10.137.214.141 Parar frente (code=ArrowUp) sid=Uo_6XWBupYyfmlbDAAAB
+[2026-04-08 15:43:04] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=Uo_6XWBupYyfmlbDAAAB
+[2026-04-08 15:43:04] 10.137.214.141 Parar ré (code=ArrowDown) sid=Uo_6XWBupYyfmlbDAAAB
+[2026-04-08 15:43:04] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=Uo_6XWBupYyfmlbDAAAB
+[2026-04-08 15:43:05] 10.137.214.141 Parar frente (code=ArrowUp) sid=Uo_6XWBupYyfmlbDAAAB
+[2026-04-08 15:45:11] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:11] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:11] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:12] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:12] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:12] 10.137.214.141 Parar frente (code=ArrowUp) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:13] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:13] 10.137.214.141 Parar frente (code=ArrowUp) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:13] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:14] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:15] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:16] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:16] 10.137.214.141 Iniciar direita (code=ArrowRight) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:16] 10.137.214.141 Parar direita (code=ArrowRight) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:17] 10.137.214.141 Iniciar direita (code=ArrowRight) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:17] 10.137.214.141 Parar direita (code=ArrowRight) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:18] 10.137.214.141 Iniciar direita (code=ArrowRight) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:18] 10.137.214.141 Parar direita (code=ArrowRight) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:19] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:19] 10.137.214.141 Parar frente (code=ArrowUp) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:20] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:20] 10.137.214.141 Parar frente (code=ArrowUp) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:21] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:21] 10.137.214.141 Parar ré (code=ArrowDown) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:22] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:22] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:23] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:24] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:24] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:24] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:25] 10.137.214.141 Parar frente (code=ArrowUp) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:25] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:26] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:26] 10.137.214.141 Iniciar direita (code=ArrowRight) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:26] 10.137.214.141 Parar ré (code=ArrowDown) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:26] 10.137.214.141 Parar direita (code=ArrowRight) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:26] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:26] 10.137.214.141 Iniciar direita (code=ArrowRight) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:27] 10.137.214.141 Parar frente (code=ArrowUp) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:27] 10.137.214.141 Parar direita (code=ArrowRight) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:28] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:28] 10.137.214.141 Iniciar direita (code=ArrowRight) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:28] 10.137.214.141 Parar frente (code=ArrowUp) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:28] 10.137.214.141 Parar direita (code=ArrowRight) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:29] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:29] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:29] 10.137.214.141 Parar ré (code=ArrowDown) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:29] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:30] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:30] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:31] 10.137.214.141 Parar ré (code=ArrowDown) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:31] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:32] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:45:33] 10.137.214.141 Parar frente (code=ArrowUp) sid=V68GhPcYkN5Ih9QdAAAD
+[2026-04-08 15:46:14] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:14] 127.0.0.1 Parar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:15] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:15] 127.0.0.1 Parar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:16] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:16] 127.0.0.1 Parar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:16] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:16] 127.0.0.1 Parar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:17] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:17] 127.0.0.1 Parar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:18] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:18] 127.0.0.1 Parar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:18] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:18] 127.0.0.1 Parar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:24] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:24] 127.0.0.1 Parar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:24] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:24] 127.0.0.1 Parar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:26] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:27] 127.0.0.1 Parar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:28] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:28] 127.0.0.1 Parar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:28] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:29] 127.0.0.1 Parar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:29] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 15:46:30] 127.0.0.1 Parar frente (code=ArrowUp) sid=9ajD3biqA698rDXeAAAD
+[2026-04-08 16:12:19] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:12:19] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:12:20] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:12:20] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:12:26] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:12:27] 10.137.214.141 Parar ré (code=ArrowDown) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:12:27] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:12:28] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:12:28] 10.137.214.141 Iniciar direita (code=ArrowRight) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:12:28] 10.137.214.141 Parar direita (code=ArrowRight) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:12:44] 10.137.214.141 Iniciar direita (code=ArrowRight) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:12:44] 10.137.214.141 Parar direita (code=ArrowRight) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:12:44] 10.137.214.141 Iniciar direita (code=ArrowRight) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:12:44] 10.137.214.141 Parar direita (code=ArrowRight) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:12:44] 10.137.214.141 Iniciar direita (code=ArrowRight) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:12:45] 10.137.214.141 Parar direita (code=ArrowRight) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:12:47] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:12:48] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:12:48] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:12:48] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:13] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:13] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:13] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:13] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:13] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:14] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:14] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:14] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:14] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:15] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:15] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:16] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:16] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:16] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:16] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:16] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:16] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:16] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:16] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:16] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:39] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:39] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:40] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:40] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:40] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:42] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:42] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:42] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:42] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:43] 10.137.214.141 Parar ré (code=ArrowDown) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:44] 10.137.214.141 Iniciar direita (code=ArrowRight) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:45] 10.137.214.141 Parar direita (code=ArrowRight) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:45] 10.137.214.141 Iniciar direita (code=ArrowRight) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:45] 10.137.214.141 Parar direita (code=ArrowRight) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:46] 10.137.214.141 Iniciar esquerda (code=ArrowLeft) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:47] 10.137.214.141 Parar esquerda (code=ArrowLeft) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:47] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:47] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:48] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:48] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:48] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:48] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:48] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:13:48] 10.137.214.141 Parar frente (code=ArrowUp) sid=SNnCdqoz1r0ZU6xkAAAD
+[2026-04-08 16:33:14] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=0MqpfrPijrtpf7ZoAAAB
+[2026-04-08 16:33:14] 127.0.0.1 Parar frente (code=ArrowUp) sid=0MqpfrPijrtpf7ZoAAAB
+[2026-04-08 16:33:14] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=0MqpfrPijrtpf7ZoAAAB
+[2026-04-08 16:33:14] 127.0.0.1 Parar frente (code=ArrowUp) sid=0MqpfrPijrtpf7ZoAAAB
+[2026-04-08 16:34:03] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:03] 127.0.0.1 Parar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:03] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:03] 127.0.0.1 Parar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:03] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:03] 127.0.0.1 Parar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:03] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:04] 127.0.0.1 Parar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:04] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:05] 127.0.0.1 Parar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:05] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:05] 127.0.0.1 Parar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:08] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:08] 127.0.0.1 Parar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:09] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:09] 127.0.0.1 Parar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:10] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:10] 127.0.0.1 Parar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:10] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:10] 127.0.0.1 Parar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:11] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:11] 127.0.0.1 Parar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:13] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:14] 127.0.0.1 Parar frente (code=ArrowUp) sid=qhFTQG0pUYaQJjhsAAAB
+[2026-04-08 16:34:31] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=ar6EjOmUgjsNsBJIAAAB
+[2026-04-08 16:34:32] 127.0.0.1 Parar frente (code=ArrowUp) sid=ar6EjOmUgjsNsBJIAAAB
+[2026-04-08 16:34:32] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=ar6EjOmUgjsNsBJIAAAB
+[2026-04-08 16:34:32] 127.0.0.1 Parar frente (code=ArrowUp) sid=ar6EjOmUgjsNsBJIAAAB
+[2026-04-08 16:34:32] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=ar6EjOmUgjsNsBJIAAAB
+[2026-04-08 16:34:32] 127.0.0.1 Parar frente (code=ArrowUp) sid=ar6EjOmUgjsNsBJIAAAB
+[2026-04-08 16:34:41] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:34:41] 10.137.214.141 Parar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:34:41] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:34:42] 10.137.214.141 Parar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:34:42] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:34:42] 10.137.214.141 Parar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:34:42] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:34:43] 10.137.214.141 Parar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:35:01] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:35:02] 10.137.214.141 Parar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:35:02] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:35:03] 10.137.214.141 Parar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:35:03] 10.137.214.141 Iniciar ré (code=ArrowDown) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:35:03] 10.137.214.141 Parar ré (code=ArrowDown) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:35:22] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:35:22] 10.137.214.141 Parar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:35:22] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:35:23] 10.137.214.141 Parar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:35:23] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:35:23] 10.137.214.141 Parar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:35:23] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:35:24] 10.137.214.141 Parar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:35:24] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:35:24] 10.137.214.141 Parar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:35:25] 10.137.214.141 Iniciar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-08 16:35:25] 10.137.214.141 Parar frente (code=ArrowUp) sid=JynJSEENfMgb6ydpAAAD
+[2026-04-09 14:44:33] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:44:34] 127.0.0.1 Parar frente (code=ArrowUp) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:44:34] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:44:34] 127.0.0.1 Parar frente (code=ArrowUp) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:09] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:09] 127.0.0.1 Parar frente (code=ArrowUp) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:10] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:10] 127.0.0.1 Parar frente (code=ArrowUp) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:11] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:11] 127.0.0.1 Parar frente (code=ArrowUp) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:13] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:13] 127.0.0.1 Parar frente (code=ArrowUp) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:13] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:14] 127.0.0.1 Parar frente (code=ArrowUp) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:14] 127.0.0.1 Iniciar ré (code=ArrowDown) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:14] 127.0.0.1 Parar ré (code=ArrowDown) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:14] 127.0.0.1 Iniciar ré (code=ArrowDown) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:15] 127.0.0.1 Parar ré (code=ArrowDown) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:15] 127.0.0.1 Iniciar direita (code=ArrowRight) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:15] 127.0.0.1 Parar direita (code=ArrowRight) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:56] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:56] 127.0.0.1 Parar frente (code=ArrowUp) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:56] 127.0.0.1 Iniciar ré (code=ArrowDown) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:56] 127.0.0.1 Parar ré (code=ArrowDown) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:57] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 14:45:57] 127.0.0.1 Parar frente (code=ArrowUp) sid=lFkvcLHmIdjx11hqAAAB
+[2026-04-09 15:20:11] 127.0.0.1 [GAMEPAD] Iniciar frente L=186 R=186 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:11] 127.0.0.1 [GAMEPAD] Iniciar frente L=374 R=94 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:11] 127.0.0.1 [GAMEPAD] Iniciar frente L=300 R=300 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:11] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:15] 127.0.0.1 [GAMEPAD] Iniciar frente L=285 R=285 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:15] 127.0.0.1 [GAMEPAD] Iniciar frente L=300 R=300 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:15] 127.0.0.1 [GAMEPAD] Iniciar direita L=72 R=372 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:15] 127.0.0.1 [GAMEPAD] Iniciar frente L=212 R=328 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:15] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:15] 127.0.0.1 [GAMEPAD] Iniciar frente L=174 R=174 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:15] 127.0.0.1 [GAMEPAD] Iniciar frente L=300 R=300 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:16] 127.0.0.1 [GAMEPAD] Iniciar frente L=45 R=45 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:16] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:16] 127.0.0.1 [GAMEPAD] Iniciar ré L=-60 R=-60 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:16] 127.0.0.1 [GAMEPAD] Iniciar ré L=-300 R=-300 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:16] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:17] 127.0.0.1 [GAMEPAD] Iniciar ré L=-300 R=-300 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:17] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=225 R=225 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=300 R=300 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=231 R=231 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=222 R=222 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=27 R=27 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:19] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:19] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=88 R=-88 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:19] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=200 R=-200 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:19] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=341 R=-59 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:19] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=351 R=-33 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:19] 127.0.0.1 [GAMEPAD] Iniciar frente L=370 R=74 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:19] 127.0.0.1 [GAMEPAD] Iniciar frente L=371 R=91 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:19] 127.0.0.1 [GAMEPAD] Iniciar frente L=369 R=81 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:19] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=362 R=22 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:19] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:20] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:20] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:21] 127.0.0.1 [GAMEPAD] button btn=cross sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:21] 127.0.0.1 [GAMEPAD] button btn=circle sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:21] 127.0.0.1 [GAMEPAD] button btn=circle sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:21] 127.0.0.1 [GAMEPAD] button btn=triangle sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:22] 127.0.0.1 [GAMEPAD] button btn=triangle sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:22] 127.0.0.1 [GAMEPAD] button btn=square sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:22] 127.0.0.1 [GAMEPAD] button btn=square sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:28] 127.0.0.1 [GAMEPAD] Iniciar frente L=18 R=18 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:28] 127.0.0.1 [GAMEPAD] Iniciar frente L=48 R=48 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:28] 127.0.0.1 [GAMEPAD] Iniciar frente L=87 R=87 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:28] 127.0.0.1 [GAMEPAD] Iniciar frente L=300 R=300 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:29] 127.0.0.1 [GAMEPAD] Iniciar frente L=285 R=285 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:29] 127.0.0.1 [GAMEPAD] Iniciar frente L=183 R=183 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:29] 127.0.0.1 [GAMEPAD] Iniciar frente L=141 R=141 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:29] 127.0.0.1 [GAMEPAD] Iniciar frente L=132 R=132 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:29] 127.0.0.1 [GAMEPAD] Iniciar frente L=123 R=123 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:29] 127.0.0.1 [GAMEPAD] Iniciar frente L=105 R=105 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:29] 127.0.0.1 [GAMEPAD] Iniciar frente L=96 R=96 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:30] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:33] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:33] 127.0.0.1 Parar frente (code=ArrowUp) sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:35] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:35] 127.0.0.1 Parar frente (code=ArrowUp) sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:35] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:36] 127.0.0.1 Parar frente (code=ArrowUp) sid=Mo5j-6yzojI9wZWzAAAB
+[2026-04-09 15:20:57] 127.0.0.1 [GAMEPAD] Iniciar frente L=201 R=201 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:57] 127.0.0.1 [GAMEPAD] Iniciar frente L=228 R=228 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:57] 127.0.0.1 [GAMEPAD] Iniciar frente L=237 R=237 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:57] 127.0.0.1 [GAMEPAD] Iniciar frente L=144 R=144 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:57] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:57] 127.0.0.1 [GAMEPAD] Iniciar frente L=126 R=126 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:57] 127.0.0.1 [GAMEPAD] Iniciar frente L=135 R=135 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:57] 127.0.0.1 [GAMEPAD] Iniciar frente L=168 R=168 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:57] 127.0.0.1 [GAMEPAD] Iniciar frente L=189 R=189 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:57] 127.0.0.1 [GAMEPAD] Iniciar frente L=243 R=243 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:57] 127.0.0.1 [GAMEPAD] Iniciar frente L=231 R=231 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:57] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=233 R=-167 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:57] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=200 R=-200 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:57] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=94 R=-94 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:57] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:58] 127.0.0.1 [GAMEPAD] Iniciar frente L=300 R=300 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:58] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:58] 127.0.0.1 [GAMEPAD] Iniciar frente L=102 R=102 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:58] 127.0.0.1 [GAMEPAD] Iniciar frente L=123 R=123 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:58] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=226 R=-34 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:58] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=178 R=-94 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:58] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=247 R=-145 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:59] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=288 R=-84 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:59] 127.0.0.1 [GAMEPAD] Iniciar frente L=180 R=132 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:59] 127.0.0.1 [GAMEPAD] Iniciar frente L=149 R=97 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:59] 127.0.0.1 [GAMEPAD] Iniciar frente L=143 R=91 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:59] 127.0.0.1 [GAMEPAD] Iniciar frente L=140 R=76 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:59] 127.0.0.1 [GAMEPAD] Iniciar frente L=132 R=36 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:59] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=60 R=-60 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:59] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:59] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=10 R=-10 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:20:59] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:02] 127.0.0.1 [GAMEPAD] Iniciar frente L=93 R=93 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:02] 127.0.0.1 [GAMEPAD] Iniciar frente L=300 R=300 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:02] 127.0.0.1 [GAMEPAD] Iniciar frente L=279 R=279 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:02] 127.0.0.1 [GAMEPAD] Iniciar frente L=264 R=264 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:02] 127.0.0.1 [GAMEPAD] Iniciar frente L=255 R=255 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:02] 127.0.0.1 [GAMEPAD] Iniciar frente L=222 R=222 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:02] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:03] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:03] 127.0.0.1 [GAMEPAD] Iniciar frente L=51 R=51 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:03] 127.0.0.1 [GAMEPAD] Iniciar frente L=69 R=69 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:03] 127.0.0.1 [GAMEPAD] Iniciar frente L=144 R=144 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:03] 127.0.0.1 [GAMEPAD] Iniciar frente L=240 R=240 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:03] 127.0.0.1 [GAMEPAD] Iniciar frente L=231 R=231 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:03] 127.0.0.1 [GAMEPAD] Iniciar frente L=240 R=240 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:03] 127.0.0.1 [GAMEPAD] Iniciar frente L=267 R=231 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:03] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=301 R=-43 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:03] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=200 R=-200 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:03] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=200 R=-200 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:03] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=314 R=-86 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:04] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=200 R=-200 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:04] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=182 R=-218 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:04] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=200 R=-200 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:04] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=-5 R=-361 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:04] 127.0.0.1 [GAMEPAD] Iniciar ré L=-77 R=-373 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:04] 127.0.0.1 [GAMEPAD] Iniciar ré L=-216 R=-384 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:04] 127.0.0.1 [GAMEPAD] Iniciar ré L=-300 R=-300 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:04] 127.0.0.1 [GAMEPAD] Iniciar ré L=-380 R=-100 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:04] 127.0.0.1 [GAMEPAD] Iniciar ré L=-374 R=-82 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:04] 127.0.0.1 [GAMEPAD] Iniciar direita L=-200 R=200 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:05] 127.0.0.1 [GAMEPAD] Iniciar direita L=-146 R=254 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:05] 127.0.0.1 [GAMEPAD] Iniciar direita L=-13 R=355 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:05] 127.0.0.1 [GAMEPAD] Iniciar frente L=210 R=390 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:05] 127.0.0.1 [GAMEPAD] Iniciar frente L=216 R=384 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:05] 127.0.0.1 [GAMEPAD] Iniciar frente L=300 R=300 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:05] 127.0.0.1 [GAMEPAD] Iniciar frente L=155 R=391 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:05] 127.0.0.1 [GAMEPAD] Iniciar frente L=115 R=383 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:05] 127.0.0.1 [GAMEPAD] Iniciar frente L=97 R=377 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:05] 127.0.0.1 [GAMEPAD] Iniciar direita L=3 R=363 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:06] 127.0.0.1 [GAMEPAD] Iniciar direita L=-89 R=311 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:06] 127.0.0.1 [GAMEPAD] Iniciar direita L=72 R=372 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:06] 127.0.0.1 [GAMEPAD] Iniciar frente L=300 R=300 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:06] 127.0.0.1 [GAMEPAD] Iniciar frente L=378 R=222 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:06] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=18 R=-18 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:06] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:06] 127.0.0.1 [GAMEPAD] Iniciar ré L=-93 R=-93 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:06] 127.0.0.1 [GAMEPAD] Iniciar ré L=-300 R=-300 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:07] 127.0.0.1 [GAMEPAD] Iniciar ré L=-111 R=-111 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:07] 127.0.0.1 [GAMEPAD] Iniciar ré L=-33 R=-33 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:07] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:07] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:07] 127.0.0.1 [GAMEPAD] Iniciar ré L=-252 R=-252 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:07] 127.0.0.1 [GAMEPAD] Iniciar ré L=-300 R=-300 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:08] 127.0.0.1 [GAMEPAD] Iniciar ré L=-219 R=-219 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:08] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:08] 127.0.0.1 [GAMEPAD] button btn=cross sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:08] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:08] 127.0.0.1 [GAMEPAD] Iniciar ré L=-300 R=-300 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:08] 127.0.0.1 [GAMEPAD] button btn=cross sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:09] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:10] 127.0.0.1 [GAMEPAD] button btn=cross sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:10] 127.0.0.1 [GAMEPAD] Iniciar direita L=-96 R=96 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:10] 127.0.0.1 [GAMEPAD] Iniciar direita L=-26 R=26 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:10] 127.0.0.1 [GAMEPAD] Iniciar frente L=300 R=300 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:11] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:11] 127.0.0.1 [GAMEPAD] Iniciar frente L=198 R=198 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:11] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:11] 127.0.0.1 [GAMEPAD] button btn=cross sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:13] 127.0.0.1 [GAMEPAD] button btn=square sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:13] 127.0.0.1 [GAMEPAD] button btn=square sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:14] 127.0.0.1 [GAMEPAD] Iniciar frente L=300 R=300 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:14] 127.0.0.1 [GAMEPAD] Iniciar frente L=267 R=267 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:14] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:14] 127.0.0.1 [GAMEPAD] Iniciar frente L=300 R=300 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:14] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:15] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=16 R=-16 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:15] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=54 R=-54 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:15] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:15] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=26 R=-26 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:15] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:15] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:15] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=26 R=-26 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:15] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=64 R=-64 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:16] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=76 R=-76 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:16] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=190 R=-190 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:16] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=178 R=-178 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:16] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=82 R=-82 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:16] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:16] 127.0.0.1 [GAMEPAD] Iniciar frente L=39 R=39 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:16] 127.0.0.1 [GAMEPAD] Iniciar frente L=300 R=300 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:17] 127.0.0.1 [GAMEPAD] Iniciar frente L=261 R=261 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:17] 127.0.0.1 [GAMEPAD] Iniciar frente L=213 R=213 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:17] 127.0.0.1 [GAMEPAD] Iniciar frente L=177 R=177 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:17] 127.0.0.1 [GAMEPAD] Iniciar frente L=57 R=57 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:17] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:19] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:19] 127.0.0.1 [GAMEPAD] Iniciar frente L=30 R=30 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:19] 127.0.0.1 [GAMEPAD] Iniciar frente L=114 R=114 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:19] 127.0.0.1 [GAMEPAD] Iniciar frente L=123 R=123 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:19] 127.0.0.1 [GAMEPAD] Iniciar frente L=138 R=138 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:19] 127.0.0.1 [GAMEPAD] Iniciar frente L=144 R=144 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:19] 127.0.0.1 [GAMEPAD] Iniciar frente L=156 R=156 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:19] 127.0.0.1 [GAMEPAD] Iniciar frente L=222 R=222 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:19] 127.0.0.1 [GAMEPAD] Iniciar frente L=270 R=270 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:19] 127.0.0.1 [GAMEPAD] Iniciar frente L=300 R=300 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:21] 127.0.0.1 [GAMEPAD] Iniciar frente L=388 R=140 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:21] 127.0.0.1 [GAMEPAD] Iniciar frente L=370 R=74 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:21] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=362 R=10 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:21] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=354 R=-6 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:21] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=351 R=-21 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:21] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=200 R=-200 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:21] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=200 R=-200 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:21] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:23] 127.0.0.1 [GAMEPAD] Iniciar frente L=18 R=18 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:23] 127.0.0.1 [GAMEPAD] Iniciar frente L=36 R=36 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:23] 127.0.0.1 [GAMEPAD] Iniciar frente L=45 R=45 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:23] 127.0.0.1 [GAMEPAD] Iniciar frente L=300 R=300 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:23] 127.0.0.1 [GAMEPAD] Iniciar frente L=105 R=105 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:21:23] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=gHB4umxGGzT6REbWAAAB
+[2026-04-09 15:25:50] 127.0.0.1 [GAMEPAD] Iniciar frente L=11 R=11 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:50] 127.0.0.1 [GAMEPAD] Iniciar frente L=111 R=111 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:50] 127.0.0.1 [GAMEPAD] Iniciar frente L=63 R=63 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:50] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:50] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:51] 127.0.0.1 [GAMEPAD] Iniciar frente L=88 R=88 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:51] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:51] 127.0.0.1 [GAMEPAD] Iniciar frente L=54 R=54 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:51] 127.0.0.1 [GAMEPAD] Iniciar frente L=117 R=117 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:51] 127.0.0.1 [GAMEPAD] Iniciar frente L=122 R=122 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:51] 127.0.0.1 [GAMEPAD] Iniciar frente L=117 R=117 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:51] 127.0.0.1 [GAMEPAD] Iniciar frente L=93 R=93 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:51] 127.0.0.1 [GAMEPAD] Iniciar frente L=87 R=87 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:52] 127.0.0.1 [GAMEPAD] Iniciar frente L=94 R=94 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:52] 127.0.0.1 [GAMEPAD] Iniciar frente L=99 R=99 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:52] 127.0.0.1 [GAMEPAD] Iniciar frente L=93 R=93 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:52] 127.0.0.1 [GAMEPAD] Iniciar frente L=51 R=51 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:52] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:53] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:53] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:53] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:53] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:53] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:53] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:54] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:54] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:54] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:54] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:54] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:54] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:54] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:54] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:54] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:54] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:54] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:54] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:55] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:55] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:55] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:55] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:55] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:56] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:56] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:56] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:56] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:56] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:56] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:57] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:57] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:57] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:57] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:57] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:57] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:57] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:58] 127.0.0.1 [GAMEPAD] Iniciar frente L=40 R=40 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:58] 127.0.0.1 [GAMEPAD] Iniciar frente L=33 R=33 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:58] 127.0.0.1 [GAMEPAD] Iniciar frente L=39 R=39 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:25:58] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:00] 127.0.0.1 [GAMEPAD] Iniciar frente L=120 R=180 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:00] 127.0.0.1 [GAMEPAD] Iniciar direita L=36 R=186 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:00] 127.0.0.1 [GAMEPAD] Iniciar direita L=2 R=182 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:00] 127.0.0.1 [GAMEPAD] Iniciar direita L=-100 R=100 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:00] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:01] 127.0.0.1 [GAMEPAD] Iniciar ré L=-22 R=-22 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:01] 127.0.0.1 [GAMEPAD] Iniciar ré L=-150 R=-150 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:01] 127.0.0.1 [GAMEPAD] Iniciar ré L=-108 R=-108 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:01] 127.0.0.1 [GAMEPAD] Iniciar ré L=-58 R=-58 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:01] 127.0.0.1 [GAMEPAD] Iniciar ré L=-44 R=-44 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:01] 127.0.0.1 [GAMEPAD] Iniciar ré L=-38 R=-38 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:01] 127.0.0.1 [GAMEPAD] Iniciar ré L=-20 R=-20 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:01] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:02] 127.0.0.1 [GAMEPAD] Iniciar ré L=-28 R=-28 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:02] 127.0.0.1 [GAMEPAD] Iniciar ré L=-24 R=-24 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:03] 127.0.0.1 [GAMEPAD] Iniciar ré L=-28 R=-28 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:03] 127.0.0.1 [GAMEPAD] Iniciar ré L=-33 R=-33 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:03] 127.0.0.1 [GAMEPAD] Iniciar ré L=-38 R=-38 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:04] 127.0.0.1 [GAMEPAD] Iniciar ré L=-42 R=-42 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:04] 127.0.0.1 [GAMEPAD] Iniciar ré L=-61 R=-61 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:04] 127.0.0.1 [GAMEPAD] Iniciar ré L=-90 R=-90 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:04] 127.0.0.1 [GAMEPAD] Iniciar ré L=-93 R=-93 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:04] 127.0.0.1 [GAMEPAD] Iniciar ré L=-98 R=-98 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:04] 127.0.0.1 [GAMEPAD] Iniciar ré L=-102 R=-102 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:04] 127.0.0.1 [GAMEPAD] Iniciar ré L=-106 R=-106 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:04] 127.0.0.1 [GAMEPAD] Iniciar ré L=-120 R=-120 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:04] 127.0.0.1 [GAMEPAD] Iniciar ré L=-147 R=-147 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:04] 127.0.0.1 [GAMEPAD] Iniciar ré L=-140 R=-140 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:04] 127.0.0.1 [GAMEPAD] Iniciar ré L=-93 R=-93 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:05] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:05] 127.0.0.1 [GAMEPAD] Iniciar frente L=69 R=69 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:05] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:07] 127.0.0.1 [GAMEPAD] Iniciar frente L=26 R=26 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:07] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:07] 127.0.0.1 [GAMEPAD] Iniciar frente L=14 R=14 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:08] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:08] 127.0.0.1 [GAMEPAD] Iniciar frente L=74 R=74 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:08] 127.0.0.1 [GAMEPAD] Iniciar frente L=60 R=60 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:08] 127.0.0.1 [GAMEPAD] Iniciar frente L=74 R=74 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:09] 127.0.0.1 [GAMEPAD] Iniciar frente L=84 R=84 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:09] 127.0.0.1 [GAMEPAD] Iniciar frente L=102 R=102 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:10] 127.0.0.1 [GAMEPAD] Iniciar frente L=98 R=98 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:10] 127.0.0.1 [GAMEPAD] Iniciar frente L=93 R=93 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:10] 127.0.0.1 [GAMEPAD] Iniciar frente L=96 R=96 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:10] 127.0.0.1 [GAMEPAD] Iniciar frente L=92 R=92 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:11] 127.0.0.1 [GAMEPAD] Iniciar frente L=94 R=94 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:11] 127.0.0.1 [GAMEPAD] Iniciar frente L=99 R=99 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:11] 127.0.0.1 [GAMEPAD] Iniciar frente L=103 R=103 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:11] 127.0.0.1 [GAMEPAD] Iniciar frente L=96 R=96 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:11] 127.0.0.1 [GAMEPAD] Iniciar frente L=54 R=54 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:11] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=QT1PZP-x8MfqX5czAAAB
+[2026-04-09 15:26:17] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=93 R=93 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=63 R=63 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=57 R=57 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=61 R=61 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=72 R=72 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=112 R=112 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=122 R=122 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:20] 127.0.0.1 [GAMEPAD] Iniciar frente L=133 R=167 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:20] 127.0.0.1 [GAMEPAD] Iniciar frente L=108 R=192 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:20] 127.0.0.1 [GAMEPAD] Iniciar direita L=36 R=186 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:21] 127.0.0.1 [GAMEPAD] Iniciar direita L=5 R=181 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:21] 127.0.0.1 [GAMEPAD] Iniciar direita L=-54 R=146 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:21] 127.0.0.1 [GAMEPAD] Iniciar direita L=-70 R=130 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:21] 127.0.0.1 [GAMEPAD] Iniciar direita L=-78 R=122 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:21] 127.0.0.1 [GAMEPAD] Iniciar direita L=-100 R=100 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:21] 127.0.0.1 [GAMEPAD] Iniciar direita L=-134 R=66 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:21] 127.0.0.1 [GAMEPAD] Iniciar ré L=-188 R=-38 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:21] 127.0.0.1 [GAMEPAD] Iniciar ré L=-197 R=-79 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:21] 127.0.0.1 [GAMEPAD] Iniciar ré L=-150 R=-150 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:22] 127.0.0.1 [GAMEPAD] Iniciar ré L=-137 R=-163 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:22] 127.0.0.1 [GAMEPAD] Iniciar ré L=-38 R=-186 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:22] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=-4 R=-182 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:22] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=80 R=-120 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:22] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=100 R=-100 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:22] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=97 R=-97 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:22] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:24] 127.0.0.1 [GAMEPAD] Iniciar ré L=-61 R=-61 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:24] 127.0.0.1 [GAMEPAD] Iniciar ré L=-114 R=-114 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:24] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:24] 127.0.0.1 [GAMEPAD] Iniciar ré L=-40 R=-40 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:24] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:25] 127.0.0.1 [GAMEPAD] Iniciar ré L=-150 R=-150 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:25] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:25] 127.0.0.1 [GAMEPAD] Iniciar ré L=-33 R=-33 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:25] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:25] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:26] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:26] 127.0.0.1 [GAMEPAD] Iniciar ré L=-16 R=-16 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:26] 127.0.0.1 [GAMEPAD] Iniciar ré L=-39 R=-39 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:26] 127.0.0.1 [GAMEPAD] Iniciar ré L=-34 R=-34 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:27] 127.0.0.1 [GAMEPAD] Iniciar ré L=-51 R=-51 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:27] 127.0.0.1 [GAMEPAD] Iniciar ré L=-61 R=-61 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:27] 127.0.0.1 [GAMEPAD] Iniciar ré L=-57 R=-57 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:27] 127.0.0.1 [GAMEPAD] Iniciar ré L=-40 R=-40 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:27] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:29] 127.0.0.1 [GAMEPAD] Iniciar frente L=27 R=27 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:29] 127.0.0.1 [GAMEPAD] Iniciar frente L=21 R=21 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:29] 127.0.0.1 [GAMEPAD] Iniciar frente L=26 R=26 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:29] 127.0.0.1 [GAMEPAD] Iniciar frente L=30 R=30 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:29] 127.0.0.1 [GAMEPAD] Iniciar frente L=45 R=45 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:29] 127.0.0.1 [GAMEPAD] Iniciar frente L=58 R=58 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:29] 127.0.0.1 [GAMEPAD] Iniciar frente L=111 R=111 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:30] 127.0.0.1 [GAMEPAD] Iniciar frente L=106 R=106 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:30] 127.0.0.1 [GAMEPAD] Iniciar frente L=72 R=72 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:30] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:30] 127.0.0.1 [GAMEPAD] Iniciar ré L=-11 R=-11 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:30] 127.0.0.1 [GAMEPAD] Iniciar ré L=-80 R=-80 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:30] 127.0.0.1 [GAMEPAD] Iniciar ré L=-150 R=-150 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:30] 127.0.0.1 [GAMEPAD] Iniciar ré L=-93 R=-93 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:30] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:31] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=13 R=-13 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:31] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=20 R=-20 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:31] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=29 R=-29 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:31] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:32] 127.0.0.1 [GAMEPAD] Iniciar direita L=-27 R=27 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:32] 127.0.0.1 [GAMEPAD] Iniciar direita L=-39 R=39 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:32] 127.0.0.1 [GAMEPAD] Iniciar direita L=-100 R=100 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:32] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:32] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=13 R=-13 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:32] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=97 R=-97 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:32] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=94 R=-94 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:32] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=65 R=-65 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:32] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:33] 127.0.0.1 [GAMEPAD] Iniciar direita L=-100 R=100 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:33] 127.0.0.1 [GAMEPAD] Iniciar direita L=-21 R=21 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:33] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:34] 127.0.0.1 [GAMEPAD] Iniciar ré L=-54 R=-54 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:34] 127.0.0.1 [GAMEPAD] Iniciar ré L=-140 R=-140 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:34] 127.0.0.1 [GAMEPAD] Iniciar ré L=-150 R=-150 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:34] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:36] 127.0.0.1 [GAMEPAD] Iniciar ré L=-14 R=-14 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:36] 127.0.0.1 [GAMEPAD] Iniciar ré L=-34 R=-34 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:36] 127.0.0.1 [GAMEPAD] Iniciar ré L=-39 R=-39 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:37] 127.0.0.1 [GAMEPAD] Iniciar ré L=-46 R=-46 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:37] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:38] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:40] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:40] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:41] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:42] 127.0.0.1 [GAMEPAD] button btn=triangle sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:42] 127.0.0.1 [GAMEPAD] button btn=triangle sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:42] 127.0.0.1 [GAMEPAD] button btn=triangle sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:43] 127.0.0.1 [GAMEPAD] button btn=triangle sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:43] 127.0.0.1 [GAMEPAD] button btn=square sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:43] 127.0.0.1 [GAMEPAD] button btn=square sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:43] 127.0.0.1 [GAMEPAD] button btn=circle sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:43] 127.0.0.1 [GAMEPAD] button btn=circle sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:44] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:51] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:51] 127.0.0.1 [GAMEPAD] Iniciar ré L=-61 R=-61 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:51] 127.0.0.1 [GAMEPAD] Iniciar ré L=-96 R=-96 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:51] 127.0.0.1 [GAMEPAD] Iniciar ré L=-74 R=-74 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:51] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:51] 127.0.0.1 [GAMEPAD] Iniciar ré L=-116 R=-184 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:51] 127.0.0.1 [GAMEPAD] Iniciar ré L=-95 R=-163 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:51] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:52] 127.0.0.1 [GAMEPAD] Iniciar frente L=76 R=76 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:52] 127.0.0.1 [GAMEPAD] Iniciar frente L=96 R=96 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:52] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:53] 127.0.0.1 [GAMEPAD] Iniciar ré L=-61 R=-61 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:53] 127.0.0.1 [GAMEPAD] Iniciar ré L=-119 R=-181 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:53] 127.0.0.1 [GAMEPAD] Iniciar ré L=-90 R=-198 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:53] 127.0.0.1 [GAMEPAD] Iniciar ré L=-12 R=-12 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:53] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:53] 127.0.0.1 [GAMEPAD] Iniciar ré L=-39 R=-39 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:53] 127.0.0.1 [GAMEPAD] Iniciar ré L=-103 R=-103 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:53] 127.0.0.1 [GAMEPAD] Iniciar ré L=-138 R=-138 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:54] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:54] 127.0.0.1 [GAMEPAD] Iniciar direita L=-27 R=27 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:54] 127.0.0.1 [GAMEPAD] Iniciar direita L=-91 R=91 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:54] 127.0.0.1 [GAMEPAD] Iniciar direita L=-100 R=100 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:54] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:55] 127.0.0.1 [GAMEPAD] Iniciar direita L=-37 R=37 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:55] 127.0.0.1 [GAMEPAD] Iniciar direita L=-100 R=100 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:55] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:55] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=63 R=-63 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:55] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=100 R=-100 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:55] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=28 R=-28 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:56] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:56] 127.0.0.1 [GAMEPAD] Iniciar direita L=-27 R=27 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:56] 127.0.0.1 [GAMEPAD] Iniciar direita L=-34 R=34 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:56] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:56] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:57] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:57] 127.0.0.1 [GAMEPAD] Iniciar direita L=-100 R=100 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:57] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:58] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:26:58] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:04] 127.0.0.1 [GAMEPAD] Iniciar ré L=-48 R=-48 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:04] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:04] 127.0.0.1 [GAMEPAD] Iniciar ré L=-108 R=-108 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:04] 127.0.0.1 [GAMEPAD] Iniciar ré L=-150 R=-150 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:04] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:08] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=43 R=-43 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:08] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=100 R=-100 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:08] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:09] 127.0.0.1 [GAMEPAD] Iniciar direita L=-100 R=100 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:09] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:09] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=100 R=-100 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:10] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:10] 127.0.0.1 [GAMEPAD] Iniciar direita L=-50 R=50 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:10] 127.0.0.1 [GAMEPAD] Iniciar direita L=-100 R=100 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:10] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:11] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=100 R=-100 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:11] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:11] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=96 R=-96 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:11] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=100 R=-100 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:11] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:12] 127.0.0.1 [GAMEPAD] Iniciar ré L=-21 R=-21 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:12] 127.0.0.1 [GAMEPAD] Iniciar ré L=-98 R=-98 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:12] 127.0.0.1 [GAMEPAD] Iniciar ré L=-64 R=-64 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:12] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:13] 127.0.0.1 [GAMEPAD] Iniciar ré L=-27 R=-27 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:13] 127.0.0.1 [GAMEPAD] Iniciar ré L=-78 R=-78 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:13] 127.0.0.1 [GAMEPAD] Iniciar ré L=-150 R=-150 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:13] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:21] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:23] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:24] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:27:24] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=AJ-IM4m_f9pa3cgLAAAD
+[2026-04-09 15:35:29] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:30] 127.0.0.1 Parar frente (code=ArrowUp) sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:31] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:31] 127.0.0.1 Parar frente (code=ArrowUp) sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:32] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:32] 127.0.0.1 Parar frente (code=ArrowUp) sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:32] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:32] 127.0.0.1 Parar frente (code=ArrowUp) sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:32] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:34] 127.0.0.1 Parar frente (code=ArrowUp) sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:38] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:38] 127.0.0.1 Parar frente (code=ArrowUp) sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:53] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:53] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:56] 127.0.0.1 [GAMEPAD] Iniciar frente L=6 R=6 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:56] 127.0.0.1 [GAMEPAD] Iniciar frente L=75 R=75 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:57] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:57] 127.0.0.1 [GAMEPAD] Iniciar frente L=32 R=32 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:57] 127.0.0.1 [GAMEPAD] Iniciar frente L=61 R=61 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:57] 127.0.0.1 [GAMEPAD] Iniciar frente L=75 R=75 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:57] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:58] 127.0.0.1 [GAMEPAD] Iniciar frente L=75 R=75 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:58] 127.0.0.1 [GAMEPAD] Iniciar frente L=24 R=24 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:35:58] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:08] 127.0.0.1 [GAMEPAD] Iniciar frente L=16 R=16 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:08] 127.0.0.1 [GAMEPAD] Iniciar frente L=75 R=75 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:08] 127.0.0.1 [GAMEPAD] Iniciar frente L=57 R=57 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:08] 127.0.0.1 [GAMEPAD] Iniciar frente L=50 R=50 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:08] 127.0.0.1 [GAMEPAD] Iniciar frente L=29 R=29 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:08] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:08] 127.0.0.1 [GAMEPAD] Iniciar frente L=31 R=31 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:08] 127.0.0.1 [GAMEPAD] Iniciar frente L=75 R=75 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:19] 127.0.0.1 [GAMEPAD] Iniciar frente L=55 R=55 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:19] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:21] 127.0.0.1 [GAMEPAD] Iniciar frente L=103 R=103 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:21] 127.0.0.1 [GAMEPAD] Iniciar frente L=240 R=240 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:21] 127.0.0.1 [GAMEPAD] Iniciar frente L=46 R=46 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:21] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:26] 127.0.0.1 [GAMEPAD] Iniciar frente L=50 R=50 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:27] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:27] 127.0.0.1 [GAMEPAD] Iniciar frente L=103 R=103 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:27] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:28] 127.0.0.1 [GAMEPAD] Iniciar frente L=102 R=102 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:28] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:35] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:35] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:35] 127.0.0.1 [GAMEPAD] Iniciar frente L=132 R=132 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:36] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:37] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:39] 127.0.0.1 [GAMEPAD] Iniciar frente L=106 R=106 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:39] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:39] 127.0.0.1 [GAMEPAD] Iniciar frente L=40 R=40 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:39] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:40] 127.0.0.1 [GAMEPAD] Iniciar ré L=-150 R=-150 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:40] 127.0.0.1 [GAMEPAD] Iniciar ré L=-111 R=-111 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:40] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:40] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:41] 127.0.0.1 [GAMEPAD] Iniciar ré L=-54 R=-54 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:41] 127.0.0.1 [GAMEPAD] Iniciar ré L=-58 R=-58 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:41] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:41] 127.0.0.1 [GAMEPAD] Iniciar ré L=-40 R=-40 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:41] 127.0.0.1 [GAMEPAD] Iniciar ré L=-150 R=-150 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:41] 127.0.0.1 [GAMEPAD] Iniciar ré L=-103 R=-103 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:41] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:41] 127.0.0.1 [GAMEPAD] Iniciar ré L=-150 R=-150 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:41] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:42] 127.0.0.1 [GAMEPAD] Iniciar ré L=-18 R=-18 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:42] 127.0.0.1 [GAMEPAD] Iniciar ré L=-150 R=-150 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:42] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:44] 127.0.0.1 [GAMEPAD] Iniciar frente L=44 R=44 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:44] 127.0.0.1 [GAMEPAD] Iniciar frente L=129 R=129 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:44] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:46] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:47] 127.0.0.1 [GAMEPAD] Iniciar frente L=22 R=22 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:47] 127.0.0.1 [GAMEPAD] Iniciar frente L=38 R=38 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:48] 127.0.0.1 [GAMEPAD] Iniciar frente L=7 R=7 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:48] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:48] 127.0.0.1 [GAMEPAD] Iniciar frente L=22 R=22 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:48] 127.0.0.1 [GAMEPAD] Iniciar frente L=38 R=38 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:48] 127.0.0.1 [GAMEPAD] Iniciar frente L=96 R=96 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:48] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:49] 127.0.0.1 [GAMEPAD] Iniciar frente L=93 R=93 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:49] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:49] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:49] 127.0.0.1 [GAMEPAD] Iniciar frente L=81 R=81 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:49] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:52] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:52] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:53] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:54] 127.0.0.1 [GAMEPAD] Iniciar frente L=38 R=38 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:54] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:54] 127.0.0.1 [GAMEPAD] Iniciar frente L=3 R=3 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:54] 127.0.0.1 [GAMEPAD] Iniciar frente L=33 R=33 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:54] 127.0.0.1 [GAMEPAD] Iniciar frente L=38 R=38 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:55] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:56] 127.0.0.1 [GAMEPAD] Iniciar frente L=38 R=38 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:58] 127.0.0.1 [GAMEPAD] Iniciar frente L=99 R=99 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:58] 127.0.0.1 [GAMEPAD] Iniciar frente L=16 R=16 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:58] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:58] 127.0.0.1 [GAMEPAD] Iniciar frente L=20 R=20 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:36:58] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:00] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:00] 127.0.0.1 [GAMEPAD] Iniciar frente L=2 R=2 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:00] 127.0.0.1 [GAMEPAD] Iniciar frente L=38 R=38 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:01] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:01] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:03] 127.0.0.1 [GAMEPAD] Iniciar frente L=52 R=52 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:03] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:07] 127.0.0.1 [GAMEPAD] Iniciar frente L=28 R=28 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:07] 127.0.0.1 [GAMEPAD] Iniciar frente L=75 R=75 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:13] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:13] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:14] 127.0.0.1 [GAMEPAD] Iniciar frente L=124 R=124 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:14] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:14] 127.0.0.1 [GAMEPAD] Iniciar frente L=110 R=110 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:15] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:16] 127.0.0.1 [GAMEPAD] Iniciar frente L=44 R=44 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:16] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:17] 127.0.0.1 [GAMEPAD] Iniciar frente L=66 R=66 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:17] 127.0.0.1 [GAMEPAD] Iniciar frente L=75 R=75 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:19] 127.0.0.1 [GAMEPAD] Iniciar frente L=57 R=57 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:19] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:19] 127.0.0.1 [GAMEPAD] Iniciar frente L=30 R=30 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:19] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:20] 127.0.0.1 [GAMEPAD] Iniciar frente L=92 R=92 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:20] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:20] 127.0.0.1 [GAMEPAD] Iniciar frente L=134 R=134 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:20] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:21] 127.0.0.1 [GAMEPAD] Iniciar frente L=53 R=53 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:21] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:21] 127.0.0.1 [GAMEPAD] Iniciar frente L=23 R=23 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:21] 127.0.0.1 [GAMEPAD] Iniciar frente L=38 R=38 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:22] 127.0.0.1 [GAMEPAD] Iniciar frente L=10 R=10 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:22] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:22] 127.0.0.1 [GAMEPAD] Iniciar frente L=4 R=4 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:22] 127.0.0.1 [GAMEPAD] Iniciar frente L=38 R=38 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:23] 127.0.0.1 [GAMEPAD] Iniciar frente L=21 R=21 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:23] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:23] 127.0.0.1 [GAMEPAD] Iniciar frente L=9 R=9 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:23] 127.0.0.1 [GAMEPAD] Iniciar frente L=38 R=38 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:24] 127.0.0.1 [GAMEPAD] Iniciar frente L=16 R=16 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:24] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:24] 127.0.0.1 [GAMEPAD] Iniciar frente L=38 R=38 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:24] 127.0.0.1 [GAMEPAD] Iniciar frente L=53 R=53 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:24] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:25] 127.0.0.1 [GAMEPAD] Iniciar frente L=75 R=75 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:26] 127.0.0.1 [GAMEPAD] Iniciar frente L=33 R=33 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:26] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:26] 127.0.0.1 [GAMEPAD] Iniciar frente L=38 R=38 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:26] 127.0.0.1 [GAMEPAD] Iniciar frente L=27 R=27 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:26] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:27] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:28] 127.0.0.1 [GAMEPAD] Iniciar frente L=64 R=64 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:28] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:28] 127.0.0.1 [GAMEPAD] Iniciar frente L=134 R=134 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:28] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:29] 127.0.0.1 [GAMEPAD] Iniciar frente L=50 R=50 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:29] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:29] 127.0.0.1 [GAMEPAD] Iniciar frente L=150 R=150 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:30] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:30] 127.0.0.1 [GAMEPAD] Iniciar frente L=75 R=75 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:31] 127.0.0.1 [GAMEPAD] Iniciar frente L=6 R=6 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:31] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:32] 127.0.0.1 [GAMEPAD] Iniciar ré L=-8 R=-8 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:32] 127.0.0.1 [GAMEPAD] Iniciar ré L=-75 R=-75 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:33] 127.0.0.1 [GAMEPAD] Iniciar ré L=-71 R=-71 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:33] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:36] 127.0.0.1 [GAMEPAD] Iniciar direita L=-31 R=31 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:36] 127.0.0.1 [GAMEPAD] Iniciar direita L=-50 R=50 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:36] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:37] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=6 R=-6 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:37] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=50 R=-50 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:37] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:37] 127.0.0.1 [GAMEPAD] Iniciar ré L=-35 R=-35 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:37] 127.0.0.1 [GAMEPAD] Iniciar ré L=-75 R=-75 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:37] 127.0.0.1 [GAMEPAD] Iniciar ré L=-38 R=-38 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:37:37] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=sY7VjluJlAqkNjK3AAAB
+[2026-04-09 15:41:13] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:13] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:13] 127.0.0.1 [GAMEPAD] Iniciar frente L=12 R=12 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:13] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:13] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:13] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:13] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:13] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:14] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:14] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:19] 127.0.0.1 [GAMEPAD] Iniciar frente L=30 R=30 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:19] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:20] 127.0.0.1 [GAMEPAD] Iniciar frente L=30 R=30 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:20] 127.0.0.1 [GAMEPAD] Iniciar frente L=50 R=50 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:21] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:21] 127.0.0.1 [GAMEPAD] Iniciar ré L=-16 R=-16 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:21] 127.0.0.1 [GAMEPAD] Iniciar ré L=-50 R=-50 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:23] 127.0.0.1 [GAMEPAD] Iniciar ré L=-42 R=-42 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:23] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:23] 127.0.0.1 [GAMEPAD] Iniciar frente L=31 R=31 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:23] 127.0.0.1 [GAMEPAD] Iniciar frente L=19 R=19 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:23] 127.0.0.1 [GAMEPAD] Iniciar frente L=50 R=50 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:25] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:25] 127.0.0.1 [GAMEPAD] Iniciar ré L=-21 R=-21 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:25] 127.0.0.1 [GAMEPAD] Iniciar ré L=-50 R=-50 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:26] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:26] 127.0.0.1 [GAMEPAD] Iniciar frente L=50 R=50 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:28] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:28] 127.0.0.1 [GAMEPAD] Iniciar ré L=-50 R=-50 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:30] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:30] 127.0.0.1 [GAMEPAD] Iniciar frente L=26 R=26 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:30] 127.0.0.1 [GAMEPAD] Iniciar frente L=50 R=50 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:31] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:31] 127.0.0.1 [GAMEPAD] Iniciar ré L=-50 R=-50 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:31] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=29 R=-29 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:31] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=22 R=-22 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:31] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:31] 127.0.0.1 [GAMEPAD] Iniciar frente L=50 R=50 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:32] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:32] 127.0.0.1 [GAMEPAD] Iniciar ré L=-48 R=-48 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:32] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:32] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:33] 127.0.0.1 [GAMEPAD] Iniciar frente L=50 R=50 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:33] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:38] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:40] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:40] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:40] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=14 R=-14 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:40] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:40] 127.0.0.1 [GAMEPAD] Iniciar ré L=-7 R=-7 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:40] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:40] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:41] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:41] 127.0.0.1 [GAMEPAD] Iniciar frente L=89 R=89 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:41] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:41] 127.0.0.1 [GAMEPAD] Iniciar ré L=-39 R=-39 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:41] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:41] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:42] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:42] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:43] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:43] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:43] 127.0.0.1 [GAMEPAD] Iniciar ré L=-18 R=-18 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:43] 127.0.0.1 [GAMEPAD] Iniciar ré L=-200 R=-200 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:43] 127.0.0.1 [GAMEPAD] Iniciar ré L=-190 R=-210 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:43] 127.0.0.1 [GAMEPAD] Iniciar ré L=-200 R=-200 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:43] 127.0.0.1 [GAMEPAD] Iniciar ré L=-12 R=-12 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:43] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:44] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:45] 127.0.0.1 [GAMEPAD] Iniciar ré L=-97 R=-103 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:45] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:46] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:46] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:49] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:50] 127.0.0.1 [GAMEPAD] Iniciar frente L=17 R=17 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:50] 127.0.0.1 [GAMEPAD] Iniciar frente L=50 R=50 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:52] 127.0.0.1 [GAMEPAD] Iniciar frente L=12 R=12 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:52] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:52] 127.0.0.1 [GAMEPAD] Iniciar ré L=-26 R=-26 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:52] 127.0.0.1 [GAMEPAD] Iniciar ré L=-34 R=-66 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:53] 127.0.0.1 [GAMEPAD] Iniciar ré L=-46 R=-54 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:53] 127.0.0.1 [GAMEPAD] Iniciar ré L=-43 R=-43 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:53] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:53] 127.0.0.1 [GAMEPAD] Iniciar direita L=-36 R=28 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:53] 127.0.0.1 [GAMEPAD] Iniciar ré L=-62 R=-13 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:53] 127.0.0.1 [GAMEPAD] Iniciar ré L=-63 R=-16 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:53] 127.0.0.1 [GAMEPAD] Iniciar ré L=-50 R=-50 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:54] 127.0.0.1 [GAMEPAD] Iniciar ré L=-15 R=-62 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:54] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=20 R=-45 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:54] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=22 R=-42 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:54] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=24 R=-41 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:54] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=22 R=-42 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:54] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=-13 R=-61 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:54] 127.0.0.1 [GAMEPAD] Iniciar ré L=-62 R=-13 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:54] 127.0.0.1 [GAMEPAD] Iniciar direita L=-59 R=2 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:54] 127.0.0.1 [GAMEPAD] Iniciar direita L=-52 R=13 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:55] 127.0.0.1 [GAMEPAD] Iniciar direita L=-54 R=12 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:55] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:55] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=32 R=-32 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:55] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=20 R=-45 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:55] 127.0.0.1 [GAMEPAD] Iniciar ré L=-13 R=-62 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:55] 127.0.0.1 [GAMEPAD] Iniciar ré L=-50 R=-50 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:56] 127.0.0.1 [GAMEPAD] Iniciar ré L=-47 R=-53 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:56] 127.0.0.1 [GAMEPAD] Iniciar ré L=-13 R=-13 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:41:56] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=ygIvQarsfk-cAeSgAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=18 R=18 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=22 R=22 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=38 R=38 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=29 R=29 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=59 R=59 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=86 R=86 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=51 R=51 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=8 R=8 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Iniciar frente L=93 R=93 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:18] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:19] 127.0.0.1 [GAMEPAD] Iniciar frente L=97 R=97 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:19] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:19] 127.0.0.1 [GAMEPAD] Iniciar frente L=40 R=40 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:19] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:20] 127.0.0.1 [GAMEPAD] Iniciar frente L=43 R=43 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:20] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:22] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:22] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:25] 127.0.0.1 [GAMEPAD] Iniciar frente L=69 R=69 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:25] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:25] 127.0.0.1 [GAMEPAD] Iniciar ré L=-80 R=-80 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:25] 127.0.0.1 [GAMEPAD] Iniciar ré L=-63 R=-97 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:25] 127.0.0.1 [GAMEPAD] Iniciar ré L=-45 R=-51 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:25] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:26] 127.0.0.1 [GAMEPAD] Iniciar ré L=-54 R=-54 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:26] 127.0.0.1 [GAMEPAD] Iniciar ré L=-80 R=-80 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:26] 127.0.0.1 [GAMEPAD] Iniciar ré L=-77 R=-77 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:26] 127.0.0.1 [GAMEPAD] Iniciar ré L=-30 R=-30 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:26] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:26] 127.0.0.1 [GAMEPAD] Iniciar frente L=80 R=80 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:27] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:27] 127.0.0.1 [GAMEPAD] Iniciar frente L=50 R=50 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:27] 127.0.0.1 [GAMEPAD] Iniciar frente L=80 R=80 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:27] 127.0.0.1 [GAMEPAD] Iniciar frente L=66 R=66 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:27] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:28] 127.0.0.1 [GAMEPAD] Iniciar ré L=-14 R=-14 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:28] 127.0.0.1 [GAMEPAD] Iniciar ré L=-72 R=-88 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:28] 127.0.0.1 [GAMEPAD] Iniciar ré L=-73 R=-87 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:28] 127.0.0.1 [GAMEPAD] Iniciar ré L=-55 R=-55 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:28] 127.0.0.1 [GAMEPAD] Iniciar ré L=-20 R=-20 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:28] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:28] 127.0.0.1 [GAMEPAD] Iniciar frente L=80 R=80 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:29] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:29] 127.0.0.1 [GAMEPAD] Iniciar frente L=59 R=59 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:29] 127.0.0.1 [GAMEPAD] Iniciar frente L=80 R=80 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:29] 127.0.0.1 [GAMEPAD] Iniciar frente L=78 R=78 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:29] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:30] 127.0.0.1 [GAMEPAD] Iniciar ré L=-12 R=-12 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:30] 127.0.0.1 [GAMEPAD] Iniciar ré L=-31 R=-31 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:30] 127.0.0.1 [GAMEPAD] Iniciar ré L=-36 R=-36 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:30] 127.0.0.1 [GAMEPAD] Iniciar ré L=-80 R=-80 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:30] 127.0.0.1 [GAMEPAD] Iniciar ré L=-38 R=-38 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:30] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:30] 127.0.0.1 [GAMEPAD] Iniciar frente L=80 R=80 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:31] 127.0.0.1 [GAMEPAD] Iniciar frente L=56 R=56 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:31] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:31] 127.0.0.1 [GAMEPAD] Iniciar ré L=-4 R=-4 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:31] 127.0.0.1 [GAMEPAD] Iniciar ré L=-54 R=-54 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:31] 127.0.0.1 [GAMEPAD] Iniciar ré L=-80 R=-80 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:31] 127.0.0.1 [GAMEPAD] Iniciar ré L=-59 R=-59 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:31] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:31] 127.0.0.1 [GAMEPAD] Iniciar ré L=-4 R=-4 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:32] 127.0.0.1 [GAMEPAD] Iniciar ré L=-48 R=-48 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:32] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:32] 127.0.0.1 [GAMEPAD] Iniciar ré L=-6 R=-6 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:32] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:33] 127.0.0.1 [GAMEPAD] Iniciar ré L=-66 R=-66 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:33] 127.0.0.1 [GAMEPAD] Iniciar ré L=-80 R=-80 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:33] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:34] 127.0.0.1 [GAMEPAD] Iniciar frente L=62 R=62 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:34] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:38] 127.0.0.1 [GAMEPAD] Iniciar frente L=40 R=40 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:38] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:40] 127.0.0.1 [GAMEPAD] Iniciar frente L=10 R=10 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:40] 127.0.0.1 [GAMEPAD] Iniciar frente L=18 R=18 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:40] 127.0.0.1 [GAMEPAD] Iniciar frente L=72 R=72 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:40] 127.0.0.1 [GAMEPAD] Iniciar frente L=80 R=80 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:41] 127.0.0.1 [GAMEPAD] Iniciar frente L=56 R=56 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:41] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:42] 127.0.0.1 [GAMEPAD] Iniciar frente L=29 R=29 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:42] 127.0.0.1 [GAMEPAD] Iniciar frente L=80 R=80 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:50] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:51] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:51] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:52] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:53] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:53] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:53] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:53] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:54] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:55] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:56] 127.0.0.1 [GAMEPAD] Iniciar ré L=-11 R=-11 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:44:56] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:02] 127.0.0.1 [GAMEPAD] Iniciar ré L=-22 R=-22 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:02] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:03] 127.0.0.1 [GAMEPAD] Iniciar frente L=25 R=25 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:03] 127.0.0.1 [GAMEPAD] Iniciar frente L=27 R=27 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:03] 127.0.0.1 [GAMEPAD] Iniciar frente L=49 R=49 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:03] 127.0.0.1 [GAMEPAD] Iniciar frente L=80 R=80 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:04] 127.0.0.1 [GAMEPAD] Iniciar frente L=72 R=72 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:04] 127.0.0.1 [GAMEPAD] Iniciar frente L=47 R=47 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:04] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:04] 127.0.0.1 [GAMEPAD] Iniciar direita L=-10 R=10 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:04] 127.0.0.1 [GAMEPAD] Iniciar direita L=-18 R=18 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:04] 127.0.0.1 [GAMEPAD] Iniciar direita L=-20 R=20 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:04] 127.0.0.1 [GAMEPAD] Iniciar direita L=-21 R=21 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:05] 127.0.0.1 [GAMEPAD] Iniciar direita L=-22 R=22 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:05] 127.0.0.1 [GAMEPAD] Iniciar direita L=-44 R=-1 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:05] 127.0.0.1 [GAMEPAD] Iniciar direita L=-59 R=15 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:05] 127.0.0.1 [GAMEPAD] Iniciar direita L=-62 R=17 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:05] 127.0.0.1 [GAMEPAD] Iniciar direita L=-64 R=19 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:05] 127.0.0.1 [GAMEPAD] Iniciar direita L=-62 R=18 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:05] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:05] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=16 R=-16 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:05] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=52 R=-52 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:06] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=42 R=-42 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:06] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:06] 127.0.0.1 [GAMEPAD] Iniciar ré L=-70 R=-70 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:06] 127.0.0.1 [GAMEPAD] Iniciar ré L=-80 R=-80 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:06] 127.0.0.1 [GAMEPAD] Iniciar ré L=-31 R=-31 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:45:06] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=3RfsPJzkVCMqurPjAAAB
+[2026-04-09 15:50:40] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=M5lsVy9ukOWPufyBAAAB
+[2026-04-09 15:51:23] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=M5lsVy9ukOWPufyBAAAB
+[2026-04-09 15:51:23] 127.0.0.1 Parar frente (code=ArrowUp) sid=M5lsVy9ukOWPufyBAAAB
+[2026-04-09 15:51:23] 127.0.0.1 Iniciar frente (code=ArrowUp) sid=M5lsVy9ukOWPufyBAAAB
+[2026-04-09 15:51:23] 127.0.0.1 Parar frente (code=ArrowUp) sid=M5lsVy9ukOWPufyBAAAB
+[2026-04-09 15:51:55] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:55] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:55] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:55] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:55] 127.0.0.1 [GAMEPAD] Iniciar frente L=19 R=19 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:55] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:55] 127.0.0.1 [GAMEPAD] Iniciar frente L=82 R=82 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:55] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:55] 127.0.0.1 [GAMEPAD] Iniciar frente L=6 R=6 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:55] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:55] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:55] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:55] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:55] 127.0.0.1 [GAMEPAD] Iniciar frente L=34 R=34 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:55] 127.0.0.1 [GAMEPAD] Iniciar frente L=81 R=81 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:55] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:55] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:55] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:55] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:56] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:56] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:56] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:57] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:57] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:51:58] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:06] 127.0.0.1 [GAMEPAD] Iniciar frente L=8 R=8 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:06] 127.0.0.1 [GAMEPAD] Iniciar frente L=122 R=26 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:06] 127.0.0.1 [GAMEPAD] Iniciar frente L=14 R=4 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:06] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:06] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:06] 127.0.0.1 [GAMEPAD] Iniciar frente L=123 R=77 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:06] 127.0.0.1 [GAMEPAD] Iniciar frente L=120 R=80 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:07] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:07] 127.0.0.1 [GAMEPAD] Iniciar frente L=73 R=73 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:07] 127.0.0.1 [GAMEPAD] Iniciar frente L=123 R=33 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:07] 127.0.0.1 [GAMEPAD] Iniciar frente L=128 R=52 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:07] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:09] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:11] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:11] 127.0.0.1 [GAMEPAD] Iniciar ré L=-15 R=-15 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:11] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:12] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:14] 127.0.0.1 [GAMEPAD] Iniciar frente L=148 R=148 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:14] 127.0.0.1 [GAMEPAD] Iniciar frente L=244 R=52 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:15] 127.0.0.1 [GAMEPAD] Iniciar frente L=63 R=63 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:15] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:16] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:17] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:17] 127.0.0.1 [GAMEPAD] Iniciar ré L=-200 R=-200 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:18] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:20] 127.0.0.1 [GAMEPAD] Iniciar frente L=59 R=59 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:20] 127.0.0.1 [GAMEPAD] Iniciar frente L=87 R=73 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:21] 127.0.0.1 [GAMEPAD] Iniciar frente L=89 R=71 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:21] 127.0.0.1 [GAMEPAD] Iniciar frente L=94 R=66 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:21] 127.0.0.1 [GAMEPAD] Iniciar frente L=104 R=56 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:21] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:21] 127.0.0.1 [GAMEPAD] Iniciar ré L=-10 R=-10 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:21] 127.0.0.1 [GAMEPAD] Iniciar ré L=-80 R=-80 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:22] 127.0.0.1 [GAMEPAD] Iniciar ré L=-33 R=-33 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:22] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:22] 127.0.0.1 [GAMEPAD] Iniciar frente L=10 R=10 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:22] 127.0.0.1 [GAMEPAD] Iniciar frente L=80 R=80 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:24] 127.0.0.1 [GAMEPAD] Iniciar frente L=71 R=71 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:24] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:24] 127.0.0.1 [GAMEPAD] Iniciar ré L=-46 R=-46 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:24] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:25] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:32] 127.0.0.1 [GAMEPAD] Iniciar ré L=-13 R=-13 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:32] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:32] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:33] 127.0.0.1 [GAMEPAD] Iniciar ré L=-40 R=-40 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:33] 127.0.0.1 [GAMEPAD] Iniciar ré L=-79 R=-121 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:33] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:33] 127.0.0.1 [GAMEPAD] Iniciar ré L=-45 R=-45 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:33] 127.0.0.1 [GAMEPAD] Iniciar ré L=-96 R=-104 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:33] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:34] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:34] 127.0.0.1 [GAMEPAD] Iniciar direita L=-65 R=65 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:34] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:35] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=65 R=-65 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:35] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:35] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=65 R=-65 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:35] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=70 R=-60 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:35] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=65 R=-65 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:35] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=45 R=-45 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:35] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:36] 127.0.0.1 [GAMEPAD] Iniciar direita L=-12 R=12 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:36] 127.0.0.1 [GAMEPAD] Iniciar direita L=-65 R=65 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:36] 127.0.0.1 [GAMEPAD] Iniciar direita L=-34 R=34 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:36] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:36] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=44 R=-44 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:36] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=65 R=-65 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:36] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=87 R=-43 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:36] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:37] 127.0.0.1 [GAMEPAD] Iniciar direita L=-13 R=13 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:37] 127.0.0.1 [GAMEPAD] Iniciar direita L=-32 R=32 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:37] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:39] 127.0.0.1 [GAMEPAD] Iniciar direita L=-16 R=16 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:39] 127.0.0.1 [GAMEPAD] Iniciar direita L=-62 R=62 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:39] 127.0.0.1 [GAMEPAD] Iniciar direita L=-6 R=6 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:39] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:44] 127.0.0.1 [GAMEPAD] Iniciar ré L=-41 R=-41 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:44] 127.0.0.1 [GAMEPAD] Iniciar ré L=-94 R=-94 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:44] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:45] 127.0.0.1 [GAMEPAD] Iniciar ré L=-52 R=-52 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:45] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:45] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:45] 127.0.0.1 [GAMEPAD] Iniciar ré L=-96 R=-104 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:45] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:45] 127.0.0.1 [GAMEPAD] Iniciar ré L=-8 R=-8 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:45] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:46] 127.0.0.1 [GAMEPAD] Iniciar frente L=86 R=86 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:46] 127.0.0.1 [GAMEPAD] Iniciar frente L=90 R=90 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:46] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:46] 127.0.0.1 [GAMEPAD] Iniciar frente L=37 R=37 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:46] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:47] 127.0.0.1 [GAMEPAD] Iniciar ré L=-17 R=-17 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:47] 127.0.0.1 [GAMEPAD] Iniciar ré L=-79 R=-121 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:47] 127.0.0.1 [GAMEPAD] Iniciar ré L=-90 R=-110 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:47] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:49] 127.0.0.1 [GAMEPAD] Iniciar ré L=-68 R=-68 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:49] 127.0.0.1 [GAMEPAD] Iniciar ré L=-79 R=-79 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:49] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:50] 127.0.0.1 [GAMEPAD] Iniciar ré L=-50 R=-42 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:50] 127.0.0.1 [GAMEPAD] Iniciar ré L=-64 R=-48 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:50] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:51] 127.0.0.1 [GAMEPAD] Iniciar ré L=-21 R=-21 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:51] 127.0.0.1 [GAMEPAD] Iniciar ré L=-55 R=-55 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:51] 127.0.0.1 [GAMEPAD] Iniciar ré L=-90 R=-90 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:51] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:51] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:52] 127.0.0.1 [GAMEPAD] Iniciar ré L=-66 R=-66 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:52] 127.0.0.1 [GAMEPAD] Iniciar ré L=-97 R=-103 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:52] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:52] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:53] 127.0.0.1 [GAMEPAD] Iniciar ré L=-49 R=-49 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:53] 127.0.0.1 [GAMEPAD] Iniciar ré L=-68 R=-68 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:53] 127.0.0.1 [GAMEPAD] Iniciar ré L=-18 R=-18 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:53] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:54] 127.0.0.1 [GAMEPAD] Iniciar frente L=20 R=20 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:54] 127.0.0.1 [GAMEPAD] Iniciar frente L=76 R=76 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:54] 127.0.0.1 [GAMEPAD] Iniciar frente L=79 R=79 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:54] 127.0.0.1 [GAMEPAD] Iniciar frente L=74 R=74 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:54] 127.0.0.1 [GAMEPAD] Iniciar frente L=58 R=58 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:54] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:54] 127.0.0.1 [GAMEPAD] Iniciar ré L=-34 R=-34 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:54] 127.0.0.1 [GAMEPAD] Iniciar ré L=-53 R=-53 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:55] 127.0.0.1 [GAMEPAD] Iniciar ré L=-50 R=-50 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:55] 127.0.0.1 [GAMEPAD] Iniciar ré L=-43 R=-43 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:55] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:55] 127.0.0.1 [GAMEPAD] Iniciar ré L=-6 R=-6 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:55] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:56] 127.0.0.1 [GAMEPAD] Iniciar ré L=-95 R=-95 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:56] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:58] 127.0.0.1 [GAMEPAD] Iniciar frente L=80 R=80 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:58] 127.0.0.1 [GAMEPAD] Iniciar frente L=59 R=59 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:58] 127.0.0.1 [GAMEPAD] Iniciar frente L=46 R=46 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:58] 127.0.0.1 [GAMEPAD] Iniciar frente L=32 R=32 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:58] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:52:59] 127.0.0.1 [GAMEPAD] Iniciar ré L=-14 R=-14 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:00] 127.0.0.1 [GAMEPAD] Iniciar ré L=-21 R=-21 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:01] 127.0.0.1 [GAMEPAD] Iniciar ré L=-24 R=-24 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:01] 127.0.0.1 [GAMEPAD] Iniciar ré L=-30 R=-30 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:01] 127.0.0.1 [GAMEPAD] Iniciar ré L=-47 R=-47 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:01] 127.0.0.1 [GAMEPAD] Iniciar ré L=-54 R=-54 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:01] 127.0.0.1 [GAMEPAD] Iniciar ré L=-74 R=-74 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:02] 127.0.0.1 [GAMEPAD] Iniciar ré L=-72 R=-72 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:02] 127.0.0.1 [GAMEPAD] Iniciar ré L=-70 R=-70 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:02] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:03] 127.0.0.1 [GAMEPAD] Iniciar frente L=58 R=58 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:03] 127.0.0.1 [GAMEPAD] Iniciar frente L=55 R=55 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:03] 127.0.0.1 [GAMEPAD] Iniciar frente L=58 R=58 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:03] 127.0.0.1 [GAMEPAD] Iniciar frente L=43 R=43 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:03] 127.0.0.1 [GAMEPAD] Iniciar frente L=6 R=6 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:03] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:05] 127.0.0.1 [GAMEPAD] Iniciar frente L=18 R=18 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:05] 127.0.0.1 [GAMEPAD] Iniciar frente L=16 R=16 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:05] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:09] 127.0.0.1 [GAMEPAD] Iniciar frente L=21 R=21 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:09] 127.0.0.1 [GAMEPAD] Iniciar frente L=57 R=57 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:10] 127.0.0.1 [GAMEPAD] Iniciar frente L=55 R=55 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:10] 127.0.0.1 [GAMEPAD] Iniciar frente L=50 R=50 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:10] 127.0.0.1 [GAMEPAD] Iniciar frente L=24 R=24 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:10] 127.0.0.1 [GAMEPAD] Iniciar frente L=20 R=20 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:10] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:11] 127.0.0.1 [GAMEPAD] Iniciar ré L=-22 R=-22 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:11] 127.0.0.1 [GAMEPAD] Iniciar ré L=-76 R=-76 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:11] 127.0.0.1 [GAMEPAD] Iniciar ré L=-66 R=-94 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:11] 127.0.0.1 [GAMEPAD] Iniciar ré L=-58 R=-102 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:11] 127.0.0.1 [GAMEPAD] Iniciar ré L=-60 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:11] 127.0.0.1 [GAMEPAD] Iniciar ré L=-70 R=-90 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:11] 127.0.0.1 [GAMEPAD] Iniciar ré L=-77 R=-83 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:11] 127.0.0.1 [GAMEPAD] Iniciar ré L=-67 R=-67 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:11] 127.0.0.1 [GAMEPAD] Iniciar ré L=-26 R=-26 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:11] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:12] 127.0.0.1 [GAMEPAD] Iniciar ré L=-4 R=-4 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:12] 127.0.0.1 [GAMEPAD] Iniciar ré L=-18 R=-18 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:12] 127.0.0.1 [GAMEPAD] Iniciar ré L=-80 R=-80 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:12] 127.0.0.1 [GAMEPAD] Iniciar ré L=-54 R=-54 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:12] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:13] 127.0.0.1 [GAMEPAD] Iniciar direita L=-83 R=-16 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:13] 127.0.0.1 [GAMEPAD] Iniciar ré L=-81 R=-18 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:13] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:14] 127.0.0.1 [GAMEPAD] Iniciar ré L=-18 R=-18 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:14] 127.0.0.1 [GAMEPAD] Iniciar ré L=-80 R=-80 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:14] 127.0.0.1 [GAMEPAD] Iniciar ré L=-48 R=-48 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:53:14] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:08] 127.0.0.1 [GAMEPAD] Iniciar ré L=-7 R=-7 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:08] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:08] 127.0.0.1 [GAMEPAD] Iniciar ré L=-36 R=-36 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:08] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:09] 127.0.0.1 [GAMEPAD] Iniciar ré L=-35 R=-35 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:09] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:09] 127.0.0.1 [GAMEPAD] Iniciar ré L=-60 R=-60 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:09] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:12] 127.0.0.1 [GAMEPAD] Iniciar frente L=6 R=6 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:12] 127.0.0.1 [GAMEPAD] Iniciar frente L=8 R=8 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:12] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:13] 127.0.0.1 [GAMEPAD] Iniciar frente L=57 R=57 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:13] 127.0.0.1 [GAMEPAD] Iniciar frente L=47 R=47 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:13] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:13] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:13] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:14] 127.0.0.1 [GAMEPAD] Iniciar ré L=-5 R=-5 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:14] 127.0.0.1 [GAMEPAD] Iniciar ré L=-14 R=-14 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:15] 127.0.0.1 [GAMEPAD] Iniciar ré L=-74 R=-74 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:15] 127.0.0.1 [GAMEPAD] Iniciar ré L=-80 R=-80 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:15] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:15] 127.0.0.1 [GAMEPAD] Iniciar direita L=-53 R=53 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:15] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:16] 127.0.0.1 [GAMEPAD] Iniciar direita L=-65 R=65 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:16] 127.0.0.1 [GAMEPAD] Iniciar direita L=-58 R=58 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:16] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:16] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=16 R=-16 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:16] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=65 R=-65 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:17] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:17] 127.0.0.1 [GAMEPAD] Iniciar ré L=-94 R=-94 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:17] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:17] 127.0.0.1 [GAMEPAD] Iniciar ré L=-25 R=-25 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:55:17] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:56:00] 127.0.0.1 [GAMEPAD] Iniciar ré L=-48 R=-48 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:56:00] 127.0.0.1 [GAMEPAD] Iniciar ré L=-70 R=-70 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:56:00] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:58:53] 127.0.0.1 [GAMEPAD] Iniciar ré L=-5 R=-5 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:58:53] 127.0.0.1 [GAMEPAD] Iniciar ré L=-14 R=-14 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:58:53] 127.0.0.1 [GAMEPAD] Iniciar ré L=-11 R=-11 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:58:54] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:58:54] 127.0.0.1 [GAMEPAD] Iniciar ré L=-86 R=-86 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:58:54] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:58:54] 127.0.0.1 [GAMEPAD] Iniciar ré L=-92 R=-108 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:58:54] 127.0.0.1 [GAMEPAD] Iniciar ré L=-97 R=-103 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:58:54] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:58:55] 127.0.0.1 [GAMEPAD] Iniciar ré L=-97 R=-97 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:58:55] 127.0.0.1 [GAMEPAD] Iniciar ré L=-84 R=-116 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:58:55] 127.0.0.1 [GAMEPAD] Iniciar ré L=-78 R=-122 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:58:55] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:59:23] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:59:23] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:59:24] 127.0.0.1 [GAMEPAD] Iniciar ré L=-14 R=-14 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:59:24] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:59:24] 127.0.0.1 [GAMEPAD] Iniciar ré L=-86 R=-86 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:59:24] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:59:25] 127.0.0.1 [GAMEPAD] Iniciar ré L=-6 R=-6 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:59:25] 127.0.0.1 [GAMEPAD] Iniciar ré L=-93 R=-107 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:59:25] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:59:25] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:59:25] 127.0.0.1 [GAMEPAD] Iniciar ré L=-5 R=-5 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:59:25] 127.0.0.1 [GAMEPAD] Iniciar ré L=-86 R=-114 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:59:25] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:59:26] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:59:26] 127.0.0.1 [GAMEPAD] Iniciar ré L=-86 R=-114 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:59:27] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 15:59:27] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 16:01:08] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 16:01:08] 127.0.0.1 [GAMEPAD] Iniciar ré L=-7 R=-7 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 16:01:08] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 16:01:09] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 16:01:09] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 16:01:12] 127.0.0.1 [GAMEPAD] Iniciar ré L=-42 R=-42 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 16:01:12] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 16:01:12] 127.0.0.1 [GAMEPAD] Iniciar ré L=-110 R=-90 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 16:01:12] 127.0.0.1 [GAMEPAD] Iniciar ré L=-46 R=-14 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 16:01:12] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 16:01:12] 127.0.0.1 [GAMEPAD] Iniciar ré L=-51 R=-51 sid=E0CdiUaXqFsnc0R_AAAB
+[2026-04-09 16:01:36] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=c0M3hFaThTlf8is4AAAD
+[2026-04-09 16:01:36] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=c0M3hFaThTlf8is4AAAD
+[2026-04-09 16:02:17] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:19] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:19] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:19] 127.0.0.1 [GAMEPAD] Iniciar ré L=-69 R=-69 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:19] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:20] 127.0.0.1 [GAMEPAD] Iniciar ré L=-76 R=-76 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:20] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:20] 127.0.0.1 [GAMEPAD] Iniciar ré L=-86 R=-86 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:20] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:21] 127.0.0.1 [GAMEPAD] Iniciar ré L=-34 R=-124 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:21] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:21] 127.0.0.1 [GAMEPAD] Iniciar frente L=100 R=100 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:21] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:22] 127.0.0.1 [GAMEPAD] Iniciar ré L=-45 R=-45 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:22] 127.0.0.1 [GAMEPAD] Iniciar ré L=-100 R=-100 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:22] 127.0.0.1 [GAMEPAD] Iniciar ré L=-90 R=-110 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:22] 127.0.0.1 [GAMEPAD] Iniciar ré L=-89 R=-255 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:22] 127.0.0.1 [GAMEPAD] Iniciar ré L=-38 R=-38 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:22] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:22] 127.0.0.1 [GAMEPAD] Iniciar frente L=130 R=130 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:23] 127.0.0.1 [GAMEPAD] Iniciar frente L=200 R=200 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:23] 127.0.0.1 [GAMEPAD] Iniciar frente L=62 R=62 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:23] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:23] 127.0.0.1 [GAMEPAD] Iniciar ré L=-120 R=-120 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:23] 127.0.0.1 [GAMEPAD] Iniciar ré L=-200 R=-200 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:23] 127.0.0.1 [GAMEPAD] Iniciar ré L=-136 R=-136 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:23] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:24] 127.0.0.1 [GAMEPAD] Iniciar ré L=-75 R=-75 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:24] 127.0.0.1 [GAMEPAD] Iniciar ré L=-80 R=-80 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:25] 127.0.0.1 [GAMEPAD] Iniciar direita L=-98 R=-18 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:25] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:26] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=52 R=-52 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:26] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:26] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=52 R=-52 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:27] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=25 R=-25 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:27] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:27] 127.0.0.1 [GAMEPAD] Iniciar direita L=-43 R=43 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:27] 127.0.0.1 [GAMEPAD] Iniciar direita L=-52 R=52 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:27] 127.0.0.1 [GAMEPAD] Iniciar direita L=-28 R=28 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:27] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:28] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=3 R=-3 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:28] 127.0.0.1 [GAMEPAD] Iniciar esquerda L=52 R=-52 sid=kMB0vBTUivvTrQEkAAAB
+[2026-04-09 16:02:28] 127.0.0.1 [GAMEPAD] Parar parar L=0 R=0 sid=kMB0vBTUivvTrQEkAAAB

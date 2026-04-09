@@ -1,26 +1,123 @@
 (() => {
   // Script do cliente: captura teclado/botões, envia eventos via Socket.IO
   // e exibe status de conexão e confirmação de entrega (ACK) do servidor.
+  // Também gerencia o modo de controle (web vs gamepad).
+
   const connEl = document.getElementById('conn');
   const pressedEl = document.getElementById('pressed');
   const logEl = document.getElementById('log');
   const deliveryEl = document.getElementById('delivery');
+  const modeDisplay = document.getElementById('mode-display');
+  const pressedRow = document.getElementById('pressed-row');
+  const gamepadStatusRow = document.getElementById('gamepad-status-row');
+  const webControls = document.getElementById('web-controls');
+  const gamepadControls = document.getElementById('gamepad-controls');
 
   // Rastreia teclas pressionadas para evitar flood por autorepeat
   const pressed = new Set();
 
+  // Modo ativo: 'web' ou 'gamepad'
+  let controlMode = 'web';
+
   // Prefere polling e faz upgrade para websocket (melhor compatibilidade)
   const socket = io({ transports: ['polling', 'websocket'] });
+
+  // --- Controle de velocidade (compartilhado entre modos) ---
+  const speedSlider = document.getElementById('speed-slider');
+  const speedMultDisplay = document.getElementById('speed-mult-display');
+  const speedLinearVal = document.getElementById('speed-linear-val');
+  const speedAngularVal = document.getElementById('speed-angular-val');
+  const BASE_LINEAR = 100;
+  const BASE_ANGULAR = 65;
+  let currentMultiplier = 1.0;
+
+  function updateSpeedUI(mult, linearSpeed, angularSpeed) {
+    currentMultiplier = mult;
+    if (speedSlider) speedSlider.value = mult;
+    if (speedMultDisplay) speedMultDisplay.textContent = mult.toFixed(1) + 'x';
+    if (speedLinearVal) speedLinearVal.textContent = Math.round(linearSpeed || BASE_LINEAR * mult);
+    if (speedAngularVal) speedAngularVal.textContent = Math.round(angularSpeed || BASE_ANGULAR * mult);
+    // Destaca o preset ativo
+    document.querySelectorAll('.speed-preset-btn').forEach(b => {
+      const bm = parseFloat(b.getAttribute('data-mult'));
+      b.classList.toggle('active', Math.abs(bm - mult) < 0.05);
+    });
+  }
+
+  function sendSpeed(mult) {
+    socket.emit('set_speed', { multiplier: mult });
+  }
+
+  if (speedSlider) {
+    speedSlider.addEventListener('input', () => {
+      const mult = parseFloat(speedSlider.value);
+      updateSpeedUI(mult);
+      sendSpeed(mult);
+    });
+  }
+
+  document.querySelectorAll('.speed-preset-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mult = parseFloat(btn.getAttribute('data-mult'));
+      updateSpeedUI(mult);
+      sendSpeed(mult);
+    });
+  });
+
+  socket.on('speed_update', (data) => {
+    if (data && data.ok) {
+      updateSpeedUI(data.multiplier, data.linear_speed, data.angular_speed);
+      appendLog('vel', `Velocidade: ${data.multiplier.toFixed(1)}x (L=${Math.round(data.linear_speed)} A=${Math.round(data.angular_speed)})`);
+    }
+  });
+
+  // Expõe socket e helpers para o módulo gamepad
+  window._robotSocket = socket;
+  window._robotAppendLog = appendLog;
+  window._robotDeliveryEl = deliveryEl;
+  window._robotGetMode = () => controlMode;
+  window._robotSendSpeed = sendSpeed;
+  window._robotUpdateSpeedUI = updateSpeedUI;
+  window._robotGetMultiplier = () => currentMultiplier;
 
   // Sequência incremental para correlacionar ACKs (confirmação)
   let seq = 0;
   const pending = new Map(); // seq -> {code, type, timer}
 
+  // --- Seletor de modo ---
+  document.querySelectorAll('.mode-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mode = btn.getAttribute('data-mode');
+      if (mode === controlMode) return;
+      controlMode = mode;
+
+      document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      if (mode === 'web') {
+        modeDisplay.textContent = 'Teclado / Web';
+        pressedRow.style.display = '';
+        gamepadStatusRow.style.display = 'none';
+        webControls.style.display = '';
+        gamepadControls.style.display = 'none';
+      } else {
+        modeDisplay.textContent = 'Controle PS4';
+        pressedRow.style.display = 'none';
+        gamepadStatusRow.style.display = '';
+        webControls.style.display = 'none';
+        gamepadControls.style.display = '';
+        // Limpa teclas pressionadas ao trocar para gamepad
+        pressed.clear();
+        renderPressed();
+      }
+      appendLog('modo', `Alterado para: ${modeDisplay.textContent}`);
+    });
+  });
+
   socket.on('connect', () => {
     connEl.textContent = 'conectado';
     const transport = socket.io.engine.transport && socket.io.engine.transport.name;
     appendLog('socket', `conectado sid=${socket.id} transport=${transport || 'n/a'}`);
-    // Envia um "hello" de diagnóstico para o servidor
     try {
       socket.emit('client_hello', {
         ts: Date.now(),
@@ -65,7 +162,6 @@
   });
 
   socket.on('ack', (res) => {
-    // Recebe confirmação do servidor para um evento enviado
     const { ok, seq: rseq, type, code, action, command, error } = res || {};
     if (pending.has(rseq)) {
       const item = pending.get(rseq);
@@ -82,13 +178,9 @@
     }
   });
 
-  // no-op: não exibimos mais o server_echo na UI
-
   function send(type, code, repeat) {
-    // Envia um evento de tecla para o servidor com timeout de confirmação
     const id = ++seq;
     const payload = { type, code, repeat: !!repeat, seq: id };
-    // Marca como pendente e define timeout para considerar "não recebido"
     const timer = setTimeout(() => {
       if (pending.has(id)) {
         pending.delete(id);
@@ -102,7 +194,6 @@
   }
 
   function renderPressed() {
-    // Atualiza a lista de teclas atualmente pressionadas
     if (pressed.size === 0) {
       pressedEl.textContent = '(nenhuma)';
     } else {
@@ -111,7 +202,6 @@
   }
 
   function appendLog(tag, message) {
-    // Adiciona uma linha no log visual (limite de 50 entradas)
     if (!logEl) return;
     const ts = new Date().toLocaleTimeString();
     const li = document.createElement('li');
@@ -122,21 +212,22 @@
     }
   }
 
-  // Listeners de teclado
+  // Listeners de teclado (só ativos no modo web)
   window.addEventListener('keydown', (e) => {
+    if (controlMode !== 'web') return;
     const code = e.code || e.key;
     if (!pressed.has(code)) {
       pressed.add(code);
       send('down', code, e.repeat);
       renderPressed();
     }
-    // Evita rolagem da página com setas/espaço
     if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Space'].includes(code)) {
       e.preventDefault();
     }
   }, { passive: false });
 
   window.addEventListener('keyup', (e) => {
+    if (controlMode !== 'web') return;
     const code = e.code || e.key;
     if (pressed.has(code)) {
       pressed.delete(code);
@@ -153,6 +244,7 @@
       : [button.getAttribute('data-code')].filter(Boolean);
 
     const down = () => {
+      if (controlMode !== 'web') return;
       let changed = false;
       for (const code of codes) {
         if (!pressed.has(code)) {
@@ -164,6 +256,7 @@
       if (changed) renderPressed();
     };
     const up = () => {
+      if (controlMode !== 'web') return;
       let changed = false;
       for (const code of codes) {
         if (pressed.has(code)) {
@@ -185,7 +278,6 @@
   document.querySelectorAll('.pad').forEach(setupPad);
 
   function humanize(type, code, action, command) {
-    // Converte dados técnicos em mensagem humana (pt-BR)
     const cmdPt = { forward: 'frente', backward: 'ré', left: 'esquerda', right: 'direita', stop: 'parar' };
     const actPt = { start: 'Iniciar', stop: 'Parar' };
     if (action && command && cmdPt[command] && actPt[action]) {

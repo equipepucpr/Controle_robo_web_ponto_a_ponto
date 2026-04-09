@@ -3,17 +3,81 @@
 html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: #0f172a; color: #e2e8f0; }
 main { max-width: 720px; margin: 32px auto; padding: 0 16px; }
 h1 { margin: 0 0 12px; font-size: 28px; }
-.hint { opacity: 0.8; margin-bottom: 16px; }
+.hint { opacity: 0.8; margin-bottom: 16px; font-size: 14px; }
+
+/* Seletor de modo de controle */
+.mode-selector { margin-bottom: 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.mode-selector label { font-weight: 600; font-size: 14px; }
+.mode-btn { padding: 8px 16px; border: 2px solid #374151; background: #1f2937; color: #9ca3af; border-radius: 8px; cursor: pointer; font-size: 14px; transition: all 0.2s; }
+.mode-btn:hover { border-color: #6366f1; color: #e2e8f0; }
+.mode-btn.active { border-color: #6366f1; background: #312e81; color: #e0e7ff; }
+
+/* Controle de velocidade (compartilhado) */
+.speed-control { background: #111827; border: 1px solid #374151; padding: 12px; border-radius: 8px; margin-bottom: 16px; }
+.speed-control-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.speed-control-row label { font-weight: 600; font-size: 14px; white-space: nowrap; }
+.speed-control-row input[type="range"] { flex: 1; accent-color: #6366f1; height: 6px; cursor: pointer; }
+#speed-mult-display { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 16px; font-weight: 700; min-width: 48px; text-align: center; color: #a5b4fc; }
+.speed-control-info { font-size: 13px; opacity: 0.7; margin-bottom: 8px; display: flex; gap: 16px; }
+.speed-presets { display: flex; gap: 8px; flex-wrap: wrap; }
+.speed-preset-btn { padding: 4px 12px; border: 1px solid #374151; background: #1f2937; color: #9ca3af; border-radius: 6px; cursor: pointer; font-size: 12px; transition: all 0.15s; }
+.speed-preset-btn:hover { border-color: #6366f1; color: #e2e8f0; }
+.speed-preset-btn.active { border-color: #6366f1; background: #312e81; color: #e0e7ff; }
 
 /* Bloco de status (conexão e teclas) */
-.status { background: #111827; border: 1px solid #374151; padding: 12px; border-radius: 8px; margin-bottom: 16px; }
+.status { background: #111827; border: 1px solid #374151; padding: 12px; border-radius: 8px; margin-bottom: 16px; font-size: 14px; }
+.status div { margin-bottom: 4px; }
+.status div:last-child { margin-bottom: 0; }
 
 /* Controles direcionais */
-.controls { display: flex; justify-content: center; }
+.controls { display: flex; flex-direction: column; align-items: center; }
 .grid { display: grid; grid-template-columns: repeat(3, auto); grid-template-rows: repeat(3, auto); gap: 8px; align-items: center; justify-items: center; }
 .row { display: contents; }
 .pad { font-size: 28px; padding: 16px 20px; background: #1f2937; color: #e5e7eb; border: 1px solid #374151; border-radius: 8px; cursor: pointer; min-width: 96px; min-height: 72px; }
 .pad:active { background: #374151; }
+
+/* Visualização do Gamepad */
+.gamepad-viz { display: flex; gap: 24px; align-items: center; justify-content: center; flex-wrap: wrap; margin: 16px 0; }
+
+/* Stick visual */
+.stick-container { text-align: center; }
+.stick-label { font-size: 12px; opacity: 0.7; margin-bottom: 8px; }
+.stick-area { width: 160px; height: 160px; background: #111827; border: 2px solid #374151; border-radius: 50%; position: relative; overflow: hidden; }
+.stick-crosshair { position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; transform: translate(-50%, -50%); pointer-events: none; }
+.stick-crosshair::before, .stick-crosshair::after {
+  content: ''; position: absolute; background: #374151;
+}
+.stick-crosshair::before { width: 1px; height: 100%; left: 50%; top: 0; }
+.stick-crosshair::after { height: 1px; width: 100%; top: 50%; left: 0; }
+.stick-dot { width: 20px; height: 20px; background: #6366f1; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); transition: left 0.05s, top 0.05s; box-shadow: 0 0 8px rgba(99,102,241,0.5); }
+
+/* Barras de velocidade */
+.speed-display { display: flex; flex-direction: column; gap: 12px; min-width: 200px; }
+.speed-bar-container { display: flex; align-items: center; gap: 8px; }
+.speed-label { font-size: 12px; width: 60px; text-align: right; opacity: 0.7; }
+.speed-bar-bg { flex: 1; height: 16px; background: #1e293b; border-radius: 4px; overflow: hidden; border: 1px solid #334155; }
+.speed-bar { height: 100%; background: #22c55e; border-radius: 4px; transition: width 0.1s; width: 0%; }
+.speed-bar.reverse { background: #ef4444; }
+.speed-value { font-size: 12px; width: 40px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.speed-info { font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; opacity: 0.8; }
+.speed-info div { margin-bottom: 2px; }
+
+/* Botões visuais do gamepad */
+.gamepad-buttons { display: flex; gap: 8px; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
+.gp-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #1f2937; border: 2px solid #374151; font-size: 16px; color: #9ca3af; transition: all 0.15s; }
+.gp-btn.active { background: #312e81; border-color: #6366f1; color: #e0e7ff; box-shadow: 0 0 10px rgba(99,102,241,0.4); }
+
+/* Estado de trava de emergência */
+.emergency { position: relative; }
+.emergency::after {
+  content: 'TRAVA DE EMERGÊNCIA ATIVA';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(239, 68, 68, 0.15); border: 2px solid #ef4444; border-radius: 8px;
+  color: #ef4444; font-weight: 700; font-size: 18px; letter-spacing: 1px;
+  pointer-events: none; animation: emergency-pulse 1s ease-in-out infinite alternate;
+}
+@keyframes emergency-pulse { from { opacity: 0.7; } to { opacity: 1; } }
 
 /* Log visual de eventos */
 .eventlog { margin-top: 16px; background: #0b1220; border: 1px solid #243042; padding: 12px; border-radius: 8px; }

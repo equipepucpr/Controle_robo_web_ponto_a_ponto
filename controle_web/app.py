@@ -149,6 +149,91 @@ def handle_key_event(data):
             'code': data.get('code') or data.get('key'),
         }, broadcast=False)
 
+@socketio.on('gamepad_event')
+def handle_gamepad_event(data):
+    # Recebe evento de gamepad (controle PS4/Xbox) com valores analógicos
+    try:
+        app.logger.info(f"gamepad_event from {request.remote_addr}: type={data.get('type')} L={data.get('linear','?')} A={data.get('angular','?')}")
+        result = controller.handle_gamepad_event(data)
+
+        entry = {
+            'ts': time.time(),
+            'addr': request.remote_addr,
+            'sid': request.sid,
+            'input': 'gamepad',
+            'type': data.get('type'),
+        }
+        if data.get('type') == 'axis':
+            entry['linear'] = data.get('linear')
+            entry['angular'] = data.get('angular')
+        elif data.get('type') == 'button':
+            entry['button'] = data.get('button')
+            entry['pressed'] = data.get('pressed')
+
+        if isinstance(result, dict):
+            entry.update({
+                'action': result.get('action'),
+                'command': result.get('command'),
+                'left_speed': result.get('left_speed'),
+                'right_speed': result.get('right_speed'),
+            })
+
+        movement_logger.info(json.dumps(entry, ensure_ascii=False))
+
+        # Log legível
+        try:
+            ts_readable = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(entry['ts']))
+            if entry.get('action') and entry.get('command'):
+                cmd_pt = {'forward': 'frente', 'backward': 'ré', 'left': 'esquerda', 'right': 'direita', 'stop': 'parar'}
+                act_pt = {'start': 'Iniciar', 'stop': 'Parar'}
+                extra = ''
+                if entry.get('left_speed') is not None:
+                    extra = f" L={entry['left_speed']:.0f} R={entry['right_speed']:.0f}"
+                movement_human.info(f"[{ts_readable}] {entry['addr']} [GAMEPAD] {act_pt.get(entry['action'], entry['action'])} {cmd_pt.get(entry['command'], entry['command'])}{extra} sid={entry['sid']}")
+            else:
+                movement_human.info(f"[{ts_readable}] {entry['addr']} [GAMEPAD] {entry['type']} btn={entry.get('button','-')} sid={entry['sid']}")
+        except Exception:
+            pass
+
+        # Log no terminal
+        try:
+            if result and result.get('command'):
+                cmd_pt = {'forward': 'frente', 'backward': 'ré', 'left': 'esquerda', 'right': 'direita', 'stop': 'parar'}
+                act_pt = {'start': 'Iniciar', 'stop': 'Parar'}
+                app.logger.info(f"[Gamepad] {act_pt.get(result['action'], result['action'])} {cmd_pt.get(result['command'], result['command'])} L={result.get('left_speed',0):.0f} R={result.get('right_speed',0):.0f} from {entry['addr']}")
+        except Exception:
+            pass
+
+        emit('gamepad_ack', {
+            'ok': True,
+            'command': result.get('command') if result else None,
+            'action': result.get('action') if result else None,
+            'left_speed': result.get('left_speed') if result else None,
+            'right_speed': result.get('right_speed') if result else None,
+            'emergency': result.get('emergency') if result else None,
+        }, broadcast=False)
+    except Exception as e:
+        emit('gamepad_ack', {
+            'ok': False,
+            'error': str(e),
+        }, broadcast=False)
+
+@socketio.on('set_speed')
+def handle_set_speed(data):
+    # Altera o multiplicador de velocidade do robô
+    try:
+        mult = float(data.get('multiplier', 1.0))
+        effective = controller.set_speed_multiplier(mult)
+        app.logger.info(f"set_speed from {request.remote_addr}: mult={mult:.2f} → effective={effective:.2f}")
+        emit('speed_update', {
+            'ok': True,
+            'multiplier': effective,
+            'linear_speed': controller._linear_speed,
+            'angular_speed': controller._angular_speed,
+        }, broadcast=True)
+    except Exception as e:
+        emit('speed_update', {'ok': False, 'error': str(e)}, broadcast=False)
+
 @socketio.on('client_hello')
 def handle_client_hello(payload):
     # Handshake simples para depuração (cliente informa dados básicos)
