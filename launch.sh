@@ -27,6 +27,31 @@ fi
 
 source "$ROS2_SETUP"
 
+# --- Bootstrap do venv com dependências Python ---
+VENV_DIR="$SCRIPT_DIR/controle_web/.venv"
+REQ_FILE="$SCRIPT_DIR/controle_web/requirements.txt"
+REQ_STAMP="$VENV_DIR/.requirements.sha1"
+
+if [ ! -f "$VENV_DIR/bin/activate" ]; then
+    echo "Criando venv em $VENV_DIR..."
+    python3 -m venv "$VENV_DIR" || {
+        echo "ERRO: falha ao criar venv. Instale python3-venv: sudo apt install python3-venv"
+        exit 1
+    }
+fi
+
+# Reinstala apenas se requirements.txt mudou
+REQ_HASH=$(sha1sum "$REQ_FILE" | awk '{print $1}')
+if [ ! -f "$REQ_STAMP" ] || [ "$(cat "$REQ_STAMP" 2>/dev/null)" != "$REQ_HASH" ]; then
+    echo "Instalando dependências Python ($REQ_FILE)..."
+    "$VENV_DIR/bin/pip" install --upgrade pip >/dev/null
+    "$VENV_DIR/bin/pip" install -r "$REQ_FILE" || {
+        echo "ERRO: falha ao instalar dependências."
+        exit 1
+    }
+    echo "$REQ_HASH" > "$REQ_STAMP"
+fi
+
 # --- Libera porta 5000 se já estiver em uso ---
 PORT_PID=$(ss -tlnp 2>/dev/null | awk '/:5000 /{match($0,/pid=([0-9]+)/,a); if(a[1]) print a[1]}')
 if [ -n "$PORT_PID" ]; then

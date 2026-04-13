@@ -20,10 +20,25 @@ source "$ROS2_SETUP"
 
 cd "$SCRIPT_DIR/controle_web"
 
-# Ativa o venv se existir
-if [ -f ".venv/bin/activate" ]; then
-    source .venv/bin/activate
+# --- Bootstrap do venv com dependências Python ---
+VENV_DIR=".venv"
+REQ_FILE="requirements.txt"
+REQ_STAMP="$VENV_DIR/.requirements.sha1"
+
+if [ ! -f "$VENV_DIR/bin/activate" ]; then
+    echo "Criando venv em $VENV_DIR..."
+    python3 -m venv "$VENV_DIR"
 fi
+
+REQ_HASH=$(sha1sum "$REQ_FILE" | awk '{print $1}')
+if [ ! -f "$REQ_STAMP" ] || [ "$(cat "$REQ_STAMP" 2>/dev/null)" != "$REQ_HASH" ]; then
+    echo "Instalando dependências Python..."
+    "$VENV_DIR/bin/pip" install --upgrade pip >/dev/null
+    "$VENV_DIR/bin/pip" install -r "$REQ_FILE"
+    echo "$REQ_HASH" > "$REQ_STAMP"
+fi
+
+source "$VENV_DIR/bin/activate"
 
 echo "Iniciando servidor de controle do robô em http://0.0.0.0:5000"
 python3 app.py
