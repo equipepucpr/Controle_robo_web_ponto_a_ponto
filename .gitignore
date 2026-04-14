@@ -10,3 +10,6 @@ venv/
 # Logs
 *.log
 controle_web/logs/
+
+# Mapas gerados pelo SLAM
+maps/

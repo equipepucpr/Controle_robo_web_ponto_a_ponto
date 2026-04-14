@@ -12,32 +12,53 @@ import threading
 import atexit
 from logging.handlers import RotatingFileHandler
 
+# Modo de operação — setado pelo launch.sh via env var. Valores: 'teleop',
+# 'slam' ou 'nav2'. Controla quais componentes do SocketIO ficam ativos.
+ROBOT_MODE = os.environ.get('ROBOT_MODE', 'teleop').lower()
+MAPS_DIR = os.environ.get('ROBOT_MAPS_DIR', os.path.abspath(
+    os.path.join(os.path.dirname(__file__), '..', 'maps')
+))
+
 # Controlador ROS2 — publica em /cmd_vel (geometry_msgs/Twist).
 # Pré-requisito: source ~/ros2_ws/install/setup.bash antes de iniciar o servidor.
 controller: RobotController = ROS2Controller()
+
+# Ponte de mapa/pose/navegação — opcional (só sobe se rclpy importou OK).
+map_bridge = None
 
 # rclpy.init() instala seus próprios handlers de SIGINT/SIGTERM que engolem o
 # Ctrl+C (o processo fica preso esperando o executor do ROS2 que nunca acorda).
 # Sobrescreve com handlers Python que fazem shutdown limpo e saem imediatamente.
 _shutting_down = False
-def _force_shutdown(signum, _frame):
-    global _shutting_down
-    if _shutting_down:
-        os._exit(1)  # segundo Ctrl+C = kill imediato
-    _shutting_down = True
-    print(f"\n[app] Sinal {signum} recebido, encerrando...", flush=True)
+
+def _shutdown_all():
+    try:
+        if map_bridge is not None:
+            map_bridge.shutdown()
+    except Exception:
+        pass
     try:
         if hasattr(controller, 'shutdown'):
             controller.shutdown()
     except Exception:
         pass
+
+
+def _force_shutdown_full(signum, _frame):
+    global _shutting_down
+    if _shutting_down:
+        os._exit(1)
+    _shutting_down = True
+    print(f"\n[app] Sinal {signum} recebido, encerrando...", flush=True)
+    _shutdown_all()
     os._exit(0)
 
-signal.signal(signal.SIGINT,  _force_shutdown)
-signal.signal(signal.SIGTERM, _force_shutdown)
 
-# Encerra o nó ROS2 corretamente ao sair
-atexit.register(lambda: controller.shutdown() if hasattr(controller, 'shutdown') else None)
+signal.signal(signal.SIGINT,  _force_shutdown_full)
+signal.signal(signal.SIGTERM, _force_shutdown_full)
+
+# Encerra tudo ao sair
+atexit.register(_shutdown_all)
 
 # Instancia a aplicação web
 app = Flask(__name__)
@@ -55,6 +76,19 @@ socketio = SocketIO(
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s] %(levelname)s: %(message)s')
 # Suprime o aviso de "production deployment" do Werkzeug (esperado para uso local)
 logging.getLogger('werkzeug').setLevel(logging.ERROR)
+
+# ---- Ponte de mapa/navegação (ROS2 ↔ Socket.IO) ----
+# Só inicializa se o modo precisar (slam/nav2). Em teleop puro, pula para
+# economizar CPU. Falhas não derrubam o servidor — só logam.
+if ROBOT_MODE in ('slam', 'nav2'):
+    try:
+        from map_service import MapBridge
+        map_bridge = MapBridge(socketio=socketio, mode=ROBOT_MODE, maps_dir=MAPS_DIR)
+    except Exception as e:
+        logging.getLogger(__name__).warning(
+            f"[app] Falha ao iniciar MapBridge: {e}. Mapa e navegação desabilitados."
+        )
+        map_bridge = None
 
 # ---- Detector de obstáculos (LiDAR) ----
 # O nó obstacle_detector roda como processo separado (via launch.sh) e escreve em
@@ -125,6 +159,43 @@ def handle_connect():
     # Evento de conexão de um cliente Socket.IO
     app.logger.info(f"Client connected: addr={request.remote_addr} sid={request.sid}")
     emit('server_status', {'message': 'connected'})
+    # Informa o modo atual para o cliente decidir qual UI mostrar
+    emit('mode_info', {
+        'mode': ROBOT_MODE,
+        'has_map': map_bridge is not None,
+    })
+
+
+@socketio.on('nav_goal')
+def handle_nav_goal(data):
+    """Cliente clicou no mapa: publica PoseStamped em /goal_pose."""
+    if map_bridge is None:
+        emit('nav_goal_ack', {'ok': False, 'error': 'mapa indisponível neste modo'})
+        return
+    if ROBOT_MODE != 'nav2':
+        emit('nav_goal_ack', {'ok': False, 'error': 'clique-para-ir só funciona em modo NAV2'})
+        return
+    try:
+        x = float(data.get('x'))
+        y = float(data.get('y'))
+        yaw = float(data.get('yaw', 0.0))
+        result = map_bridge.send_goal(x, y, yaw)
+        app.logger.info(f"nav_goal from {request.remote_addr}: ({x:.2f}, {y:.2f})")
+        emit('nav_goal_ack', result)
+    except Exception as e:
+        emit('nav_goal_ack', {'ok': False, 'error': str(e)})
+
+
+@socketio.on('save_map')
+def handle_save_map(data):
+    """Cliente apertou 'Salvar mapa' — chama map_saver_cli."""
+    if map_bridge is None:
+        emit('save_map_ack', {'ok': False, 'error': 'mapa indisponível neste modo'})
+        return
+    name = (data or {}).get('name', 'sala')
+    app.logger.info(f"save_map from {request.remote_addr}: name={name}")
+    result = map_bridge.save_map(name)
+    emit('save_map_ack', result)
 
 @socketio.on('disconnect')
 def handle_disconnect():

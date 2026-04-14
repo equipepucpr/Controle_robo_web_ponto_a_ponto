@@ -108,6 +108,28 @@ h1 { margin: 0 0 12px; font-size: 28px; }
 .obs-dist.vermelho { color: #f87171; }
 @keyframes obs-pulse { from { opacity: 0.85; } to { opacity: 1; box-shadow: 0 0 8px rgba(220,38,38,0.5); } }
 
+/* Badge do modo atual (TELEOP / SLAM / NAV2) ao lado do título */
+.mode-badge { display: inline-block; font-size: 11px; letter-spacing: 0.05em; padding: 3px 8px; border-radius: 4px; background: #243042; color: #aab; vertical-align: middle; margin-left: 8px; }
+.mode-badge.mode-slam  { background: #1e3a8a; color: #dbeafe; }
+.mode-badge.mode-nav2  { background: #065f46; color: #d1fae5; }
+.mode-badge.mode-teleop { background: #3f3f46; color: #e4e4e7; }
+
+/* Painel de mapa (SLAM / Nav2) */
+.map-panel { margin-top: 16px; background: #0b1220; border: 1px solid #243042; padding: 12px; border-radius: 8px; }
+.map-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.map-header h2 { margin: 0; font-size: 16px; opacity: 0.9; }
+.map-toolbar { display: flex; gap: 8px; align-items: center; }
+.map-status { font-size: 12px; padding: 3px 8px; border-radius: 4px; background: #243042; color: #aab; }
+.map-status.ok { background: #065f46; color: #d1fae5; }
+.map-status.err { background: #7f1d1d; color: #fee2e2; }
+.map-btn { padding: 6px 12px; font-size: 13px; border: 1px solid #374151; background: #1f2937; color: #e5e7eb; border-radius: 4px; cursor: pointer; }
+.map-btn:hover:not(:disabled) { background: #374151; }
+.map-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.map-info { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: #9ca3af; margin-bottom: 8px; }
+.map-info span { white-space: nowrap; }
+.map-canvas-wrap { background: #000; border: 1px solid #243042; border-radius: 4px; display: flex; justify-content: center; }
+#map-canvas { display: block; max-width: 100%; height: auto; cursor: crosshair; }
+
 /* Log visual de eventos */
 .eventlog { margin-top: 16px; background: #0b1220; border: 1px solid #243042; padding: 12px; border-radius: 8px; }
 .eventlog h2 { margin: 0 0 8px; font-size: 16px; opacity: 0.9; }

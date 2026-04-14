@@ -7,11 +7,11 @@
     <meta http-equiv="Cache-Control" content="no-store" />
     <title>Controle do Robô</title>
     <!-- CSS básico da interface -->
-    <link rel="stylesheet" href="/static/css/styles.css?v=4" />
+    <link rel="stylesheet" href="/static/css/styles.css?v=5" />
   </head>
   <body>
     <main>
-      <h1>Controle do Robô</h1>
+      <h1>Controle do Robô <span id="robot-mode-badge" class="mode-badge">TELEOP</span></h1>
 
       <!-- Seletor de modo de controle -->
       <section class="mode-selector">
@@ -148,6 +148,26 @@
         </div>
       </section>
 
+      <!-- Mapa 2D (SLAM / Nav2) -->
+      <section class="map-panel" id="map-panel" style="display:none">
+        <div class="map-header">
+          <h2>Mapa</h2>
+          <div class="map-toolbar">
+            <span id="map-status" class="map-status">sem mapa</span>
+            <button id="btn-save-map" class="map-btn" disabled>Salvar mapa</button>
+          </div>
+        </div>
+        <div class="map-info">
+          <span id="map-info-size">—</span>
+          <span id="map-info-res">—</span>
+          <span id="map-robot-pose">robô: —</span>
+          <span id="map-click-hint"></span>
+        </div>
+        <div class="map-canvas-wrap">
+          <canvas id="map-canvas" width="600" height="600"></canvas>
+        </div>
+      </section>
+
       <!-- Log visual de eventos e última entrega confirmada (ACK) -->
       <section class="eventlog">
         <h2>Eventos</h2>
@@ -158,7 +178,8 @@
 
     <!-- Bibliotecas cliente Socket.IO e scripts do cliente -->
     <script src="https://cdn.socket.io/3.1.3/socket.io.min.js"></script>
-    <script src="/static/js/client.js?v=5"></script>
+    <script src="/static/js/client.js?v=6"></script>
     <script src="/static/js/gamepad.js?v=2"></script>
+    <script src="/static/js/map.js?v=1"></script>
   </body>
 </html>

@@ -1,19 +1,25 @@
 # Controle Web do Robô Hoverboard
 
-Interface web para controlar um robô hoverboard com ROS2, LiDAR FHL-LD20 e detecção de obstáculos em tempo real.
+Interface web para controlar um robô hoverboard com ROS2, LiDAR FHL-LD20, detecção de obstáculos, **mapeamento SLAM** e **navegação autônoma Nav2 com click-to-go** no mapa web.
 
 ## Sumário
 
 - [Visão geral](#visão-geral)
+- [Os três modos de operação](#os-três-modos-de-operação)
 - [Pré-requisitos](#pré-requisitos)
 - [Configuração inicial (uma vez)](#configuração-inicial-uma-vez)
   - [1. Workspace ROS2](#1-workspace-ros2)
   - [2. Portas USB fixas](#2-portas-usb-fixas-obrigatório)
   - [3. Dependências Python](#3-dependências-python)
 - [Como rodar](#como-rodar)
+  - [Modo TELEOP (padrão)](#modo-teleop-padrão)
+  - [Modo SLAM — mapear a sala](#modo-slam--mapear-a-sala)
+  - [Modo NAV2 — navegação autônoma](#modo-nav2--navegação-autônoma)
 - [Controles](#controles)
 - [Arquitetura](#arquitetura)
+  - [Ponte ROS2 ↔ Web para mapa e navegação](#ponte-ros2--web-para-mapa-e-navegação)
 - [Logs](#logs)
+- [Limitações conhecidas](#limitações-conhecidas)
 - [Solução de problemas](#solução-de-problemas)
 
 ---
@@ -21,34 +27,80 @@ Interface web para controlar um robô hoverboard com ROS2, LiDAR FHL-LD20 e dete
 ## Visão geral
 
 ```
-Navegador (WASD / Gamepad)
+Navegador (WASD / Gamepad / Clique no mapa)
         │  Socket.IO
         ▼
   Flask + Socket.IO (porta 5000)
         │  /cmd_vel  (geometry_msgs/Twist)
+        │  /goal_pose (PoseStamped) — só em NAV2
         ▼
   cmd_vel_to_wheels
         │  /wheel_vel_setpoints  (wheel_msgs/WheelSpeeds)
         ▼
   ros2-hoverboard-driver  ──────►  /dev/hoverboard (USB serial)
-        
+
   LiDAR FHL-LD20  ──────────────►  /dev/lidar (USB serial)
         │  /scan  (sensor_msgs/LaserScan)
         ▼
-  obstacle_detector
-        │  /tmp/obstacle_current.json  (lido pelo Flask a 5 Hz)
+  ┌─────────────────────────┬─────────────────────────┐
+  │  TELEOP                 │  SLAM                   │  NAV2
+  │  obstacle_detector      │  slam_toolbox           │  map_server + amcl
+  │  → /tmp/obstacle_*.json │  → /map (ao vivo)       │  → /map (estático)
+  │                         │  → TF map→odom          │  + planner + controller
+  │                         │                         │  → /goal_pose → /plan
+  └─────────────────────────┴─────────────────────────┘
+        │
+        ▼  map_service.py (ponte ROS2 → Socket.IO)
+  /map (OccupancyGrid → PNG)
+  TF map→base_link (pose do robô, 10 Hz)
+  /plan (trajetória, quando Nav2 está ativo)
+        │
         ▼
-  Interface web  (mapa de obstáculos em tempo real)
+  Canvas do mapa no navegador
+    (renderiza mapa + robô + plano;
+     click envia /goal_pose em modo NAV2)
 ```
+
+---
+
+## Os três modos de operação
+
+O `launch.sh` tem um conceito central: **o modo**. Cada modo sobe uma combinação diferente de nós ROS2 para um propósito distinto:
+
+| Modo | Flag | Pra quê serve | O que sobe a mais |
+|------|------|---------------|-------------------|
+| **TELEOP** | *(padrão)* | Dirigir manualmente pela sala | `nav2_collision_monitor` — só segurança (freia se tiver obstáculo perto) |
+| **SLAM** | `--slam` | Construir o mapa da sala pela primeira vez | `slam_toolbox` em modo *mapping online* (gera `/map` ao vivo) |
+| **NAV2** | `--nav2` | Navegação autônoma usando um mapa já salvo | `map_server` + `amcl` + `planner_server` + `controller_server` + `bt_navigator` + `behavior_server` + `velocity_smoother` + `waypoint_follower` |
+
+Nos três modos o web control, o hoverboard e o LiDAR rodam normalmente — você sempre pode dirigir manualmente, mesmo durante SLAM ou NAV2.
+
+### Espera, por que aparece "nav2" em dois lugares? (collision_monitor vs Nav2 completo)
+
+Dá pra confundir: no modo TELEOP o log mostra `nav2_collision.log` e no modo `--nav2` aparece `nav2.log`. **Não são dois jeitos de rodar o Nav2** — são dois pedaços distintos do mesmo projeto upstream Nav2:
+
+- **`nav2_collision_monitor`** (modo TELEOP) — um único nó pequeno de segurança. Só intercepta `/cmd_vel`, olha o LiDAR, e freia o robô se detectar obstáculo muito perto. **Não** planeja rota, **não** precisa de mapa, **não** sabe onde o robô está no mundo. É uma camada de proteção pra dirigir manualmente.
+- **Stack Nav2 completa** (modo `--nav2`) — uma dúzia de nós que fazem navegação autônoma de verdade: carregam um mapa salvo (`map_server`), localizam o robô nele por correlação de scans (`amcl`), planejam rota até um destino (`planner_server`), executam a trajetória desviando de obstáculos dinâmicos (`controller_server`), orquestram tudo com uma árvore de comportamento (`bt_navigator`).
+
+Por vir do mesmo projeto Nav2, os dois compartilham o prefixo `nav2_` no nome dos pacotes — mas têm papéis completamente diferentes.
 
 ---
 
 ## Pré-requisitos
 
 - Ubuntu 22.04 (testado) ou 24.04
-- ROS2 Humble ou Jazzy instalado e no PATH
+- ROS2 Humble ou Jazzy instalado e no PATH (testado em **Jazzy**)
 - `xacro`: `sudo apt install ros-$ROS_DISTRO-xacro`
 - `robot_state_publisher`: `sudo apt install ros-$ROS_DISTRO-robot-state-publisher`
+- **SLAM**: `sudo apt install ros-$ROS_DISTRO-slam-toolbox`
+- **Nav2** (qualquer modo, inclusive o collision_monitor do teleop):
+  ```bash
+  sudo apt install \
+      ros-$ROS_DISTRO-nav2-bringup \
+      ros-$ROS_DISTRO-nav2-collision-monitor \
+      ros-$ROS_DISTRO-nav2-map-server \
+      ros-$ROS_DISTRO-nav2-amcl
+  ```
 - Python 3.10+
 
 ---
@@ -115,6 +167,18 @@ pip install -r requirements.txt
 
 ## Como rodar
 
+Todos os modos usam o mesmo `launch.sh` e a mesma interface web em `http://<IP>:5000`. O modo é passado como flag e propagado ao servidor web via a variável de ambiente `ROBOT_MODE` — a UI mostra um badge colorido (TELEOP / SLAM / NAV2) no topo e exibe ou esconde o painel de mapa conforme o modo.
+
+Para descobrir o IP:
+
+```bash
+hostname -I
+```
+
+### Modo TELEOP (padrão)
+
+Dirigir manualmente. Sobe o Nav2 Collision Monitor como camada de segurança.
+
 ```bash
 cd ~/Controle_robo_web
 ./launch.sh
@@ -127,32 +191,64 @@ O script inicia, nesta ordem:
 | 1 | `ros2-hoverboard-driver` (porta `/dev/hoverboard`) | `logs/hoverboard_driver.log` |
 | 2 | Nós do robô: `robot_state_publisher`, `odom_publisher`, `cmd_vel_to_wheels` | `logs/robot_nodes.log` |
 | 3 | LiDAR FHL-LD20 (`ldlidar_stl_ros2`) + `obstacle_detector` | `logs/lidar.log`, `logs/obstacle_detector.log` |
-| 4 | Nav2 Collision Monitor (se instalado) | `logs/nav2_collision.log` |
+| 4 | `nav2_collision_monitor` *(só segurança, não é a stack Nav2 completa)* | `logs/nav2_collision.log` |
 | 5 | Servidor web Flask + Socket.IO em `http://0.0.0.0:5000` | terminal |
 
-Acesse de outro computador na mesma rede:
+### Modo SLAM — mapear a sala
 
-```
-http://<IP_DO_ROBO>:5000
-```
-
-Para descobrir o IP:
+Primeira etapa do fluxo de navegação: você dirige o robô pela sala (com WASD, gamepad ou pad touch na UI), o `slam_toolbox` constrói o mapa em tempo real, e você salva com um clique quando terminar.
 
 ```bash
-hostname -I
+./launch.sh --slam
 ```
 
-### Opções do launch.sh
+Troca o passo `[4/5]`: em vez do collision_monitor sobe o `slam_toolbox` em modo *mapping online async*. O painel **Mapa** da UI aparece automaticamente e vai mostrando o mapa crescendo à medida que você dirige.
+
+**Como mapear bem:**
+1. Comece com o robô parado no centro de onde você quer mapear.
+2. Dirija **devagar** — o SLAM precisa de tempo para casar scans consecutivos. Velocidade alta quebra o matching.
+3. Faça movimentos suaves, priorize retas longas e evite girar no mesmo lugar.
+4. **Feche loops**: volte por onde já passou para o SLAM fechar laços e corrigir drift acumulado.
+5. Evite ambientes muito simétricos (corredores longos com paredes lisas) — se o scan não tem features, o matching falha.
+
+**Salvando o mapa:** Quando o mapa estiver bom, clique em **Salvar mapa** no canto do painel. Um prompt pede o nome (padrão: `sala`). O backend chama o `nav2_map_server/map_saver_cli`, que grava dois arquivos em `maps/`:
+
+- `maps/sala.yaml` — metadados (resolução, origem, thresholds)
+- `maps/sala.pgm` — imagem grayscale do occupancy grid
+
+Esses arquivos ficam fora do git (`.gitignore`). Depois de salvar, você pode encerrar o SLAM (`Ctrl+C`) e rodar o modo NAV2.
+
+### Modo NAV2 — navegação autônoma
+
+Segunda etapa: usa um mapa já salvo pelo SLAM e ativa a stack Nav2 completa. Você clica num ponto do mapa na UI e o robô se localiza (AMCL), planeja uma rota (planner) e executa (controller) até chegar lá.
 
 ```bash
-./launch.sh --no-lidar              # Sobe sem LiDAR (robô apenas)
-./launch.sh --no-nav2               # Sobe sem Nav2 Collision Monitor
+./launch.sh --nav2                           # usa maps/sala.yaml (padrão)
+./launch.sh --nav2 --map=/caminho/outro.yaml # mapa customizado
+```
+
+No painel da UI:
+- **Mapa** aparece com o mapa estático carregado.
+- **Robô** aparece como seta laranja apontando para o yaw, atualizada a 10 Hz via TF `map→base_link`.
+- **Click** no mapa publica `/goal_pose` (PoseStamped, frame `map`) que o `bt_navigator` consome.
+- **Trajetória planejada** pelo Nav2 aparece como linha azul (escutando `/plan`).
+- **Último alvo** aparece como bolinha vermelha.
+
+Se o arquivo de mapa não existir, o `launch.sh` aborta com uma mensagem clara e sugere rodar `--slam` antes.
+
+### Outras flags
+
+```bash
+./launch.sh --no-lidar              # Sobe sem LiDAR (só teleop, modos slam/nav2 exigem lidar)
+./launch.sh --no-nav2               # Teleop sem collision_monitor
 ./launch.sh --lidar-port=/dev/lidar # Porta do LiDAR (padrão: /dev/lidar)
 ```
 
 ### Encerrar
 
-`Ctrl+C` encerra todos os processos limpos.
+`Ctrl+C` encerra todos os processos limpos. O `cleanup()` do script mata a árvore inteira de filhos (inclusive os nós spawnados pelo `ros2 launch`, que ficariam órfãos se só matasse o pai).
+
+> **Por que tem um handler de SIGINT custom no `app.py`?** O `rclpy.init()` instala seus próprios handlers de SIGINT/SIGTERM que engolem o Ctrl+C — o processo Python fica preso esperando o executor do ROS2 que nunca acorda, e o bash em foreground nunca roda o `trap cleanup`. Por isso o `app.py` instala handlers Python que sobrescrevem os do rclpy: primeiro Ctrl+C faz shutdown limpo, segundo Ctrl+C força `os._exit(1)` imediato.
 
 ---
 
@@ -190,15 +286,48 @@ Combinações são suportadas (ex: `W + D` = frente + direita).
 
 ### Tópicos ROS2
 
-| Tópico | Tipo | Produtor | Consumidor |
-|--------|------|----------|------------|
-| `/cmd_vel` | `geometry_msgs/Twist` | servidor web | `cmd_vel_to_wheels` |
-| `/wheel_vel_setpoints` | `wheel_msgs/WheelSpeeds` | `cmd_vel_to_wheels` | hoverboard driver |
-| `/scan` | `sensor_msgs/LaserScan` | LiDAR driver | `obstacle_detector` |
-| `/obstacle_info` | `std_msgs/String` (JSON) | `obstacle_detector` | (monitoramento) |
-| `/odom` | `nav_msgs/Odometry` | `odom_publisher` | Nav2 |
+| Tópico | Tipo | Produtor | Consumidor | Quando |
+|--------|------|----------|------------|--------|
+| `/cmd_vel` | `geometry_msgs/Twist` | servidor web (teleop) / `velocity_smoother` (nav2) | `cmd_vel_to_wheels` | sempre |
+| `/wheel_vel_setpoints` | `wheel_msgs/WheelSpeeds` | `cmd_vel_to_wheels` | hoverboard driver | sempre |
+| `/scan` | `sensor_msgs/LaserScan` | LiDAR driver | `obstacle_detector` / `slam_toolbox` / `amcl` | sempre |
+| `/odom` | `nav_msgs/Odometry` | `odom_publisher` | `slam_toolbox` / `amcl` | sempre |
+| `/obstacle_info` | `std_msgs/String` (JSON) | `obstacle_detector` | (monitoramento) | teleop |
+| `/map` | `nav_msgs/OccupancyGrid` | `slam_toolbox` / `map_server` | `map_service.py` (ponte web) | slam, nav2 |
+| `/goal_pose` | `geometry_msgs/PoseStamped` | `map_service.py` (click na UI) | `bt_navigator` | nav2 |
+| `/plan` | `nav_msgs/Path` | `planner_server` | `map_service.py` (ponte web) | nav2 |
 
-### Detecção de obstáculos
+**TFs publicadas:**
+- `base_link → base_laser`, `base_link → wheels` — static (URDF via `robot_state_publisher`)
+- `odom → base_link` — dinâmica (`odom_publisher` a partir do feedback das rodas)
+- `map → odom` — dinâmica, em SLAM pelo `slam_toolbox`, em NAV2 pelo `amcl`
+
+### Ponte ROS2 ↔ Web para mapa e navegação
+
+O arquivo `controle_web/map_service.py` contém uma classe `MapBridge` que roda dentro do servidor Flask como uma thread daemon com seu próprio executor ROS2. Isso é o que permite o mapa aparecer no navegador e os clicks virarem comandos Nav2.
+
+**O que o MapBridge faz:**
+
+| Responsabilidade | Como |
+|------------------|------|
+| Receber o mapa | Subscribe `/map` com QoS `TRANSIENT_LOCAL` (a mensagem é *latched*, sem essa durability o subscriber nunca recebe). Converte o `OccupancyGrid` em PNG grayscale com `numpy` + `Pillow` (−1 cinza, 0 branco, ≥50 preto), flipa verticalmente (ROS y sobe, PNG y desce), base64-encoda e emite `map_update` via Socket.IO com `{info, png_b64}` |
+| Rastrear o robô | `tf2_ros.TransformListener` em polling a 10 Hz. Olha `map→base_link`, extrai x/y/yaw (yaw do quaternion via `atan2`), emite `robot_pose` via Socket.IO |
+| Receber trajetória | Subscribe `/plan`, converte cada pose em `{x, y}`, emite `plan_update` via Socket.IO |
+| Enviar goal | Publisher em `/goal_pose` (`PoseStamped`, frame `map`). Handler `nav_goal` do Socket.IO recebe `{x, y, yaw}` do click no canvas e publica — mas só em modo NAV2 (fora disso retorna erro) |
+| Salvar mapa | Handler `save_map` chama `ros2 run nav2_map_server map_saver_cli -f maps/<nome> --ros-args -p map_subscribe_transient_local:=true` via subprocess. O `map_subscribe_transient_local:=true` é obrigatório porque o `/map` é latched |
+
+**Rodar só em modo slam/nav2:** o `app.py` só instancia o `MapBridge` se `ROBOT_MODE in ('slam', 'nav2')` — no teleop não há `/map` pra subscribee, então o módulo nem sobe. Falha na inicialização do MapBridge não derruba o servidor (só loga um warning e desabilita o painel de mapa).
+
+**Cliente (navegador):** o `static/js/map.js` escuta todos esses eventos, mantém estado local (`mapInfo`, `mapImage`, `robotPose`, `plan`, `lastGoal`) e redesenha o canvas a ~15 Hz. A conversão click→mundo usa `origin + resolution`:
+
+```js
+world_x = origin_x + px_in_img * resolution
+world_y = origin_y + (height-1 - py_in_img) * resolution
+```
+
+Precisa inverter o eixo y porque o PNG foi flipado verticalmente antes de ser mandado.
+
+### Detecção de obstáculos (modo TELEOP)
 
 O `obstacle_detector` divide o campo de visão em 6 setores e classifica por distância:
 
@@ -214,29 +343,38 @@ Os dados são escritos em `/tmp/obstacle_current.json` e lidos pelo Flask a 5 Hz
 
 ```
 Controle_robo_web/
-├── launch.sh                          # Launcher principal
+├── launch.sh                          # Launcher principal (flags --slam / --nav2 / --map=)
 ├── setup_udev.sh                      # Configura portas USB fixas
+├── maps/                              # Mapas salvos pelo SLAM (ignorado pelo git)
+│   ├── sala.yaml                      # Metadados: resolução, origem, thresholds
+│   └── sala.pgm                       # Grayscale do occupancy grid
 └── controle_web/
-    ├── app.py                         # Servidor Flask + Socket.IO
+    ├── app.py                         # Servidor Flask + Socket.IO (lê ROBOT_MODE)
+    ├── map_service.py                 # Ponte ROS2↔Web: /map, TF, /plan, /goal_pose
     ├── controllers/
     │   └── robot_controller.py        # ROS2Controller (publica /cmd_vel)
-    ├── templates/index.html           # Interface web
+    ├── templates/index.html           # Interface web (badge de modo + painel de mapa)
     ├── static/
     │   ├── css/styles.css
-    │   └── js/client.js               # Captura teclado/gamepad, envia via Socket.IO
+    │   └── js/
+    │       ├── client.js              # Teclado/gamepad → Socket.IO
+    │       ├── gamepad.js             # Leitura do gamepad e visualização
+    │       └── map.js                 # Canvas do mapa, render, click → goal
     └── logs/                          # Logs rotativos
 
 ~/ros2_ws/src/
 ├── robot_nav/
-│   ├── launch/robot.launch.py         # robot_state_publisher + odom + cmd_vel_to_wheels
-│   ├── launch/lidar.launch.py         # LiDAR FHL-LD20
-│   ├── launch/nav2_collision.launch.py
-│   ├── robot_nav/cmd_vel_to_wheels.py # /cmd_vel → /wheel_vel_setpoints
-│   ├── robot_nav/odom_publisher.py    # odometria pelo feedback das rodas
-│   └── robot_nav/obstacle_detector.py # /scan → /tmp/obstacle_current.json
-├── ros2-hoverboard-driver/            # Driver C++ do hoverboard
-│   └── include/.../config.hpp        # PORT = /dev/hoverboard
-└── ldlidar_stl_ros2/                  # Driver do LiDAR FHL-LD20
+│   ├── launch/robot.launch.py              # robot_state_publisher + odom + cmd_vel_to_wheels
+│   ├── launch/lidar.launch.py              # LiDAR FHL-LD20
+│   ├── launch/nav2_collision.launch.py     # Só o collision_monitor (modo TELEOP)
+│   ├── launch/slam.launch.py               # slam_toolbox online async (modo SLAM)
+│   ├── launch/nav2.launch.py               # Stack Nav2 completa (modo NAV2)
+│   ├── robot_nav/cmd_vel_to_wheels.py      # /cmd_vel → /wheel_vel_setpoints
+│   ├── robot_nav/odom_publisher.py         # odometria pelo feedback das rodas
+│   └── robot_nav/obstacle_detector.py      # /scan → /tmp/obstacle_current.json
+├── ros2-hoverboard-driver/                 # Driver C++ do hoverboard
+│   └── include/.../config.hpp              # PORT = /dev/hoverboard
+└── ldlidar_stl_ros2/                       # Driver do LiDAR FHL-LD20
 ```
 
 ---
@@ -261,6 +399,19 @@ Para acompanhar em tempo real:
 tail -f controle_web/logs/hoverboard_driver.log
 tail -f controle_web/logs/lidar.log
 ```
+
+---
+
+## Limitações conhecidas
+
+Coisas que ainda não funcionam perfeitamente ou que exigem atenção ao usar SLAM/Nav2:
+
+- **Click no mapa manda o robô com `yaw = 0`.** A UI só captura o ponto clicado, não a orientação final desejada. O `bt_navigator` aceita o goal, mas o robô chega apontando para o eixo X do mapa — não necessariamente a direção que você queria. *Mitigação futura:* capturar drag no canvas para definir yaw.
+- **Contenção do `/cmd_vel` em modo NAV2.** Tanto o teleop (Socket.IO → `/cmd_vel`) quanto o `velocity_smoother` do Nav2 publicam no mesmo tópico. Se você mover o joystick durante uma navegação autônoma, os comandos se atropelam — o último mensagem vence. Na prática funciona como "override manual por cima do Nav2", mas não é um protocolo robusto. *Mitigação futura:* roteamento explícito via `twist_mux`.
+- **Drift de odometria.** O `odom_publisher` integra o feedback das rodas do hoverboard. Em mapeamentos longos ou salas com piso escorregadio, o drift acumula e o SLAM fecha loops mal. Dirija devagar e volte por onde já passou para ajudar o `slam_toolbox` a corrigir.
+- **Ambientes muito simétricos.** Corredor longo com paredes lisas, salas quadradas vazias: o scan-matching do SLAM não encontra features suficientes e o mapa pode dobrar sobre si mesmo. Prefira mapear ambientes com móveis, quinas e variação.
+- **Bateria do hoverboard.** Sem bateria o driver até sobe, mas falha ao escrever na porta serial (`Error writing to hoverboard serial port`) — não é bug do código. Conecte a bateria antes de abrir um bug.
+- **Pipeline não validado end-to-end em hardware.** A integração SLAM → salvar → Nav2 → click-to-go passou nos smoke tests (imports, subida de processos, SIGINT limpo), mas ainda não rodou na sala real com o LiDAR e o hoverboard conectados. Espere pequenos ajustes de tuning ao primeiro uso (parâmetros do `slam_toolbox`, `amcl` e dos planners).
 
 ---
 
@@ -316,3 +467,44 @@ sudo ./install_nav2.sh
 ```
 
 Sem Nav2, o robô funciona normalmente — apenas sem parada automática por obstáculos.
+
+### Painel de mapa não aparece na UI (modo SLAM ou NAV2)
+
+Checklist:
+
+1. Confirme que subiu no modo certo: o badge no topo da página deve mostrar `SLAM` ou `NAV2` (não `TELEOP`). Se estiver `TELEOP`, o `MapBridge` nem é instanciado.
+2. Confirme que o `/map` está sendo publicado:
+   ```bash
+   ros2 topic echo /map --once
+   ```
+   Em SLAM pode demorar alguns segundos até o `slam_toolbox` publicar o primeiro mapa (ele espera acumular scans).
+3. Olhe o log do servidor web no terminal: o `MapBridge` loga `[map] recebido /map (WxH)` quando o subscriber dispara. Se não aparecer, quase certo que o QoS está errado (`TRANSIENT_LOCAL` é obrigatório).
+4. Em NAV2, se o `map_server` não sobe, o `/map` nunca aparece — veja `logs/nav2.log`.
+
+### Salvar mapa falha com "no messages received"
+
+Causa quase sempre é o `map_server`/`slam_toolbox` publicando o `/map` como *latched* (`TRANSIENT_LOCAL`), e o `map_saver_cli` tentando se inscrever com QoS default. O `MapBridge` já passa `-p map_subscribe_transient_local:=true`, mas se você rodar manualmente:
+
+```bash
+ros2 run nav2_map_server map_saver_cli -f maps/sala \
+    --ros-args -p map_subscribe_transient_local:=true
+```
+
+### Nav2 rejeita o goal (TF timeout ou frame error)
+
+```bash
+# Confirme que a cadeia de TFs está completa:
+ros2 run tf2_tools view_frames
+# Esperado: map → odom → base_link → base_laser
+
+# Se faltar map → odom: o AMCL não conseguiu localizar o robô.
+#   Certifique-se de que o mapa carregado é o mesmo onde o robô está
+#   e dê um "pose inicial" empurrando o robô um pouco com o teclado.
+
+# Se faltar odom → base_link: odom_publisher não está rodando
+#   (veja logs/robot_nodes.log).
+```
+
+### `rclpy` reclama de `Could not find a valid TF` no MapBridge
+
+O `MapBridge` faz `lookup_transform('map', 'base_link', ...)` a 10 Hz. No começo, antes do AMCL/SLAM publicar `map → odom`, essas buscas falham e logam warnings — é esperado nos primeiros segundos. Se persistir, veja o item acima.

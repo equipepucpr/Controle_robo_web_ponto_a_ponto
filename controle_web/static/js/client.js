@@ -21,6 +21,8 @@
 
   // Prefere polling e faz upgrade para websocket (melhor compatibilidade)
   const socket = io({ transports: ['polling', 'websocket'] });
+  // Exposto para outros scripts (map.js) reutilizarem a mesma conexão
+  window.robotSocket = socket;
 
   // --- Controle de velocidade (compartilhado entre modos) ---
   const speedSlider = document.getElementById('speed-slider');
