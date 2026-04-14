@@ -52,11 +52,19 @@ if [ ! -f "$REQ_STAMP" ] || [ "$(cat "$REQ_STAMP" 2>/dev/null)" != "$REQ_HASH" ]
     echo "$REQ_HASH" > "$REQ_STAMP"
 fi
 
+# --- Limpa órfãos de execuções anteriores (nós ROS2 e app.py) ---
+pkill -9 -f "robot_nav/odom_publisher"      2>/dev/null
+pkill -9 -f "robot_nav/cmd_vel_to_wheels"   2>/dev/null
+pkill -9 -f "robot_nav/obstacle_detector"   2>/dev/null
+pkill -9 -f "robot_state_publisher"         2>/dev/null
+pkill -9 -f "ldlidar_stl_ros2_node"         2>/dev/null
+pkill -9 -f "ros2-hoverboard-driver/main"   2>/dev/null
+
 # --- Libera porta 5000 se já estiver em uso ---
 PORT_PID=$(ss -tlnp 2>/dev/null | awk '/:5000 /{match($0,/pid=([0-9]+)/,a); if(a[1]) print a[1]}')
 if [ -n "$PORT_PID" ]; then
     echo "Porta 5000 em uso pelo PID $PORT_PID — encerrando antes de subir..."
-    kill "$PORT_PID" 2>/dev/null
+    kill -9 "$PORT_PID" 2>/dev/null
     sleep 1
 fi
 
@@ -68,24 +76,45 @@ OBSTACLE_PID=""
 NAV2_PID=""
 TAIL_PID=""
 
+kill_tree() {
+    # Mata o processo e todos os descendentes (filhos, netos...).
+    # Necessário porque `ros2 launch` spawna nós filhos que não morrem
+    # só matando o pai.
+    local pid="$1"
+    [ -z "$pid" ] && return
+    local children
+    children=$(pgrep -P "$pid" 2>/dev/null)
+    for c in $children; do
+        kill_tree "$c"
+    done
+    kill "$pid" 2>/dev/null
+}
+
 cleanup() {
     trap '' EXIT INT TERM
     echo ""
     echo "Encerrando todos os processos..."
     [ -n "$TAIL_PID" ]     && kill "$TAIL_PID"     2>/dev/null
-    [ -n "$SERVER_PID" ]   && kill "$SERVER_PID"   2>/dev/null
-    [ -n "$NAV2_PID" ]     && kill "$NAV2_PID"     2>/dev/null
-    [ -n "$OBSTACLE_PID" ] && kill "$OBSTACLE_PID" 2>/dev/null
-    [ -n "$LIDAR_PID" ]    && kill "$LIDAR_PID"    2>/dev/null
-    [ -n "$ROBOT_PID" ]    && kill "$ROBOT_PID"    2>/dev/null
-    [ -n "$DRIVER_PID" ]   && kill "$DRIVER_PID"   2>/dev/null
-    sleep 2
-    [ -n "$SERVER_PID" ]   && kill -9 "$SERVER_PID"   2>/dev/null
-    [ -n "$DRIVER_PID" ]   && kill -9 "$DRIVER_PID"   2>/dev/null
-    [ -n "$ROBOT_PID" ]    && kill -9 "$ROBOT_PID"    2>/dev/null
-    [ -n "$LIDAR_PID" ]    && kill -9 "$LIDAR_PID"    2>/dev/null
-    [ -n "$OBSTACLE_PID" ] && kill -9 "$OBSTACLE_PID" 2>/dev/null
-    [ -n "$NAV2_PID" ]     && kill -9 "$NAV2_PID"     2>/dev/null
+    kill_tree "$SERVER_PID"
+    kill_tree "$NAV2_PID"
+    kill_tree "$OBSTACLE_PID"
+    kill_tree "$LIDAR_PID"
+    kill_tree "$ROBOT_PID"
+    kill_tree "$DRIVER_PID"
+    sleep 1
+    # Segunda passada: SIGKILL em qualquer filho que tenha sobrevivido
+    for pid in $SERVER_PID $NAV2_PID $OBSTACLE_PID $LIDAR_PID $ROBOT_PID $DRIVER_PID; do
+        for desc in $(pgrep -P "$pid" 2>/dev/null) $pid; do
+            kill -9 "$desc" 2>/dev/null
+        done
+    done
+    # Rede de segurança: mata qualquer nó do robot_nav órfão que reste
+    pkill -9 -f "robot_nav/odom_publisher"      2>/dev/null
+    pkill -9 -f "robot_nav/cmd_vel_to_wheels"   2>/dev/null
+    pkill -9 -f "robot_nav/obstacle_detector"   2>/dev/null
+    pkill -9 -f "robot_state_publisher"         2>/dev/null
+    pkill -9 -f "ldlidar_stl_ros2_node"         2>/dev/null
+    pkill -9 -f "ros2-hoverboard-driver/main"   2>/dev/null
     rm -f /tmp/obstacle_current.json
     echo "Pronto."
     exit 0
@@ -96,7 +125,7 @@ LOG_DIR="$SCRIPT_DIR/controle_web/logs"
 mkdir -p "$LOG_DIR"
 
 # --- [1] Driver do hoverboard ---
-echo "[1/4] Iniciando driver do hoverboard (porta: /dev/ttyUSB0)..."
+echo "[1/4] Iniciando driver do hoverboard (porta: /dev/hoverboard)..."
 DRIVER_LOG="$LOG_DIR/hoverboard_driver.log"
 ros2 run ros2-hoverboard-driver main > "$DRIVER_LOG" 2>&1 &
 DRIVER_PID=$!
@@ -177,10 +206,10 @@ if [ -f ".venv/bin/activate" ]; then
     source .venv/bin/activate
 fi
 
-python3 app.py &
-SERVER_PID=$!
+echo "Logs dos nós em $LOG_DIR/ (ex: tail -f $DRIVER_LOG)"
+echo ""
 
-tail -f "$DRIVER_LOG" &
-TAIL_PID=$!
-
-wait "$SERVER_PID"
+# Servidor em primeiro plano — Ctrl+C aqui dispara cleanup() via trap.
+python3 app.py
+SERVER_EXIT=$?
+echo "Servidor web encerrou (exit=$SERVER_EXIT)"

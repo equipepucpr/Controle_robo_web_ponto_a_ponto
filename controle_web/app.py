@@ -5,6 +5,8 @@ from controllers.robot_controller import RobotController, ROS2Controller
 import logging
 import os
 import json
+import signal
+import sys
 import time
 import threading
 import atexit
@@ -13,6 +15,26 @@ from logging.handlers import RotatingFileHandler
 # Controlador ROS2 — publica em /cmd_vel (geometry_msgs/Twist).
 # Pré-requisito: source ~/ros2_ws/install/setup.bash antes de iniciar o servidor.
 controller: RobotController = ROS2Controller()
+
+# rclpy.init() instala seus próprios handlers de SIGINT/SIGTERM que engolem o
+# Ctrl+C (o processo fica preso esperando o executor do ROS2 que nunca acorda).
+# Sobrescreve com handlers Python que fazem shutdown limpo e saem imediatamente.
+_shutting_down = False
+def _force_shutdown(signum, _frame):
+    global _shutting_down
+    if _shutting_down:
+        os._exit(1)  # segundo Ctrl+C = kill imediato
+    _shutting_down = True
+    print(f"\n[app] Sinal {signum} recebido, encerrando...", flush=True)
+    try:
+        if hasattr(controller, 'shutdown'):
+            controller.shutdown()
+    except Exception:
+        pass
+    os._exit(0)
+
+signal.signal(signal.SIGINT,  _force_shutdown)
+signal.signal(signal.SIGTERM, _force_shutdown)
 
 # Encerra o nó ROS2 corretamente ao sair
 atexit.register(lambda: controller.shutdown() if hasattr(controller, 'shutdown') else None)
