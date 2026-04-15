@@ -42,31 +42,27 @@ echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
 ros2 --help   # deve listar os comandos
 ```
 
-### 2. Instalar dependências apt (uma vez)
-
-```bash
-sudo apt update
-sudo apt install -y \
-    git python3-venv python3-pip \
-    ros-jazzy-xacro ros-jazzy-robot-state-publisher \
-    ros-jazzy-slam-toolbox \
-    ros-jazzy-nav2-bringup ros-jazzy-nav2-collision-monitor \
-    ros-jazzy-nav2-map-server ros-jazzy-nav2-amcl \
-    ros-jazzy-ros-gz ros-jazzy-ros-gz-sim \
-    ros-jazzy-ros-gz-bridge ros-jazzy-ros-gz-interfaces
-```
-
-Isso cobre: SLAM (slam-toolbox), navegação (Nav2 + collision_monitor), simulação (Gazebo Harmonic + bridges) e o necessário para montar o URDF (xacro + robot_state_publisher).
-
-### 3. Clonar este repositório
+### 2. Clonar este repositório
 
 ```bash
 git clone <url-do-repo> ~/Controle_robo_web
 ```
 
-### 4. Montar o workspace ROS2
+### 3. Rodar o setup automatizado
 
-O pacote `robot_nav` (URDF, launches, nodes do robô) mora **dentro** deste repositório em `ros2_packages/robot_nav/` — basta linkar no workspace. Mas o `robot_nav` depende de pacotes externos que **não** estão neste repo:
+O script `setup.sh` na raiz do repo faz tudo de uma vez: instala dependências apt, monta o `~/ros2_ws`, faz symlink do `robot_nav`, clona o `wheel_msgs` e roda `colcon build`.
+
+```bash
+cd ~/Controle_robo_web
+./setup.sh
+```
+
+O script é idempotente — se já tiver rodado antes, pode rodar de novo sem quebrar nada. Ele cobre:
+
+- **apt install**: `xacro`, `robot-state-publisher`, `slam-toolbox`, `nav2-bringup`, `nav2-collision-monitor`, `nav2-map-server`, `nav2-amcl`, `ros-gz`, `ros-gz-sim`, `ros-gz-bridge`, `ros-gz-interfaces` (tudo para Jazzy), além de `git`, `python3-venv`, `python3-pip`.
+- **Workspace**: cria `~/ros2_ws/src`, faz o symlink do `robot_nav` deste repo, clona `wheel_msgs` ([Richard-Haes-Ellis/wheel_msgs](https://github.com/Richard-Haes-Ellis/wheel_msgs)), compila com `colcon build` e adiciona o `source` ao `~/.bashrc`.
+
+Se for usar hardware real, descomente no `setup.sh` as duas linhas de clone de `ros2-hoverboard-driver` e `ldlidar_stl_ros2` antes de rodar, ou clone/compile manualmente depois.
 
 | Pacote | Obrigatório? | Para quê |
 |--------|--------------|----------|
@@ -74,29 +70,7 @@ O pacote `robot_nav` (URDF, launches, nodes do robô) mora **dentro** deste repo
 | `ros2-hoverboard-driver` | só no modo real | Driver C++ do hoverboard |
 | `ldlidar_stl_ros2` | só no modo real | Driver do LiDAR FHL-LD20 |
 
-Monte o workspace:
-
-```bash
-mkdir -p ~/ros2_ws/src
-cd ~/ros2_ws/src
-
-# Symlink do robot_nav deste repo para o workspace
-ln -s ~/Controle_robo_web/ros2_packages/robot_nav robot_nav
-
-# Clone os pacotes externos
-git clone https://github.com/Richard-Haes-Ellis/wheel_msgs.git        wheel_msgs
-# só se for usar hardware real:
-git clone https://github.com/victorfdezc/ros2-hoverboard-driver.git   ros2-hoverboard-driver
-git clone https://github.com/ldrobotSensorTeam/ldlidar_stl_ros2.git   ldlidar_stl_ros2
-
-# Compila tudo
-cd ~/ros2_ws
-colcon build
-echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
-source ~/ros2_ws/install/setup.bash
-```
-
-### 5. (Só hardware real) Fixar portas USB
+### 4. (Só hardware real) Fixar portas USB
 
 Se for rodar no robô físico, o hoverboard e o LiDAR precisam de symlinks estáveis em `/dev/hoverboard` e `/dev/lidar`:
 
@@ -111,7 +85,7 @@ cd ~/ros2_ws && colcon build --packages-select ros2-hoverboard-driver
 
 Pule este passo inteiro se só vai usar `--sim`.
 
-### 6. Primeira execução — teste rápido no sim
+### 5. Primeira execução — teste rápido no sim
 
 Não precisa configurar mais nada. O `launch.sh` cria o `venv` Python e instala Flask/Socket.IO/Pillow automaticamente na primeira vez.
 
@@ -128,7 +102,7 @@ O que deve acontecer:
 
 `Ctrl+C` no terminal fecha tudo (Gazebo, bridges, web).
 
-### 7. Mapear a sala simulada (SLAM)
+### 6. Mapear a sala simulada (SLAM)
 
 ```bash
 ./launch.sh --sim --slam
@@ -138,7 +112,7 @@ Na UI o badge vira `SLAM` e um painel **Mapa** aparece. Dirija o robô **devagar
 
 Quando o mapa estiver bom, clique em **Salvar mapa** → nome padrão `sala` → gera `maps/sala.yaml` + `maps/sala.pgm`. Depois `Ctrl+C`.
 
-### 8. Navegação autônoma (NAV2 click-to-go)
+### 7. Navegação autônoma (NAV2 click-to-go)
 
 ```bash
 ./launch.sh --sim --nav2
@@ -146,7 +120,7 @@ Quando o mapa estiver bom, clique em **Salvar mapa** → nome padrão `sala` →
 
 O badge vira `NAV2`, o painel **Mapa** mostra o mapa estático que você salvou, o robô aparece como seta laranja. **Clique em qualquer ponto livre do mapa** — o Nav2 calcula a rota (linha azul), o bt_navigator dispara o controlador e o robô do Gazebo vai até lá.
 
-### 9. (Opcional) Use a sala que você projetou
+### 8. (Opcional) Use a sala que você projetou
 
 Coloque o arquivo `.sdf` da sua sala em `Controle_robo_web/worlds/` e passe por flag:
 
@@ -157,9 +131,9 @@ Coloque o arquivo `.sdf` da sua sala em `Controle_robo_web/worlds/` e passe por 
 
 Veja [Onde colocar o arquivo da sala](#onde-colocar-o-arquivo-da-sala-mundo-gazebo) para o checklist do que o `.sdf` precisa ter (physics, luz, ground_plane, collisions).
 
-### 10. Migrar para o hardware real
+### 9. Migrar para o hardware real
 
-Quando o fluxo estiver funcionando no sim, basta tirar o `--sim` dos comandos. A mesma UI, o mesmo `/goal_pose`, o mesmo mapa (se for a mesma sala) — e agora com `launch.sh --slam` / `launch.sh --nav2` o robô físico responde. O único diferencial é que você precisa ter rodado o passo **5** antes.
+Quando o fluxo estiver funcionando no sim, basta tirar o `--sim` dos comandos. A mesma UI, o mesmo `/goal_pose`, o mesmo mapa (se for a mesma sala) — e agora com `launch.sh --slam` / `launch.sh --nav2` o robô físico responde. O único diferencial é que você precisa ter rodado o passo **4** antes.
 
 ---
 
