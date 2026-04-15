@@ -83,11 +83,11 @@ cd ~/ros2_ws/src
 # Symlink do robot_nav deste repo para o workspace
 ln -s ~/Controle_robo_web/ros2_packages/robot_nav robot_nav
 
-# Clone os pacotes externos (substitua as URLs pelas corretas do seu fork)
-git clone <url-do-wheel_msgs>            wheel_msgs
+# Clone os pacotes externos
+git clone https://github.com/Richard-Haes-Ellis/wheel_msgs.git        wheel_msgs
 # só se for usar hardware real:
-git clone <url-do-ros2-hoverboard-driver> ros2-hoverboard-driver
-git clone <url-do-ldlidar_stl_ros2>       ldlidar_stl_ros2
+git clone https://github.com/victorfdezc/ros2-hoverboard-driver.git   ros2-hoverboard-driver
+git clone https://github.com/ldrobotSensorTeam/ldlidar_stl_ros2.git   ldlidar_stl_ros2
 
 # Compila tudo
 cd ~/ros2_ws
@@ -364,12 +364,12 @@ cd ~/ros2_ws/src
 # 1) robot_nav — symlink do pacote deste repo
 ln -s ~/Controle_robo_web/ros2_packages/robot_nav robot_nav
 
-# 2) wheel_msgs — sempre (substitua pela URL correta do seu fork)
-git clone <url-do-wheel_msgs> wheel_msgs
+# 2) wheel_msgs — sempre obrigatório
+git clone https://github.com/Richard-Haes-Ellis/wheel_msgs.git wheel_msgs
 
 # 3) Só se for rodar no hardware real — pule estes dois se for só --sim
-git clone <url-do-ros2-hoverboard-driver> ros2-hoverboard-driver
-git clone <url-do-ldlidar_stl_ros2>       ldlidar_stl_ros2
+git clone https://github.com/victorfdezc/ros2-hoverboard-driver.git ros2-hoverboard-driver
+git clone https://github.com/ldrobotSensorTeam/ldlidar_stl_ros2.git  ldlidar_stl_ros2
 
 # Compila tudo de uma vez
 cd ~/ros2_ws
