@@ -347,14 +347,31 @@ As dimensões batem com o URDF do hoverboard real de propósito: assim os parâm
 
 ### 1. Workspace ROS2
 
-O pacote ROS2 `robot_nav` (URDF, launches, nodes Python) mora **dentro deste repositório** em `ros2_packages/robot_nav/` e é linkado no workspace via symlink. Assim qualquer edição em launches, URDF ou SDF do robô já é versionada junto com o código do servidor web.
+**Nada disso está neste repositório.** O `~/ros2_ws/` é um workspace ROS2 **que você cria na máquina** e precisa popular manualmente. Só o `robot_nav` mora neste repo (em `ros2_packages/robot_nav/`), via symlink. Os outros pacotes são externos e precisam ser clonados antes do `colcon build`, senão a compilação falha:
+
+| Pacote | Origem | Obrigatório? |
+|--------|--------|--------------|
+| `robot_nav` | este repo (symlink) | **sempre** |
+| `wheel_msgs` | repo externo | **sempre** — o `robot_nav` declara `<depend>wheel_msgs</depend>`, então mesmo no sim o `colcon build` quebra sem ele |
+| `ros2-hoverboard-driver` | repo externo | só no modo real (hardware) |
+| `ldlidar_stl_ros2` | repo externo | só no modo real (hardware) |
 
 ```bash
-# Cria o symlink do pacote dentro do workspace ROS2
+# Cria a pasta do workspace e entra nela
 mkdir -p ~/ros2_ws/src
-ln -s ~/Controle_robo_web/ros2_packages/robot_nav ~/ros2_ws/src/robot_nav
+cd ~/ros2_ws/src
 
-# Compile o workspace (junto com os outros pacotes: hoverboard-driver, ldlidar, wheel_msgs)
+# 1) robot_nav — symlink do pacote deste repo
+ln -s ~/Controle_robo_web/ros2_packages/robot_nav robot_nav
+
+# 2) wheel_msgs — sempre (substitua pela URL correta do seu fork)
+git clone <url-do-wheel_msgs> wheel_msgs
+
+# 3) Só se for rodar no hardware real — pule estes dois se for só --sim
+git clone <url-do-ros2-hoverboard-driver> ros2-hoverboard-driver
+git clone <url-do-ldlidar_stl_ros2>       ldlidar_stl_ros2
+
+# Compila tudo de uma vez
 cd ~/ros2_ws
 colcon build
 source install/setup.bash
@@ -362,6 +379,8 @@ source install/setup.bash
 # Adicione ao ~/.bashrc para não precisar fazer source toda vez:
 echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
 ```
+
+> **Se o `colcon build` falhar com `Package 'wheel_msgs' not found`**, é porque você pulou o passo 2. Clone o `wheel_msgs` em `~/ros2_ws/src/` e rode de novo.
 
 Depois de editar qualquer arquivo em `ros2_packages/robot_nav/`, rode `colcon build --packages-select robot_nav` para reinstalar os launches/URDFs no `install/`.
 
