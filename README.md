@@ -4,8 +4,10 @@ Interface web para controlar um robô hoverboard com ROS2, LiDAR FHL-LD20, detec
 
 ## Sumário
 
+- [Guia rápido — do zero ao click-to-go](#guia-rápido--do-zero-ao-click-to-go)
 - [Visão geral](#visão-geral)
 - [Os três modos de operação](#os-três-modos-de-operação)
+- [Modo SIM — testar tudo no Gazebo sem hardware](#modo-sim--testar-tudo-no-gazebo-sem-hardware)
 - [Pré-requisitos](#pré-requisitos)
 - [Configuração inicial (uma vez)](#configuração-inicial-uma-vez)
   - [1. Workspace ROS2](#1-workspace-ros2)
@@ -21,6 +23,143 @@ Interface web para controlar um robô hoverboard com ROS2, LiDAR FHL-LD20, detec
 - [Logs](#logs)
 - [Limitações conhecidas](#limitações-conhecidas)
 - [Solução de problemas](#solução-de-problemas)
+
+---
+
+## Guia rápido — do zero ao click-to-go
+
+Passo a passo condensado para quem está pegando uma máquina nova e quer ver o robô andando sozinho no Gazebo, clicando num ponto do mapa. Todas as seções abaixo têm mais detalhes, isto aqui é o caminho feliz.
+
+### 1. Instalar o ROS2 Jazzy
+
+Siga o guia oficial (~10 min): https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html
+
+Confirme:
+
+```bash
+source /opt/ros/jazzy/setup.bash
+echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
+ros2 --help   # deve listar os comandos
+```
+
+### 2. Instalar dependências apt (uma vez)
+
+```bash
+sudo apt update
+sudo apt install -y \
+    git python3-venv python3-pip \
+    ros-jazzy-xacro ros-jazzy-robot-state-publisher \
+    ros-jazzy-slam-toolbox \
+    ros-jazzy-nav2-bringup ros-jazzy-nav2-collision-monitor \
+    ros-jazzy-nav2-map-server ros-jazzy-nav2-amcl \
+    ros-jazzy-ros-gz ros-jazzy-ros-gz-sim \
+    ros-jazzy-ros-gz-bridge ros-jazzy-ros-gz-interfaces
+```
+
+Isso cobre: SLAM (slam-toolbox), navegação (Nav2 + collision_monitor), simulação (Gazebo Harmonic + bridges) e o necessário para montar o URDF (xacro + robot_state_publisher).
+
+### 3. Clonar este repositório
+
+```bash
+git clone <url-do-repo> ~/Controle_robo_web
+```
+
+### 4. Montar o workspace ROS2
+
+O pacote `robot_nav` (URDF, launches, nodes do robô) mora **dentro** deste repositório em `ros2_packages/robot_nav/` — basta linkar no workspace. Mas o `robot_nav` depende de pacotes externos que **não** estão neste repo:
+
+| Pacote | Obrigatório? | Para quê |
+|--------|--------------|----------|
+| `wheel_msgs` | **sempre** (até no sim, senão `colcon build` falha) | Tipo de mensagem `WheelSpeeds` |
+| `ros2-hoverboard-driver` | só no modo real | Driver C++ do hoverboard |
+| `ldlidar_stl_ros2` | só no modo real | Driver do LiDAR FHL-LD20 |
+
+Monte o workspace:
+
+```bash
+mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws/src
+
+# Symlink do robot_nav deste repo para o workspace
+ln -s ~/Controle_robo_web/ros2_packages/robot_nav robot_nav
+
+# Clone os pacotes externos (substitua as URLs pelas corretas do seu fork)
+git clone <url-do-wheel_msgs>            wheel_msgs
+# só se for usar hardware real:
+git clone <url-do-ros2-hoverboard-driver> ros2-hoverboard-driver
+git clone <url-do-ldlidar_stl_ros2>       ldlidar_stl_ros2
+
+# Compila tudo
+cd ~/ros2_ws
+colcon build
+echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
+source ~/ros2_ws/install/setup.bash
+```
+
+### 5. (Só hardware real) Fixar portas USB
+
+Se for rodar no robô físico, o hoverboard e o LiDAR precisam de symlinks estáveis em `/dev/hoverboard` e `/dev/lidar`:
+
+```bash
+sudo ~/Controle_robo_web/setup_udev.sh
+```
+
+Depois recompile o driver:
+```bash
+cd ~/ros2_ws && colcon build --packages-select ros2-hoverboard-driver
+```
+
+Pule este passo inteiro se só vai usar `--sim`.
+
+### 6. Primeira execução — teste rápido no sim
+
+Não precisa configurar mais nada. O `launch.sh` cria o `venv` Python e instala Flask/Socket.IO/Pillow automaticamente na primeira vez.
+
+```bash
+cd ~/Controle_robo_web
+./launch.sh --sim
+```
+
+O que deve acontecer:
+1. Uma janela do Gazebo Harmonic abre mostrando uma sala 6×6 m vazia (do `worlds/empty.sdf`) com o robô simulado no centro.
+2. No terminal aparece `Iniciando servidor web em http://0.0.0.0:5000 (modo: teleop [SIM/Gazebo])`.
+3. Abra `http://localhost:5000` no navegador — você vê a UI com o badge `TELEOP`.
+4. Clique na área da página e use `WASD` ou setas: o robô se move no Gazebo.
+
+`Ctrl+C` no terminal fecha tudo (Gazebo, bridges, web).
+
+### 7. Mapear a sala simulada (SLAM)
+
+```bash
+./launch.sh --sim --slam
+```
+
+Na UI o badge vira `SLAM` e um painel **Mapa** aparece. Dirija o robô **devagar** pela sala com WASD/setas (ver [dicas de mapeamento](#modo-slam--mapear-a-sala)). O mapa cresce em tempo real no painel web.
+
+Quando o mapa estiver bom, clique em **Salvar mapa** → nome padrão `sala` → gera `maps/sala.yaml` + `maps/sala.pgm`. Depois `Ctrl+C`.
+
+### 8. Navegação autônoma (NAV2 click-to-go)
+
+```bash
+./launch.sh --sim --nav2
+```
+
+O badge vira `NAV2`, o painel **Mapa** mostra o mapa estático que você salvou, o robô aparece como seta laranja. **Clique em qualquer ponto livre do mapa** — o Nav2 calcula a rota (linha azul), o bt_navigator dispara o controlador e o robô do Gazebo vai até lá.
+
+### 9. (Opcional) Use a sala que você projetou
+
+Coloque o arquivo `.sdf` da sua sala em `Controle_robo_web/worlds/` e passe por flag:
+
+```bash
+./launch.sh --sim --slam  --world=worlds/minha_sala.sdf
+./launch.sh --sim --nav2  --world=worlds/minha_sala.sdf
+```
+
+Veja [Onde colocar o arquivo da sala](#onde-colocar-o-arquivo-da-sala-mundo-gazebo) para o checklist do que o `.sdf` precisa ter (physics, luz, ground_plane, collisions).
+
+### 10. Migrar para o hardware real
+
+Quando o fluxo estiver funcionando no sim, basta tirar o `--sim` dos comandos. A mesma UI, o mesmo `/goal_pose`, o mesmo mapa (se for a mesma sala) — e agora com `launch.sh --slam` / `launch.sh --nav2` o robô físico responde. O único diferencial é que você precisa ter rodado o passo **5** antes.
 
 ---
 
@@ -86,6 +225,97 @@ Por vir do mesmo projeto Nav2, os dois compartilham o prefixo `nav2_` no nome do
 
 ---
 
+## Modo SIM — testar tudo no Gazebo sem hardware
+
+Antes de arriscar o hoverboard na sala real, você pode rodar o pipeline inteiro (teleop + SLAM + Nav2 click-to-go) dentro do **Gazebo Harmonic**, com um robô diferencial simulado em um mundo customizado por você.
+
+A flag `--sim` troca tudo que é hardware por simulação:
+
+| Stage | Modo real | Modo `--sim` |
+|-------|-----------|--------------|
+| Driver do hoverboard | `ros2-hoverboard-driver` | — (não usa) |
+| Odometria | `odom_publisher` (feedback das rodas) | plugin `DiffDrive` do Gazebo |
+| `/cmd_vel → rodas` | `cmd_vel_to_wheels` | plugin `DiffDrive` do Gazebo |
+| LiDAR | `ldlidar_stl_ros2` em `/dev/lidar` | sensor `gpu_lidar` na SDF do robô |
+| Corpo do robô | URDF (`robot.urdf.xacro`) | URDF + SDF (`sim_robot.sdf`) |
+| `/scan`, `/odom`, `/tf` | tópicos reais | via `ros_gz_bridge` (GZ → ROS) |
+
+O servidor web, o `map_service.py` e a UI são exatamente os mesmos — o sim é transparente do ponto de vista do navegador.
+
+### Instalando o Gazebo e o bridge ROS↔GZ
+
+Em Jazzy o Gazebo moderno é o **Harmonic**, separado do ROS:
+
+```bash
+sudo apt install \
+    ros-$ROS_DISTRO-ros-gz \
+    ros-$ROS_DISTRO-ros-gz-sim \
+    ros-$ROS_DISTRO-ros-gz-bridge \
+    ros-$ROS_DISTRO-ros-gz-interfaces
+```
+
+Isso traz o `gz sim` (binário do Gazebo Harmonic) + o `parameter_bridge` que traduz mensagens `gz.msgs.*` ↔ `*_msgs/msg/*`.
+
+### Onde colocar o arquivo da sala (mundo Gazebo)
+
+**Os mundos do Gazebo ficam em `Controle_robo_web/worlds/`** (mesmo nível de `maps/`). O repositório já vem com um arquivo `worlds/empty.sdf` que cria uma sala 6×6 m com quatro paredes, um chão e uma luz — suficiente pra você testar se tudo sobe antes de trocar pelo seu mundo.
+
+Para usar seu próprio mundo, tem dois caminhos:
+
+1. **Substituir o padrão** — jogue seu arquivo como `worlds/sala.sdf` (ou salve por cima do `worlds/empty.sdf`):
+   ```bash
+   cp ~/minha_sala_projetada.sdf Controle_robo_web/worlds/empty.sdf
+   ./launch.sh --sim
+   ```
+
+2. **Passar por flag** — aceita caminho absoluto ou relativo à raiz do projeto:
+   ```bash
+   ./launch.sh --sim --world=worlds/sala_projetada.sdf
+   ./launch.sh --sim --world=/home/ubuntu/mundos/hangar.sdf
+   ```
+
+**Checklist do arquivo `.sdf` do mundo** (coisas que, se faltarem, fazem o robô cair ou o LiDAR atravessar paredes):
+
+- `<physics>` definido (ex: `dart` ou `ode`)
+- Plugins obrigatórios: `Physics`, `UserCommands`, `SceneBroadcaster`, `Sensors` com `render_engine=ogre2`
+- Pelo menos uma `<light>` (sol) — senão a cena fica preta e o GPU LiDAR não vê nada
+- Um `<model name="ground_plane">` estático — senão o robô despenca
+- Todos os objetos com `<collision>` (paredes, móveis) — senão o LiDAR trespassa
+
+O `worlds/empty.sdf` serve como template pronto de todos esses campos, olhe lá se estiver em dúvida.
+
+### Rodando no modo SIM
+
+```bash
+# 1. Sim + teleop (dirige no Gazebo pelo teclado/UI web)
+./launch.sh --sim
+
+# 2. Sim + SLAM (mapeia a sala simulada com o slam_toolbox)
+./launch.sh --sim --slam
+#    Dirija o robô pelo Gazebo até o mapa no painel web ficar bom,
+#    clique em "Salvar mapa" → fica em maps/sala.yaml
+
+# 3. Sim + NAV2 (navegação autônoma por click-to-go dentro do Gazebo)
+./launch.sh --sim --nav2
+#    Clique num ponto do mapa web → o robô simulado vai até lá
+```
+
+Todas as flags combinam. `--sim --slam --world=worlds/minha_sala.sdf` também funciona.
+
+### O robô simulado
+
+O modelo fica em `~/ros2_ws/src/robot_nav/urdf/sim_robot.sdf` — um diff drive de 50×45×10 cm (mesmo tamanho do hoverboard real), rodas de 8,5 cm de raio, caster traseiro e um GPU LiDAR de 360° no topo. A SDF inclui três plugins Gazebo:
+
+- `DiffDrive` — consome `/cmd_vel`, publica `/odom` e o TF `odom → base_link`
+- `JointStatePublisher` — roda as rodas na visualização
+- `PosePublisher` — snapshot da pose dos links
+
+As dimensões batem com o URDF do hoverboard real de propósito: assim os parâmetros que você tunar no sim (velocidade do planner, inflation radius do costmap, footprint do Nav2) transferem razoavelmente para o robô real.
+
+> **Atenção:** este modo é um scaffold pra você conseguir iterar no pipeline sem hardware. Ele não foi validado end-to-end ainda — espere pequenos ajustes nos parâmetros do `slam_toolbox` e do Nav2 no primeiro uso. Veja [Limitações conhecidas](#limitações-conhecidas).
+
+---
+
 ## Pré-requisitos
 
 - Ubuntu 22.04 (testado) ou 24.04
@@ -101,6 +331,14 @@ Por vir do mesmo projeto Nav2, os dois compartilham o prefixo `nav2_` no nome do
       ros-$ROS_DISTRO-nav2-map-server \
       ros-$ROS_DISTRO-nav2-amcl
   ```
+- **Modo SIM (Gazebo Harmonic)** — opcional, só se você for rodar `--sim`:
+  ```bash
+  sudo apt install \
+      ros-$ROS_DISTRO-ros-gz \
+      ros-$ROS_DISTRO-ros-gz-sim \
+      ros-$ROS_DISTRO-ros-gz-bridge \
+      ros-$ROS_DISTRO-ros-gz-interfaces
+  ```
 - Python 3.10+
 
 ---
@@ -109,8 +347,14 @@ Por vir do mesmo projeto Nav2, os dois compartilham o prefixo `nav2_` no nome do
 
 ### 1. Workspace ROS2
 
+O pacote ROS2 `robot_nav` (URDF, launches, nodes Python) mora **dentro deste repositório** em `ros2_packages/robot_nav/` e é linkado no workspace via symlink. Assim qualquer edição em launches, URDF ou SDF do robô já é versionada junto com o código do servidor web.
+
 ```bash
-# Clone e compile o workspace (se ainda não tiver feito)
+# Cria o symlink do pacote dentro do workspace ROS2
+mkdir -p ~/ros2_ws/src
+ln -s ~/Controle_robo_web/ros2_packages/robot_nav ~/ros2_ws/src/robot_nav
+
+# Compile o workspace (junto com os outros pacotes: hoverboard-driver, ldlidar, wheel_msgs)
 cd ~/ros2_ws
 colcon build
 source install/setup.bash
@@ -118,6 +362,8 @@ source install/setup.bash
 # Adicione ao ~/.bashrc para não precisar fazer source toda vez:
 echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
 ```
+
+Depois de editar qualquer arquivo em `ros2_packages/robot_nav/`, rode `colcon build --packages-select robot_nav` para reinstalar os launches/URDFs no `install/`.
 
 ### 2. Portas USB fixas (obrigatório)
 
@@ -236,6 +482,19 @@ No painel da UI:
 
 Se o arquivo de mapa não existir, o `launch.sh` aborta com uma mensagem clara e sugere rodar `--slam` antes.
 
+### Modo SIM — Gazebo sem hardware
+
+Adicione `--sim` em qualquer um dos modos acima para rodar no Gazebo Harmonic em vez do hardware real. Veja a seção [Modo SIM](#modo-sim--testar-tudo-no-gazebo-sem-hardware) para detalhes completos, mas o resumo é:
+
+```bash
+./launch.sh --sim                              # sim + teleop
+./launch.sh --sim --slam                       # sim + mapeamento
+./launch.sh --sim --nav2                       # sim + navegação autônoma
+./launch.sh --sim --world=worlds/sala.sdf      # sim com mundo customizado
+```
+
+**Seu arquivo de mundo** vai em `Controle_robo_web/worlds/` (padrão: `worlds/empty.sdf`, que já vem com uma sala 6×6m para teste inicial).
+
 ### Outras flags
 
 ```bash
@@ -348,6 +607,15 @@ Controle_robo_web/
 ├── maps/                              # Mapas salvos pelo SLAM (ignorado pelo git)
 │   ├── sala.yaml                      # Metadados: resolução, origem, thresholds
 │   └── sala.pgm                       # Grayscale do occupancy grid
+├── worlds/                            # Mundos do Gazebo usados pelo --sim
+│   └── empty.sdf                      # Mundo padrão (sala 6×6 m vazia)
+├── ros2_packages/
+│   └── robot_nav/                     # Pacote ROS2 (linkado em ~/ros2_ws/src/robot_nav)
+│       ├── launch/                    # robot.launch.py, lidar, slam, nav2, sim, ...
+│       ├── urdf/robot.urdf.xacro      # URDF do hoverboard real
+│       ├── urdf/sim_robot.sdf         # SDF do robô simulado
+│       ├── config/nav2_params.yaml
+│       └── robot_nav/                 # Nodes Python (odom, cmd_vel_to_wheels, ...)
 └── controle_web/
     ├── app.py                         # Servidor Flask + Socket.IO (lê ROBOT_MODE)
     ├── map_service.py                 # Ponte ROS2↔Web: /map, TF, /plan, /goal_pose
@@ -363,18 +631,11 @@ Controle_robo_web/
     └── logs/                          # Logs rotativos
 
 ~/ros2_ws/src/
-├── robot_nav/
-│   ├── launch/robot.launch.py              # robot_state_publisher + odom + cmd_vel_to_wheels
-│   ├── launch/lidar.launch.py              # LiDAR FHL-LD20
-│   ├── launch/nav2_collision.launch.py     # Só o collision_monitor (modo TELEOP)
-│   ├── launch/slam.launch.py               # slam_toolbox online async (modo SLAM)
-│   ├── launch/nav2.launch.py               # Stack Nav2 completa (modo NAV2)
-│   ├── robot_nav/cmd_vel_to_wheels.py      # /cmd_vel → /wheel_vel_setpoints
-│   ├── robot_nav/odom_publisher.py         # odometria pelo feedback das rodas
-│   └── robot_nav/obstacle_detector.py      # /scan → /tmp/obstacle_current.json
-├── ros2-hoverboard-driver/                 # Driver C++ do hoverboard
+├── robot_nav -> ~/Controle_robo_web/ros2_packages/robot_nav  # symlink
+├── ros2-hoverboard-driver/                 # Driver C++ do hoverboard (repo separado)
 │   └── include/.../config.hpp              # PORT = /dev/hoverboard
-└── ldlidar_stl_ros2/                       # Driver do LiDAR FHL-LD20
+├── ldlidar_stl_ros2/                       # Driver do LiDAR FHL-LD20 (repo separado)
+└── wheel_msgs/                             # Mensagens custom das rodas (repo separado)
 ```
 
 ---
@@ -412,6 +673,7 @@ Coisas que ainda não funcionam perfeitamente ou que exigem atenção ao usar SL
 - **Ambientes muito simétricos.** Corredor longo com paredes lisas, salas quadradas vazias: o scan-matching do SLAM não encontra features suficientes e o mapa pode dobrar sobre si mesmo. Prefira mapear ambientes com móveis, quinas e variação.
 - **Bateria do hoverboard.** Sem bateria o driver até sobe, mas falha ao escrever na porta serial (`Error writing to hoverboard serial port`) — não é bug do código. Conecte a bateria antes de abrir um bug.
 - **Pipeline não validado end-to-end em hardware.** A integração SLAM → salvar → Nav2 → click-to-go passou nos smoke tests (imports, subida de processos, SIGINT limpo), mas ainda não rodou na sala real com o LiDAR e o hoverboard conectados. Espere pequenos ajustes de tuning ao primeiro uso (parâmetros do `slam_toolbox`, `amcl` e dos planners).
+- **Modo `--sim` é um scaffold, não foi executado ponta-a-ponta.** O `sim.launch.py`, o `sim_robot.sdf` e o `worlds/empty.sdf` compilam e carregam, mas a primeira execução real no Gazebo Harmonic pode pedir ajustes: frame do LiDAR (`gz_frame_id`), QoS do bridge, nomes de tópicos `gz.msgs.*` (que às vezes mudam entre releases). Se o `/scan` não aparecer no `ros2 topic list`, é quase certo algum desses três. *Mitigação:* testar incrementalmente — primeiro `./launch.sh --sim` só com teleop, depois `--sim --slam`, depois `--sim --nav2`.
 
 ---
 

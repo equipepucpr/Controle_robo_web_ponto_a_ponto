@@ -6,9 +6,13 @@
 #   ./launch.sh --slam                            # SLAM — mapeia o ambiente em tempo real
 #   ./launch.sh --nav2                            # NAV2 — navegação autônoma (mapa padrão)
 #   ./launch.sh --nav2 --map=/caminho/sala.yaml   # NAV2 — mapa específico
+#   ./launch.sh --sim                             # SIM — Gazebo Harmonic + robô diff-drive
+#   ./launch.sh --sim --slam                      # SIM + SLAM (mapeia a sala no Gazebo)
+#   ./launch.sh --sim --nav2                      # SIM + NAV2 (navega com mapa salvo)
+#   ./launch.sh --sim --world=worlds/sala.sdf     # SIM com mundo customizado
 #
 # Outras flags:
-#   --no-lidar             desabilita o LiDAR
+#   --no-lidar             desabilita o LiDAR (só modo real)
 #   --no-nav2              desabilita o collision monitor (modo teleop)
 #   --lidar-port=/dev/X    sobrescreve a porta do LiDAR (padrão /dev/lidar)
 #
@@ -23,11 +27,15 @@ NO_NAV2=false
 LIDAR_PORT="/dev/lidar"
 MODE="teleop"                     # teleop | slam | nav2
 MAP_FILE="$SCRIPT_DIR/maps/sala.yaml"
+SIM=false
+WORLD_FILE="$SCRIPT_DIR/worlds/empty.sdf"
 
 for arg in "$@"; do
     case $arg in
         --slam)         MODE="slam" ;;
         --nav2)         MODE="nav2" ;;
+        --sim)          SIM=true ;;
+        --world=*)      WORLD_FILE="${arg#*=}" ;;
         --map=*)        MAP_FILE="${arg#*=}" ;;
         --no-lidar)     NO_LIDAR=true ;;
         --no-nav2)      NO_NAV2=true ;;
@@ -35,8 +43,13 @@ for arg in "$@"; do
     esac
 done
 
-# Em SLAM e NAV2 o LiDAR é obrigatório.
-if [ "$MODE" != "teleop" ] && [ "$NO_LIDAR" = true ]; then
+# Normaliza caminho do mundo (aceita relativo a SCRIPT_DIR)
+if [ "$SIM" = true ] && [ "${WORLD_FILE:0:1}" != "/" ]; then
+    WORLD_FILE="$SCRIPT_DIR/$WORLD_FILE"
+fi
+
+# Em SLAM e NAV2 o LiDAR é obrigatório (no modo real; no sim o Gazebo simula).
+if [ "$SIM" = false ] && [ "$MODE" != "teleop" ] && [ "$NO_LIDAR" = true ]; then
     echo "ERRO: modo $MODE precisa do LiDAR. Remova --no-lidar."
     exit 1
 fi
@@ -44,8 +57,28 @@ fi
 # Em NAV2 o arquivo de mapa precisa existir antes de subir.
 if [ "$MODE" = "nav2" ] && [ ! -f "$MAP_FILE" ]; then
     echo "ERRO: mapa '$MAP_FILE' não encontrado."
-    echo "  Rode primeiro: ./launch.sh --slam  (mapeie a sala e clique em 'Salvar mapa')"
+    if [ "$SIM" = true ]; then
+        echo "  Rode primeiro: ./launch.sh --sim --slam  (mapeie a sala e clique em 'Salvar mapa')"
+    else
+        echo "  Rode primeiro: ./launch.sh --slam  (mapeie a sala e clique em 'Salvar mapa')"
+    fi
     exit 1
+fi
+
+# Em SIM o arquivo de mundo precisa existir.
+if [ "$SIM" = true ] && [ ! -f "$WORLD_FILE" ]; then
+    echo "ERRO: mundo '$WORLD_FILE' não encontrado."
+    echo "  Coloque seu .sdf em $SCRIPT_DIR/worlds/ ou passe --world=/caminho/absoluto.sdf"
+    exit 1
+fi
+
+# SIM requer ros_gz (Gazebo Harmonic + bridges).
+if [ "$SIM" = true ]; then
+    if ! ros2 pkg list 2>/dev/null | grep -q "^ros_gz_sim$"; then
+        echo "ERRO: pacote ros_gz_sim não encontrado. Instale:"
+        echo "  sudo apt install ros-\$ROS_DISTRO-ros-gz ros-\$ROS_DISTRO-ros-gz-sim ros-\$ROS_DISTRO-ros-gz-bridge"
+        exit 1
+    fi
 fi
 
 mkdir -p "$SCRIPT_DIR/maps"
@@ -116,6 +149,7 @@ LIDAR_PID=""
 OBSTACLE_PID=""
 NAV2_PID=""
 SLAM_PID=""
+SIM_PID=""
 TAIL_PID=""
 
 kill_tree() {
@@ -144,9 +178,10 @@ cleanup() {
     kill_tree "$LIDAR_PID"
     kill_tree "$ROBOT_PID"
     kill_tree "$DRIVER_PID"
+    kill_tree "$SIM_PID"
     sleep 1
     # Segunda passada: SIGKILL em qualquer filho que tenha sobrevivido
-    for pid in $SERVER_PID $SLAM_PID $NAV2_PID $OBSTACLE_PID $LIDAR_PID $ROBOT_PID $DRIVER_PID; do
+    for pid in $SERVER_PID $SLAM_PID $NAV2_PID $OBSTACLE_PID $LIDAR_PID $ROBOT_PID $DRIVER_PID $SIM_PID; do
         for desc in $(pgrep -P "$pid" 2>/dev/null) $pid; do
             kill -9 "$desc" 2>/dev/null
         done
@@ -168,6 +203,9 @@ cleanup() {
     pkill -9 -f "nav2_velocity_smoother"        2>/dev/null
     pkill -9 -f "nav2_lifecycle_manager"        2>/dev/null
     pkill -9 -f "nav2_waypoint_follower"        2>/dev/null
+    pkill -9 -f "ruby.*gz sim"                  2>/dev/null
+    pkill -9 -f "gz sim"                        2>/dev/null
+    pkill -9 -f "parameter_bridge"              2>/dev/null
     rm -f /tmp/obstacle_current.json
     echo "Pronto."
     exit 0
@@ -177,61 +215,80 @@ trap cleanup INT TERM EXIT
 LOG_DIR="$SCRIPT_DIR/controle_web/logs"
 mkdir -p "$LOG_DIR"
 
-# --- [1] Driver do hoverboard ---
-echo "[1/4] Iniciando driver do hoverboard (porta: /dev/hoverboard)..."
-DRIVER_LOG="$LOG_DIR/hoverboard_driver.log"
-ros2 run ros2-hoverboard-driver main > "$DRIVER_LOG" 2>&1 &
-DRIVER_PID=$!
-echo "      PID: $DRIVER_PID  |  Log: $DRIVER_LOG"
-
-sleep 2
-
-if ! kill -0 "$DRIVER_PID" 2>/dev/null; then
-    echo "AVISO: Driver do hoverboard falhou. Veja o log:"
-    cat "$DRIVER_LOG"
-    echo "(Continuando sem hardware — modo simulação)"
-fi
-
-# --- [2] Nós do robô (robot_state_publisher + odom + cmd_vel_to_wheels) ---
-echo "[2/4] Iniciando nós do robô (URDF, odometria, cmd_vel->wheels)..."
-ROBOT_LOG="$LOG_DIR/robot_nodes.log"
-ros2 launch robot_nav robot.launch.py > "$ROBOT_LOG" 2>&1 &
-ROBOT_PID=$!
-echo "      PID: $ROBOT_PID  |  Log: $ROBOT_LOG"
-
-sleep 2
-
-# --- [3] LiDAR FHL-LD20 + detector de obstáculos ---
-if [ "$NO_LIDAR" = false ]; then
-    if [ -e "$LIDAR_PORT" ]; then
-        echo "[3/5] Iniciando LiDAR FHL-LD20 em $LIDAR_PORT..."
-        LIDAR_LOG="$LOG_DIR/lidar.log"
-        ros2 launch robot_nav lidar.launch.py lidar_port:="$LIDAR_PORT" > "$LIDAR_LOG" 2>&1 &
-        LIDAR_PID=$!
-        echo "      PID: $LIDAR_PID  |  Log: $LIDAR_LOG"
-        sleep 1
-
-        echo "      Iniciando detector de obstáculos..."
-        OBSTACLE_LOG="$LOG_DIR/obstacle_detector.log"
-        ros2 run robot_nav obstacle_detector > "$OBSTACLE_LOG" 2>&1 &
-        OBSTACLE_PID=$!
-        echo "      PID: $OBSTACLE_PID  |  Log: $OBSTACLE_LOG"
-        sleep 1
-    else
-        echo "[3/5] AVISO: Porta do LiDAR $LIDAR_PORT não encontrada. Pulando LiDAR."
-        echo "      Para especificar outra porta: ./launch.sh --lidar-port=/dev/ttyUSB2"
-        NO_LIDAR=true
-    fi
+if [ "$SIM" = true ]; then
+    # --- [SIM] Gazebo Harmonic + robô diff-drive + bridges ROS↔GZ ---
+    echo "[1/5] Modo SIM — subindo Gazebo com mundo: $WORLD_FILE"
+    SIM_LOG="$LOG_DIR/sim.log"
+    SIM_WORLD="$WORLD_FILE" ros2 launch robot_nav sim.launch.py \
+        world:="$WORLD_FILE" > "$SIM_LOG" 2>&1 &
+    SIM_PID=$!
+    echo "      PID: $SIM_PID  |  Log: $SIM_LOG"
+    # Gazebo + spawn demora ~5s pra estabilizar os tópicos
+    sleep 6
+    # Hardware desligado no sim
+    NO_LIDAR=true
 else
-    echo "[3/5] LiDAR desativado (--no-lidar)"
+    # --- [1] Driver do hoverboard ---
+    echo "[1/5] Iniciando driver do hoverboard (porta: /dev/hoverboard)..."
+    DRIVER_LOG="$LOG_DIR/hoverboard_driver.log"
+    ros2 run ros2-hoverboard-driver main > "$DRIVER_LOG" 2>&1 &
+    DRIVER_PID=$!
+    echo "      PID: $DRIVER_PID  |  Log: $DRIVER_LOG"
+
+    sleep 2
+
+    if ! kill -0 "$DRIVER_PID" 2>/dev/null; then
+        echo "AVISO: Driver do hoverboard falhou. Veja o log:"
+        cat "$DRIVER_LOG"
+        echo "(Continuando sem hardware — modo simulação)"
+    fi
+
+    # --- [2] Nós do robô (robot_state_publisher + odom + cmd_vel_to_wheels) ---
+    echo "[2/5] Iniciando nós do robô (URDF, odometria, cmd_vel->wheels)..."
+    ROBOT_LOG="$LOG_DIR/robot_nodes.log"
+    ros2 launch robot_nav robot.launch.py > "$ROBOT_LOG" 2>&1 &
+    ROBOT_PID=$!
+    echo "      PID: $ROBOT_PID  |  Log: $ROBOT_LOG"
+
+    sleep 2
+
+    # --- [3] LiDAR FHL-LD20 + detector de obstáculos ---
+    if [ "$NO_LIDAR" = false ]; then
+        if [ -e "$LIDAR_PORT" ]; then
+            echo "[3/5] Iniciando LiDAR FHL-LD20 em $LIDAR_PORT..."
+            LIDAR_LOG="$LOG_DIR/lidar.log"
+            ros2 launch robot_nav lidar.launch.py lidar_port:="$LIDAR_PORT" > "$LIDAR_LOG" 2>&1 &
+            LIDAR_PID=$!
+            echo "      PID: $LIDAR_PID  |  Log: $LIDAR_LOG"
+            sleep 1
+
+            echo "      Iniciando detector de obstáculos..."
+            OBSTACLE_LOG="$LOG_DIR/obstacle_detector.log"
+            ros2 run robot_nav obstacle_detector > "$OBSTACLE_LOG" 2>&1 &
+            OBSTACLE_PID=$!
+            echo "      PID: $OBSTACLE_PID  |  Log: $OBSTACLE_LOG"
+            sleep 1
+        else
+            echo "[3/5] AVISO: Porta do LiDAR $LIDAR_PORT não encontrada. Pulando LiDAR."
+            echo "      Para especificar outra porta: ./launch.sh --lidar-port=/dev/ttyUSB2"
+            NO_LIDAR=true
+        fi
+    else
+        echo "[3/5] LiDAR desativado (--no-lidar)"
+    fi
 fi
 
 # --- [4] SLAM ou Nav2 ou Collision Monitor (conforme modo) ---
+SIM_TIME_ARG="use_sim_time:=false"
+if [ "$SIM" = true ]; then
+    SIM_TIME_ARG="use_sim_time:=true"
+fi
+
 case "$MODE" in
     slam)
         echo "[4/5] Modo SLAM — subindo slam_toolbox (mapping online)..."
         SLAM_LOG="$LOG_DIR/slam.log"
-        ros2 launch robot_nav slam.launch.py > "$SLAM_LOG" 2>&1 &
+        ros2 launch robot_nav slam.launch.py $SIM_TIME_ARG > "$SLAM_LOG" 2>&1 &
         SLAM_PID=$!
         echo "      PID: $SLAM_PID  |  Log: $SLAM_LOG"
         sleep 3
@@ -239,13 +296,15 @@ case "$MODE" in
     nav2)
         echo "[4/5] Modo NAV2 — subindo Nav2 com mapa $MAP_FILE..."
         NAV2_LOG="$LOG_DIR/nav2.log"
-        ros2 launch robot_nav nav2.launch.py map:="$MAP_FILE" > "$NAV2_LOG" 2>&1 &
+        ros2 launch robot_nav nav2.launch.py map:="$MAP_FILE" $SIM_TIME_ARG > "$NAV2_LOG" 2>&1 &
         NAV2_PID=$!
         echo "      PID: $NAV2_PID  |  Log: $NAV2_LOG"
         sleep 5
         ;;
     teleop)
-        if [ "$NO_NAV2" = false ] && ros2 pkg list 2>/dev/null | grep -q "nav2_collision_monitor"; then
+        if [ "$SIM" = true ]; then
+            echo "[4/5] Modo SIM+TELEOP — sem collision monitor (dirija manualmente no Gazebo)."
+        elif [ "$NO_NAV2" = false ] && ros2 pkg list 2>/dev/null | grep -q "nav2_collision_monitor"; then
             echo "[4/5] Modo TELEOP — subindo Nav2 Collision Monitor..."
             NAV2_LOG="$LOG_DIR/nav2_collision.log"
             ros2 launch robot_nav nav2_collision.launch.py > "$NAV2_LOG" 2>&1 &
@@ -260,24 +319,29 @@ esac
 
 # --- [5] Servidor web ---
 echo ""
-echo "[5/5] Iniciando servidor web em http://0.0.0.0:5000 (modo: $MODE)"
+SIM_TAG=""
+[ "$SIM" = true ] && SIM_TAG=" [SIM/Gazebo]"
+echo "[5/5] Iniciando servidor web em http://0.0.0.0:5000 (modo: $MODE$SIM_TAG)"
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 case "$MODE" in
     slam)
-        echo "  MODO SLAM — dirija o robô para mapear. Salve o mapa pelo botão web."
+        echo "  MODO SLAM$SIM_TAG — dirija o robô para mapear. Salve o mapa pelo botão web."
         echo "  slam_toolbox publicando /map (~1 Hz) e TF map→odom."
         ;;
     nav2)
-        echo "  MODO NAV2 — clique no mapa web para enviar o robô a um destino."
+        echo "  MODO NAV2$SIM_TAG — clique no mapa web para enviar o robô a um destino."
         echo "  Mapa: $MAP_FILE"
         echo "  AMCL publicando map→odom. bt_navigator consome /goal_pose."
         ;;
     teleop)
-        echo "  MODO TELEOP — Web → /cmd_vel → cmd_vel_to_wheels → Hoverboard"
+        echo "  MODO TELEOP$SIM_TAG — Web → /cmd_vel → robô"
         ;;
 esac
-if [ "$NO_LIDAR" = false ]; then
+if [ "$SIM" = true ]; then
+    echo "  Mundo Gazebo: $WORLD_FILE"
+    echo "  Robô simulado publicando /scan, /odom e TF odom→base_link"
+elif [ "$NO_LIDAR" = false ]; then
     echo "  LiDAR FHL-LD20 publicando em: /scan"
 fi
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
@@ -294,6 +358,7 @@ echo ""
 # Passa o modo e o diretório de mapas para o app.py via env.
 export ROBOT_MODE="$MODE"
 export ROBOT_MAPS_DIR="$SCRIPT_DIR/maps"
+export ROBOT_SIM="$SIM"
 
 # Servidor em primeiro plano — Ctrl+C aqui dispara cleanup() via trap.
 python3 app.py

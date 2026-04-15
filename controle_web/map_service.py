@@ -85,6 +85,13 @@ class MapBridge:
 
         self._node: Node = rclpy.create_node('web_map_bridge')
 
+        # No modo sim, force use_sim_time para alinhar o TF Buffer com /clock.
+        if os.environ.get('ROBOT_SIM', 'false').lower() == 'true':
+            from rclpy.parameter import Parameter
+            self._node.set_parameters([
+                Parameter('use_sim_time', Parameter.Type.BOOL, True),
+            ])
+
         # /map é publicado com durability transient_local (latched).
         # Sem isso o subscriber não recebe a mensagem retida.
         map_qos = QoSProfile(
