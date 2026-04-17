@@ -33,6 +33,14 @@ if [ ! -d "$SDK_DIR" ]; then
     git clone https://github.com/Livox-SDK/Livox-SDK2.git "$SDK_DIR"
 fi
 cd "$SDK_DIR"
+
+# Patch: GCC 13+ não inclui <cstdint> transitivamente — adiciona onde falta
+echo "  Aplicando patch cstdint (GCC 13+)..."
+grep -rl --include='*.h' --include='*.cpp' -E '\buint(8|16|32|64)_t\b' sdk_core/ | while read f; do
+    grep -qE '#include\s*<(cstdint|stdint\.h)>' "$f" || \
+        sed -i '0,/#include/s/#include/#include <cstdint>\n#include/' "$f"
+done
+
 mkdir -p build && cd build
 cmake ..
 make -j"$(nproc)"
@@ -69,10 +77,26 @@ clone_if_missing() {
 
 link_if_missing robot_nav "$REPO_DIR/ros2_packages/robot_nav"
 clone_if_missing wheel_msgs             https://github.com/Richard-Haes-Ellis/wheel_msgs.git
-# livox_ros_driver2 — branch ROS2 (master já é ROS2 no repo oficial)
+# livox_ros_driver2 — repo único com suporte ROS1/ROS2; precisa de package.xml + launch/
 clone_if_missing livox_ros_driver2      https://github.com/Livox-SDK/livox_ros_driver2.git
-# FAST-LIO (hku-mars) — branch ROS2 (também é master na maioria das revisões)
-clone_if_missing FAST_LIO                https://github.com/hku-mars/FAST_LIO.git
+if [ ! -f livox_ros_driver2/package.xml ]; then
+    ln -sf package_ROS2.xml livox_ros_driver2/package.xml
+    echo "  criado symlink package.xml -> package_ROS2.xml"
+fi
+if [ ! -d livox_ros_driver2/launch ]; then
+    cp -rf livox_ros_driver2/launch_ROS2/ livox_ros_driver2/launch/
+    echo "  copiado launch_ROS2/ -> launch/"
+fi
+# FAST-LIO (hku-mars) — branch ROS2 (default é ROS1/main, precisamos da branch ROS2)
+clone_if_missing FAST_LIO                https://github.com/hku-mars/FAST_LIO.git ROS2
+# ikd-Tree é submódulo do FAST_LIO
+cd FAST_LIO && git submodule update --init --recursive
+# Patch: FAST_LIO usa C++14, mas ROS2 Jazzy (rclcpp) exige C++17
+if grep -q 'CMAKE_CXX_STANDARD 14' CMakeLists.txt 2>/dev/null; then
+    echo "  Aplicando patch C++17 no FAST_LIO..."
+    sed -i 's/std=c++14/std=c++17/g; s/std=c++0x//g; s/CMAKE_CXX_STANDARD 14/CMAKE_CXX_STANDARD 17/g' CMakeLists.txt
+fi
+cd ..
 
 # Descomente para hardware real:
 # clone_if_missing ros2-hoverboard-driver https://github.com/victorfdezc/ros2-hoverboard-driver.git
@@ -81,7 +105,7 @@ echo
 echo "=== [4/5] Compilando com colcon ==="
 cd "$WS_DIR"
 source /opt/ros/jazzy/setup.bash
-colcon build --symlink-install
+colcon build --symlink-install --cmake-args -DROS_EDITION=ROS2 -DDISTRO_ROS=jazzy
 
 BASHRC_LINE="source $WS_DIR/install/setup.bash"
 if ! grep -qxF "$BASHRC_LINE" "$HOME/.bashrc"; then
