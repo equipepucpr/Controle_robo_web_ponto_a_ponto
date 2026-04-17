@@ -4,9 +4,14 @@ Odometry publisher for hoverboard robot.
 
 Subscribes to wheel velocity feedback from hoverboard driver
 (/hoverboard/left_wheel/velocity and /hoverboard/right_wheel/velocity)
-and publishes nav_msgs/Odometry + TF (odom -> base_link).
+and publishes nav_msgs/Odometry em /wheel_odom.
 
-The hoverboard firmware reports speedL_meas and speedR_meas in RPM.
+Quando publish_tf=True também faz o broadcast TF odom->base_link. No fork
+ponto-a-ponto a pose oficial vem do FAST-LIO2 (que já publica o TF), então
+por padrão publish_tf=False — este nó é só um fallback/debug que registra
+a odometria integrada das rodas em /wheel_odom.
+
+O firmware do hoverboard reporta speedL_meas e speedR_meas em RPM.
 """
 
 import math
@@ -31,6 +36,10 @@ class OdomPublisher(Node):
         self.declare_parameter('right_wheel_sign', -1.0) # flip if odometry goes backwards
         self.declare_parameter('odom_frame', 'odom')
         self.declare_parameter('base_frame', 'base_link')
+        # No fork ponto-a-ponto o TF odom->base_link vem do FAST-LIO2 —
+        # este nó só publica a msg /wheel_odom como fallback/debug.
+        self.declare_parameter('publish_tf', False)
+        self.declare_parameter('odom_topic', 'wheel_odom')
 
         self.wheel_radius = self.get_parameter('wheel_radius').value
         self.wheel_base = self.get_parameter('wheel_base').value
@@ -39,6 +48,8 @@ class OdomPublisher(Node):
         self.right_sign = self.get_parameter('right_wheel_sign').value
         self.odom_frame = self.get_parameter('odom_frame').value
         self.base_frame = self.get_parameter('base_frame').value
+        self.publish_tf = self.get_parameter('publish_tf').value
+        self.odom_topic = self.get_parameter('odom_topic').value
 
         # State
         self.x = 0.0
@@ -64,15 +75,16 @@ class OdomPublisher(Node):
         )
 
         # Publishers
-        self.odom_pub = self.create_publisher(Odometry, 'odom', 10)
-        self.tf_broadcaster = TransformBroadcaster(self)
+        self.odom_pub = self.create_publisher(Odometry, self.odom_topic, 10)
+        self.tf_broadcaster = TransformBroadcaster(self) if self.publish_tf else None
 
         # Timer: publish odometry at 20 Hz
         self.create_timer(0.05, self._publish_odom)
 
         self.get_logger().info(
             f'OdomPublisher started | wheel_radius={self.wheel_radius}m '
-            f'| wheel_base={self.wheel_base}m'
+            f'| wheel_base={self.wheel_base}m | topic=/{self.odom_topic} '
+            f'| publish_tf={self.publish_tf}'
         )
 
     def _rpm_to_ms(self, rpm):
@@ -110,19 +122,21 @@ class OdomPublisher(Node):
         q_z = math.sin(self.theta / 2.0)
         q_w = math.cos(self.theta / 2.0)
 
-        # Publish TF: odom -> base_link
-        tf = TransformStamped()
-        tf.header.stamp = now.to_msg()
-        tf.header.frame_id = self.odom_frame
-        tf.child_frame_id = self.base_frame
-        tf.transform.translation.x = self.x
-        tf.transform.translation.y = self.y
-        tf.transform.translation.z = 0.0
-        tf.transform.rotation.x = 0.0
-        tf.transform.rotation.y = 0.0
-        tf.transform.rotation.z = q_z
-        tf.transform.rotation.w = q_w
-        self.tf_broadcaster.sendTransform(tf)
+        # Publish TF: odom -> base_link (só se configurado — no fork ponto-a-ponto
+        # quem publica esse TF é o FAST-LIO2, não queremos dois publicadores).
+        if self.tf_broadcaster is not None:
+            tf = TransformStamped()
+            tf.header.stamp = now.to_msg()
+            tf.header.frame_id = self.odom_frame
+            tf.child_frame_id = self.base_frame
+            tf.transform.translation.x = self.x
+            tf.transform.translation.y = self.y
+            tf.transform.translation.z = 0.0
+            tf.transform.rotation.x = 0.0
+            tf.transform.rotation.y = 0.0
+            tf.transform.rotation.z = q_z
+            tf.transform.rotation.w = q_w
+            self.tf_broadcaster.sendTransform(tf)
 
         # Publish Odometry message
         odom = Odometry()

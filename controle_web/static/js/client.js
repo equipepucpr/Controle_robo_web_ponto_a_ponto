@@ -21,7 +21,7 @@
 
   // Prefere polling e faz upgrade para websocket (melhor compatibilidade)
   const socket = io({ transports: ['polling', 'websocket'] });
-  // Exposto para outros scripts (map.js) reutilizarem a mesma conexão
+  // Exposto para outros scripts (waypoints.js) reutilizarem a mesma conexão
   window.robotSocket = socket;
 
   // --- Controle de velocidade (compartilhado entre modos) ---
@@ -181,6 +181,11 @@
   });
 
   function send(type, code, repeat) {
+    // Bloqueia teleop enquanto follower autônomo publica /cmd_vel.
+    if (window.isFollowerActive && window.isFollowerActive()) {
+      if (deliveryEl) deliveryEl.textContent = 'Teclado bloqueado: follower ativo';
+      return;
+    }
     const id = ++seq;
     const payload = { type, code, repeat: !!repeat, seq: id };
     const timer = setTimeout(() => {
@@ -289,65 +294,4 @@
     return `${typPt[type] || type} ${code}`;
   }
 
-  // ---- LiDAR: painel de obstáculos ----
-  const lidarBadge    = document.getElementById('lidar-badge');
-  const obstacleCls   = document.getElementById('obstacle-closest');
-  const SETOR_IDS = ['frente', 'frente_esq', 'frente_dir', 'esquerda', 'direita', 'tras'];
-  const SETOR_LABELS  = {
-    frente: 'FRENTE', frente_esq: 'F-ESQ', frente_dir: 'F-DIR',
-    esquerda: 'ESQ', direita: 'DIR', tras: 'TRÁS',
-  };
-
-  function _distStr(d) {
-    if (d === null || d === undefined) return '—';
-    return d < 10 ? d.toFixed(2) + 'm' : d.toFixed(1) + 'm';
-  }
-
-  function _angleName(deg) {
-    if (deg === null || deg === undefined) return '';
-    const abs = Math.abs(deg);
-    const side = deg >= 0 ? 'esq' : 'dir';
-    if (abs <= 30)  return 'frente';
-    if (abs <= 90)  return `frente-${side}`;
-    if (abs <= 135) return side === 'esq' ? 'esquerda' : 'direita';
-    return 'trás';
-  }
-
-  socket.on('obstacle_info', (data) => {
-    if (!data) return;
-
-    // Badge de conexão
-    if (lidarBadge) {
-      lidarBadge.textContent = data.conectado ? 'LiDAR ON' : 'sem sinal';
-      lidarBadge.className = 'lidar-badge ' + (data.conectado ? 'on' : 'off');
-    }
-
-    // Obstáculo mais próximo (destaque)
-    if (obstacleCls && data.mais_proximo) {
-      const mp = data.mais_proximo;
-      if (mp.dist !== null) {
-        const dir = _angleName(mp.angulo);
-        obstacleCls.textContent = `Mais próximo: ${_distStr(mp.dist)} @ ${dir}`;
-        obstacleCls.style.color = mp.cor === 'vermelho' ? '#f87171'
-                                : mp.cor === 'amarelo'  ? '#facc15' : '#4ade80';
-      } else {
-        obstacleCls.textContent = 'Sem obstáculos detectados';
-        obstacleCls.style.color = '#4ade80';
-      }
-    }
-
-    // Setores
-    if (data.setores) {
-      for (const key of SETOR_IDS) {
-        const s = data.setores[key];
-        const cell  = document.getElementById('obs-' + key);
-        const distEl = document.getElementById('dist-' + key);
-        if (!cell || !distEl || !s) continue;
-        const cor = s.cor || 'verde';
-        cell.className  = 'obs-sector' + (key === 'frente' || key === 'tras' ? ' obs-center' : '') + ' ' + cor;
-        distEl.className = 'obs-dist ' + cor;
-        distEl.textContent = _distStr(s.dist);
-      }
-    }
-  });
 })();

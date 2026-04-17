@@ -1,40 +1,34 @@
-# Aplicação Flask com Socket.IO para receber eventos do navegador
+# Aplicação Flask com Socket.IO para o fork ponto-a-ponto.
+# Teleop manual + gravação/reprodução de waypoints com pose do FAST-LIO2.
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO, emit
 from controllers.robot_controller import RobotController, ROS2Controller
+from controllers.waypoint_bridge import WaypointBridge
 import logging
 import os
 import json
 import signal
 import sys
 import time
-import threading
 import atexit
 from logging.handlers import RotatingFileHandler
 
-# Modo de operação — setado pelo launch.sh via env var. Valores: 'teleop',
-# 'slam' ou 'nav2'. Controla quais componentes do SocketIO ficam ativos.
-ROBOT_MODE = os.environ.get('ROBOT_MODE', 'teleop').lower()
-MAPS_DIR = os.environ.get('ROBOT_MAPS_DIR', os.path.abspath(
-    os.path.join(os.path.dirname(__file__), '..', 'maps')
-))
-
-# Controlador ROS2 — publica em /cmd_vel (geometry_msgs/Twist).
+# Controlador ROS2 — publica em /cmd_vel (geometry_msgs/Twist) via teleop.
 # Pré-requisito: source ~/ros2_ws/install/setup.bash antes de iniciar o servidor.
 controller: RobotController = ROS2Controller()
 
-# Ponte de mapa/pose/navegação — opcional (só sobe se rclpy importou OK).
-map_bridge = None
+# Ponte ROS2 ↔ Socket.IO para pose / waypoints / follower.
+waypoint_bridge: WaypointBridge | None = None
 
 # rclpy.init() instala seus próprios handlers de SIGINT/SIGTERM que engolem o
-# Ctrl+C (o processo fica preso esperando o executor do ROS2 que nunca acorda).
-# Sobrescreve com handlers Python que fazem shutdown limpo e saem imediatamente.
+# Ctrl+C. Sobrescreve com handlers Python que fazem shutdown limpo.
 _shutting_down = False
+
 
 def _shutdown_all():
     try:
-        if map_bridge is not None:
-            map_bridge.shutdown()
+        if waypoint_bridge is not None:
+            waypoint_bridge.shutdown()
     except Exception:
         pass
     try:
@@ -56,14 +50,11 @@ def _force_shutdown_full(signum, _frame):
 
 signal.signal(signal.SIGINT,  _force_shutdown_full)
 signal.signal(signal.SIGTERM, _force_shutdown_full)
-
-# Encerra tudo ao sair
 atexit.register(_shutdown_all)
 
 # Instancia a aplicação web
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'change-me'
-# Cria o servidor Socket.IO (tempo real) com logs habilitados
 socketio = SocketIO(
     app,
     cors_allowed_origins="*",
@@ -72,48 +63,17 @@ socketio = SocketIO(
     async_mode="threading",
 )
 
-# Configuração básica de logs no terminal
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s] %(levelname)s: %(message)s')
-# Suprime o aviso de "production deployment" do Werkzeug (esperado para uso local)
 logging.getLogger('werkzeug').setLevel(logging.ERROR)
 
-# ---- Ponte de mapa/navegação (ROS2 ↔ Socket.IO) ----
-# Só inicializa se o modo precisar (slam/nav2). Em teleop puro, pula para
-# economizar CPU. Falhas não derrubam o servidor — só logam.
-if ROBOT_MODE in ('slam', 'nav2'):
-    try:
-        from map_service import MapBridge
-        map_bridge = MapBridge(socketio=socketio, mode=ROBOT_MODE, maps_dir=MAPS_DIR)
-    except Exception as e:
-        logging.getLogger(__name__).warning(
-            f"[app] Falha ao iniciar MapBridge: {e}. Mapa e navegação desabilitados."
-        )
-        map_bridge = None
-
-# ---- Detector de obstáculos (LiDAR) ----
-# O nó obstacle_detector roda como processo separado (via launch.sh) e escreve em
-# /tmp/obstacle_current.json.  Esta função lê esse arquivo a 5 Hz via background
-# task do eventlet (sem ROS2 dentro do Flask = sem conflito com eventlet).
-OBSTACLE_FILE = '/tmp/obstacle_current.json'
-_last_obstacle_mtime = None
-
-def _obstacle_background_task():
-    """Lê /tmp/obstacle_current.json a 5 Hz e emite via Socket.IO."""
-    global _last_obstacle_mtime
-    log = logging.getLogger(__name__)
-    while True:
-        try:
-            mtime = os.path.getmtime(OBSTACLE_FILE)
-            if mtime != _last_obstacle_mtime:
-                _last_obstacle_mtime = mtime
-                with open(OBSTACLE_FILE) as f:
-                    data = json.load(f)
-                socketio.emit('obstacle_info', data, namespace='/')
-        except FileNotFoundError:
-            pass
-        except Exception as e:
-            log.debug(f'[LiDAR] leitura: {e}')
-        time.sleep(0.2)  # 5 Hz
+# ---- Ponte de waypoints (ROS2 ↔ Socket.IO) ----
+try:
+    waypoint_bridge = WaypointBridge(socketio=socketio)
+except Exception as e:
+    logging.getLogger(__name__).warning(
+        f"[app] Falha ao iniciar WaypointBridge: {e}. Pose e waypoints desabilitados."
+    )
+    waypoint_bridge = None
 
 # Log de movimentos (JSON Lines) gravado em arquivo rotativo + arquivo legível
 os.makedirs('logs', exist_ok=True)
@@ -123,7 +83,6 @@ if not movement_logger.handlers:
     _mh = RotatingFileHandler('logs/movements.log', maxBytes=1_048_576, backupCount=5)
     _mh.setFormatter(logging.Formatter('%(message)s'))
     movement_logger.addHandler(_mh)
-    # Logger adicional com linhas legíveis em português
     movement_human = logging.getLogger('movements_human')
     movement_human.setLevel(logging.INFO)
     _mht = RotatingFileHandler('logs/movements.txt', maxBytes=1_048_576, backupCount=5)
@@ -132,85 +91,113 @@ if not movement_logger.handlers:
 else:
     movement_human = logging.getLogger('movements_human')
 
+
 @app.before_request
 def _log_request_start():
-    # Loga início de cada requisição HTTP (método, rota, IP e user-agent)
     try:
         app.logger.info(f"HTTP {request.method} {request.path} from {request.remote_addr} UA={request.headers.get('User-Agent','-')}")
     except Exception:
         pass
 
+
 @app.after_request
 def _log_request_end(response):
-    # Loga fim de cada requisição HTTP com status
     try:
         app.logger.info(f"HTTP {response.status_code} {request.method} {request.path}")
     except Exception:
         pass
     return response
 
+
 @app.route('/')
 def index():
-    # Página principal com a interface do controle
     return render_template('index.html')
+
 
 @socketio.on('connect')
 def handle_connect():
-    # Evento de conexão de um cliente Socket.IO
     app.logger.info(f"Client connected: addr={request.remote_addr} sid={request.sid}")
-    emit('server_status', {'message': 'connected'})
-    # Informa o modo atual para o cliente decidir qual UI mostrar
-    emit('mode_info', {
-        'mode': ROBOT_MODE,
-        'has_map': map_bridge is not None,
+    emit('server_status', {
+        'message': 'connected',
+        'has_pose_bridge': waypoint_bridge is not None,
     })
 
 
-@socketio.on('nav_goal')
-def handle_nav_goal(data):
-    """Cliente clicou no mapa: publica PoseStamped em /goal_pose."""
-    if map_bridge is None:
-        emit('nav_goal_ack', {'ok': False, 'error': 'mapa indisponível neste modo'})
-        return
-    if ROBOT_MODE != 'nav2':
-        emit('nav_goal_ack', {'ok': False, 'error': 'clique-para-ir só funciona em modo NAV2'})
-        return
-    try:
-        x = float(data.get('x'))
-        y = float(data.get('y'))
-        yaw = float(data.get('yaw', 0.0))
-        result = map_bridge.send_goal(x, y, yaw)
-        app.logger.info(f"nav_goal from {request.remote_addr}: ({x:.2f}, {y:.2f})")
-        emit('nav_goal_ack', result)
-    except Exception as e:
-        emit('nav_goal_ack', {'ok': False, 'error': str(e)})
-
-
-@socketio.on('save_map')
-def handle_save_map(data):
-    """Cliente apertou 'Salvar mapa' — chama map_saver_cli."""
-    if map_bridge is None:
-        emit('save_map_ack', {'ok': False, 'error': 'mapa indisponível neste modo'})
-        return
-    name = (data or {}).get('name', 'sala')
-    app.logger.info(f"save_map from {request.remote_addr}: name={name}")
-    result = map_bridge.save_map(name)
-    emit('save_map_ack', result)
-
 @socketio.on('disconnect')
 def handle_disconnect():
-    # Evento de desconexão de um cliente Socket.IO
     app.logger.info(f"Client disconnected: addr={request.remote_addr} sid={request.sid}")
+
+
+# ---- Handlers de waypoints ----
+
+def _require_bridge(ack_event: str) -> bool:
+    if waypoint_bridge is None:
+        emit(ack_event, {'ok': False, 'error': 'ponte ROS2 indisponível'})
+        return False
+    return True
+
+
+@socketio.on('record_waypoint')
+def handle_record_waypoint(_data=None):
+    if not _require_bridge('wp_ack'):
+        return
+    result = waypoint_bridge.record_waypoint()
+    app.logger.info(f"record_waypoint from {request.remote_addr}: {result}")
+    emit('wp_ack', {'op': 'record', **result})
+
+
+@socketio.on('clear_waypoints')
+def handle_clear_waypoints(_data=None):
+    if not _require_bridge('wp_ack'):
+        return
+    result = waypoint_bridge.clear_waypoints()
+    app.logger.info(f"clear_waypoints from {request.remote_addr}: {result}")
+    emit('wp_ack', {'op': 'clear', **result})
+
+
+@socketio.on('reset_origin')
+def handle_reset_origin(_data=None):
+    if not _require_bridge('wp_ack'):
+        return
+    result = waypoint_bridge.reset_origin()
+    app.logger.info(f"reset_origin from {request.remote_addr}: {result}")
+    emit('wp_ack', {'op': 'reset_origin', **result})
+
+
+@socketio.on('start_follow')
+def handle_start_follow(_data=None):
+    if not _require_bridge('follow_ack'):
+        return
+    result = waypoint_bridge.start_follow()
+    app.logger.info(f"start_follow from {request.remote_addr}: {result}")
+    emit('follow_ack', {'op': 'start', **result})
+
+
+@socketio.on('stop_follow')
+def handle_stop_follow(_data=None):
+    if not _require_bridge('follow_ack'):
+        return
+    result = waypoint_bridge.stop_follow()
+    app.logger.info(f"stop_follow from {request.remote_addr}: {result}")
+    emit('follow_ack', {'op': 'stop', **result})
+
+
+@socketio.on('return_to_origin')
+def handle_return_to_origin(_data=None):
+    if not _require_bridge('follow_ack'):
+        return
+    result = waypoint_bridge.return_to_origin()
+    app.logger.info(f"return_to_origin from {request.remote_addr}: {result}")
+    emit('follow_ack', {'op': 'return', **result})
+
+
+# ---- Teleop ----
 
 @socketio.on('key_event')
 def handle_key_event(data):
-    # Recebe um evento de tecla do cliente
-    # Esperado: { type: 'down'|'up', key: 'KeyW'|'ArrowUp'|..., code: 'KeyW', repeat: bool, seq?: int }
     try:
         app.logger.info(f"key_event from {request.remote_addr}: {data}")
-        # Encaminha o evento para o controlador do robô
         result = controller.handle_key_event(data)
-        # Monta o registro padrão do evento para arquivo
         entry = {
             'ts': time.time(),
             'addr': request.remote_addr,
@@ -224,9 +211,7 @@ def handle_key_event(data):
                 'action': result.get('action'),
                 'command': result.get('command'),
             })
-        # Grava linha JSON no arquivo de movimentos
         movement_logger.info(json.dumps(entry, ensure_ascii=False))
-        # Grava linha legível (português) no arquivo textual
         try:
             ts_readable = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(entry['ts']))
             if entry.get('action') and entry.get('command'):
@@ -237,7 +222,6 @@ def handle_key_event(data):
                 movement_human.info(f"[{ts_readable}] {entry['addr']} {entry['type']} {entry['code']} sid={entry['sid']}")
         except Exception:
             pass
-        # Espelha no terminal uma versão humana do movimento
         try:
             human = entry.get('action') and entry.get('command')
             if human:
@@ -249,7 +233,6 @@ def handle_key_event(data):
         except Exception:
             pass
 
-        # Envia ACK para o cliente (usado na UI para indicar "Recebido")
         emit('ack', {
             'ok': True,
             'seq': data.get('seq'),
@@ -258,10 +241,7 @@ def handle_key_event(data):
             'action': entry.get('action'),
             'command': entry.get('command'),
         }, broadcast=False)
-        # Eco opcional para debug na página (mantido comentado)
-        # emit('server_echo', {'received': data}, broadcast=False)
     except Exception as e:
-        # Em caso de erro, retorna ACK negativo com mensagem
         emit('ack', {
             'ok': False,
             'error': str(e),
@@ -270,9 +250,9 @@ def handle_key_event(data):
             'code': data.get('code') or data.get('key'),
         }, broadcast=False)
 
+
 @socketio.on('gamepad_event')
 def handle_gamepad_event(data):
-    # Recebe evento de gamepad (controle PS4/Xbox) com valores analógicos
     try:
         app.logger.info(f"gamepad_event from {request.remote_addr}: type={data.get('type')} L={data.get('linear','?')} A={data.get('angular','?')}")
         result = controller.handle_gamepad_event(data)
@@ -301,7 +281,6 @@ def handle_gamepad_event(data):
 
         movement_logger.info(json.dumps(entry, ensure_ascii=False))
 
-        # Log legível
         try:
             ts_readable = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(entry['ts']))
             if entry.get('action') and entry.get('command'):
@@ -316,7 +295,6 @@ def handle_gamepad_event(data):
         except Exception:
             pass
 
-        # Log no terminal
         try:
             if result and result.get('command'):
                 cmd_pt = {'forward': 'frente', 'backward': 'ré', 'left': 'esquerda', 'right': 'direita', 'stop': 'parar'}
@@ -339,9 +317,9 @@ def handle_gamepad_event(data):
             'error': str(e),
         }, broadcast=False)
 
+
 @socketio.on('set_speed')
 def handle_set_speed(data):
-    # Altera o multiplicador de velocidade do robô
     try:
         mult = float(data.get('multiplier', 1.0))
         effective = controller.set_speed_multiplier(mult)
@@ -355,19 +333,16 @@ def handle_set_speed(data):
     except Exception as e:
         emit('speed_update', {'ok': False, 'error': str(e)}, broadcast=False)
 
+
 @socketio.on('client_hello')
 def handle_client_hello(payload):
-    # Handshake simples para depuração (cliente informa dados básicos)
     app.logger.info(f"client_hello from {request.remote_addr} sid={request.sid} payload={payload}")
     emit('server_hello', {
         'sid': request.sid,
         'msg': 'hello from server',
     })
 
+
 if __name__ == '__main__':
-    # Lê /tmp/obstacle_current.json a 5 Hz em thread separada
-    t = threading.Thread(target=_obstacle_background_task, daemon=True, name='obstacle_reader')
-    t.start()
-    # Sobe o servidor acessível na rede local (0.0.0.0:5000)
     app.logger.info("Starting Socket.IO server on 0.0.0.0:5000")
     socketio.run(app, host='0.0.0.0', port=5000, debug=False, use_reloader=False, allow_unsafe_werkzeug=True)

@@ -11,7 +11,7 @@
   </head>
   <body>
     <main>
-      <h1>Controle do Robô <span id="robot-mode-badge" class="mode-badge">TELEOP</span></h1>
+      <h1>Controle do Robô <span id="robot-mode-badge" class="mode-badge">PONTO-A-PONTO</span></h1>
 
       <!-- Seletor de modo de controle -->
       <section class="mode-selector">
@@ -105,66 +105,31 @@
         </div>
       </section>
 
-      <!-- Painel de obstáculos (LiDAR) -->
-      <section class="obstacle-panel" id="obstacle-panel">
-        <h2>LiDAR — Obstáculos</h2>
-        <div class="obstacle-status" id="obstacle-status">
-          <span class="lidar-badge" id="lidar-badge">sem sinal</span>
-          <span class="obstacle-closest" id="obstacle-closest"></span>
-        </div>
-        <!-- Mapa de setores -->
-        <div class="obstacle-map">
-          <div class="obs-sector-row">
-            <div class="obs-sector" id="obs-frente_esq">
-              <div class="obs-label">↖ F-ESQ</div>
-              <div class="obs-dist" id="dist-frente_esq">—</div>
-            </div>
-            <div class="obs-sector obs-center" id="obs-frente">
-              <div class="obs-label">▲ FRENTE</div>
-              <div class="obs-dist" id="dist-frente">—</div>
-            </div>
-            <div class="obs-sector" id="obs-frente_dir">
-              <div class="obs-label">↗ F-DIR</div>
-              <div class="obs-dist" id="dist-frente_dir">—</div>
-            </div>
-          </div>
-          <div class="obs-sector-row obs-middle-row">
-            <div class="obs-sector" id="obs-esquerda">
-              <div class="obs-label">◀ ESQ</div>
-              <div class="obs-dist" id="dist-esquerda">—</div>
-            </div>
-            <div class="obs-robot">🤖</div>
-            <div class="obs-sector" id="obs-direita">
-              <div class="obs-label">DIR ▶</div>
-              <div class="obs-dist" id="dist-direita">—</div>
-            </div>
-          </div>
-          <div class="obs-sector-row">
-            <div class="obs-sector obs-center" id="obs-tras">
-              <div class="obs-label">▼ TRÁS</div>
-              <div class="obs-dist" id="dist-tras">—</div>
-            </div>
+      <!-- Painel de waypoints (FAST-LIO2) -->
+      <section class="waypoint-panel" id="waypoint-panel">
+        <div class="wp-header">
+          <h2>Waypoints</h2>
+          <div class="wp-toolbar">
+            <span id="wp-lio-badge" class="wp-badge off">sem pose</span>
+            <span id="wp-follower-badge" class="wp-badge">IDLE</span>
           </div>
         </div>
-      </section>
-
-      <!-- Mapa 2D (SLAM / Nav2) -->
-      <section class="map-panel" id="map-panel" style="display:none">
-        <div class="map-header">
-          <h2>Mapa</h2>
-          <div class="map-toolbar">
-            <span id="map-status" class="map-status">sem mapa</span>
-            <button id="btn-save-map" class="map-btn" disabled>Salvar mapa</button>
-          </div>
+        <div class="wp-info">
+          <span>Pose: <strong id="wp-pose">x=— y=— θ=—</strong></span>
+          <span>Pontos: <strong id="wp-count">0</strong></span>
+          <span>Alvo: <strong id="wp-target">—</strong></span>
+          <span>Dist: <strong id="wp-dist">—</strong></span>
         </div>
-        <div class="map-info">
-          <span id="map-info-size">—</span>
-          <span id="map-info-res">—</span>
-          <span id="map-robot-pose">robô: —</span>
-          <span id="map-click-hint"></span>
+        <div class="wp-buttons">
+          <button id="btn-reset-origin" class="wp-btn">Resetar origem (0)</button>
+          <button id="btn-record-wp" class="wp-btn wp-btn-primary">● Salvar ponto</button>
+          <button id="btn-clear-wp" class="wp-btn wp-btn-danger">Limpar pontos</button>
+          <button id="btn-start-follow" class="wp-btn wp-btn-go">▶ Iniciar trajeto</button>
+          <button id="btn-return-origin" class="wp-btn">⟲ Voltar ao 0</button>
+          <button id="btn-stop-follow" class="wp-btn wp-btn-stop">■ Parar</button>
         </div>
-        <div class="map-canvas-wrap">
-          <canvas id="map-canvas" width="600" height="600"></canvas>
+        <div class="wp-canvas-wrap">
+          <canvas id="wp-canvas" width="520" height="520"></canvas>
         </div>
       </section>
 
@@ -180,6 +145,6 @@
     <script src="https://cdn.socket.io/3.1.3/socket.io.min.js"></script>
     <script src="/static/js/client.js?v=6"></script>
     <script src="/static/js/gamepad.js?v=2"></script>
-    <script src="/static/js/map.js?v=1"></script>
+    <script src="/static/js/waypoints.js?v=1"></script>
   </body>
 </html>

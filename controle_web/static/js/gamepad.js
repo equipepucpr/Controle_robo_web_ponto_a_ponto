@@ -215,6 +215,9 @@
     // Trava ativa — não envia eixos, mantém tudo zerado
     if (emergencyActive) return;
 
+    // Follower autônomo está publicando /cmd_vel — bloqueia teleop.
+    if (window.isFollowerActive && window.isFollowerActive()) return;
+
     // Envia eixos com rate limiting
     const now = Date.now();
     const changed = Math.abs(linear - lastLinear) > 0.02 || Math.abs(angular - lastAngular) > 0.02;

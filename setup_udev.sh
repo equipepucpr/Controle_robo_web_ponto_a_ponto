@@ -1,10 +1,9 @@
 #!/bin/bash
-# Configura nomes USB estáveis via localização física da porta USB.
-# Funciona mesmo quando dois dispositivos têm o mesmo VID:PID (ex: CH340).
-# Uso: sudo ./setup_udev.sh
+# Configura /dev/hoverboard como symlink estável via localização física da porta USB.
+# Neste fork o LiDAR é um Livox Mid-360 (Ethernet), então só o hoverboard entra
+# nas regras udev. O Mid-360 se conecta via IP — ver setup.sh e mid360_config.json.
 #
-# O script pede que você plugue cada dispositivo separadamente para
-# identificar em qual porta física cada um está.
+# Uso: sudo ./setup_udev.sh
 
 set -e
 
@@ -16,7 +15,6 @@ fi
 RULES_FILE="/etc/udev/rules.d/99-robot-usb.rules"
 
 get_devpath() {
-    # Retorna o fragmento de path físico (ex: "1-2.1") de um ttyUSB
     local dev="$1"
     udevadm info "$dev" 2>/dev/null \
         | awk -F= '/DEVPATH/{print $2}' \
@@ -33,17 +31,11 @@ get_vidpid() {
 }
 
 echo "========================================================"
-echo "  Configuração de portas USB fixas — Hoverboard + LiDAR"
+echo "  Configuração de porta USB fixa — Hoverboard"
 echo "========================================================"
 echo ""
-echo "Este script vai pedir que você plugue cada dispositivo"
-echo "separadamente para identificar a porta física de cada um."
-echo ""
-
-# ---- Passo 1: identificar porta do HOVERBOARD ----
-echo "PASSO 1: Hoverboard"
-echo "  1. Desplugue o LiDAR (deixe só o hoverboard plugado)"
-read -p "  2. Pressione ENTER quando estiver pronto..."
+echo "Plugue SOMENTE o hoverboard. O Mid-360 é Ethernet — não precisa de udev."
+read -p "Pressione ENTER quando estiver pronto..."
 
 sleep 1
 udevadm settle
@@ -69,76 +61,23 @@ fi
 
 HOVER_PATH=$(get_devpath "$HOVER_PORT")
 HOVER_VIDPID=$(get_vidpid "$HOVER_PORT")
-HOVER_VID=$(echo "$HOVER_VIDPID" | cut -d: -f1)
-HOVER_PID=$(echo "$HOVER_VIDPID" | cut -d: -f2)
 
-echo "  Hoverboard identificado: $HOVER_PORT → path=$HOVER_PATH  VID:PID=$HOVER_VIDPID"
+echo "  Hoverboard: $HOVER_PORT → path=$HOVER_PATH  VID:PID=$HOVER_VIDPID"
 echo ""
 
-# ---- Passo 2: identificar porta do LIDAR ----
-echo "PASSO 2: LiDAR"
-echo "  1. Plugue o LiDAR (pode deixar o hoverboard plugado também)"
-read -p "  2. Pressione ENTER quando estiver pronto..."
-
-sleep 1
-udevadm settle
-
-PORTS_ALL=$(ls /dev/ttyUSB* 2>/dev/null)
-# Descobre a porta nova (que não existia antes)
-LIDAR_PORT=""
-for p in $PORTS_ALL; do
-    if [ "$p" != "$HOVER_PORT" ]; then
-        LIDAR_PORT="$p"
-        break
-    fi
-done
-
-if [ -z "$LIDAR_PORT" ]; then
-    echo "AVISO: Não detectou porta nova. O LiDAR está na mesma porta que o hoverboard?"
-    echo "  Portas disponíveis:"
-    for p in $PORTS_ALL; do
-        vidpid=$(get_vidpid "$p")
-        path=$(get_devpath "$p")
-        echo "    $p  [VID:PID=$vidpid  USB path=$path]"
-    done
-    read -p "  Informe manualmente a porta do LiDAR (ex: /dev/ttyUSB1): " LIDAR_PORT
-fi
-
-LIDAR_PATH=$(get_devpath "$LIDAR_PORT")
-LIDAR_VIDPID=$(get_vidpid "$LIDAR_PORT")
-LIDAR_VID=$(echo "$LIDAR_VIDPID" | cut -d: -f1)
-LIDAR_PID=$(echo "$LIDAR_VIDPID" | cut -d: -f2)
-
-echo "  LiDAR identificado: $LIDAR_PORT → path=$LIDAR_PATH  VID:PID=$LIDAR_VIDPID"
-echo ""
-
-# ---- Validação ----
-if [ "$HOVER_PATH" = "$LIDAR_PATH" ]; then
-    echo "ERRO: Hoverboard e LiDAR têm o mesmo caminho USB ($HOVER_PATH)."
-    echo "  Isso não deveria acontecer. Verifique as conexões e tente novamente."
-    exit 1
-fi
-
-# ---- Cria as regras udev ----
 echo "Criando $RULES_FILE ..."
 
 cat > "$RULES_FILE" << EOF
-# Regras udev para nomes estáveis — hoverboard + LiDAR.
-# Usa localização física da porta USB (KERNELS) para diferenciar
-# dispositivos com o mesmo VID:PID (ex: chip CH340 genérico).
+# Regra udev para symlink estável do hoverboard.
+# Usa localização física da porta USB (KERNELS) pra sobreviver a renumeração.
 # Gerado por setup_udev.sh em $(date).
 #
-# Para regenerar: sudo ~/Controle_robo_web/setup_udev.sh
+# Para regenerar: sudo ./setup_udev.sh
 
-# Hoverboard driver — porta USB física: $HOVER_PATH
 SUBSYSTEM=="tty", KERNELS=="$HOVER_PATH", SYMLINK+="hoverboard", MODE="0666", GROUP="dialout"
-
-# LiDAR FHL-LD20 — porta USB física: $LIDAR_PATH
-SUBSYSTEM=="tty", KERNELS=="$LIDAR_PATH", SYMLINK+="lidar", MODE="0666", GROUP="dialout"
 EOF
 
 echo ""
-echo "Arquivo criado:"
 cat "$RULES_FILE"
 
 echo ""
@@ -148,13 +87,11 @@ udevadm trigger
 sleep 1
 
 echo ""
-echo "=== Verificando symlinks ==="
-ls -la /dev/hoverboard /dev/lidar 2>/dev/null || echo "AVISO: Symlinks não apareceram ainda — desplugue e replugue os dispositivos."
+echo "=== Verificando symlink ==="
+ls -la /dev/hoverboard 2>/dev/null || echo "AVISO: /dev/hoverboard não apareceu ainda — desplugue e replugue o cabo USB."
 
 echo ""
 echo "=== Pronto! ==="
-echo ""
-echo "IMPORTANTE: Esses symlinks dependem da porta USB FÍSICA."
 echo "Se trocar o cabo de entrada USB, rode este script novamente."
 echo ""
 echo "Próximo passo — recompile o driver do hoverboard:"

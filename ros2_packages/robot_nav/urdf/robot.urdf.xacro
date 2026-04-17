@@ -18,20 +18,20 @@
   <xacro:property name="body_width"   value="0.45"/>
   <xacro:property name="body_height"  value="0.10"/>
 
-  <!-- LiDAR position: slightly forward and on top -->
+  <!-- Livox Mid-360 position: ajuste pra refletir onde o Mid-360 foi montado.
+       lidar_x: offset pra frente a partir do centro do base_link (m).
+       lidar_z: altura acima do topo do corpo (m). -->
   <xacro:property name="lidar_x"      value="0.10"/>
   <xacro:property name="lidar_z"      value="0.12"/>
+  <!-- Mid-360: cilindro ~65 mm de diâmetro por ~60 mm de altura. -->
+  <xacro:property name="livox_radius" value="0.033"/>
+  <xacro:property name="livox_height" value="0.060"/>
 
   <!-- pi já existe no xacro como constante embutida -->
 
-  <!-- ======= base_footprint (ground projection) ======= -->
-  <link name="base_footprint"/>
-
-  <joint name="base_footprint_joint" type="fixed">
-    <parent link="base_footprint"/>
-    <child link="base_link"/>
-    <origin xyz="0 0 ${wheel_radius}" rpy="0 0 0"/>
-  </joint>
+  <!-- base_link é raiz do URDF. O TF body->base_link é publicado pelo
+       fast_lio.launch.py (static_transform_publisher), colocando o robô embaixo
+       do Mid-360 que o FAST-LIO2 rastreia. -->
 
   <!-- ======= base_link (center of robot body) ======= -->
   <link name="base_link">
@@ -110,30 +110,34 @@
     </inertial>
   </link>
 
-  <!-- ======= LiDAR (FHL-LD20) ======= -->
-  <joint name="laser_joint" type="fixed">
+  <!-- ======= LiDAR (Livox Mid-360) =======
+       O frame livox_frame é o usado pelo livox_ros_driver2 nas mensagens
+       /livox/lidar e /livox/imu. É um nó filho de base_link puramente pra
+       visualização — o FAST-LIO2 usa seu próprio frame "body" (que fica
+       conectado ao base_link via static TF definido no fast_lio.launch.py). -->
+  <joint name="livox_joint" type="fixed">
     <parent link="base_link"/>
-    <child link="base_laser"/>
+    <child link="livox_frame"/>
     <origin xyz="${lidar_x} 0 ${body_height/2 + lidar_z}" rpy="0 0 0"/>
   </joint>
 
-  <link name="base_laser">
+  <link name="livox_frame">
     <visual>
       <geometry>
-        <cylinder radius="0.038" length="0.04"/>
+        <cylinder radius="${livox_radius}" length="${livox_height}"/>
       </geometry>
-      <material name="blue">
-        <color rgba="0.0 0.3 0.8 1.0"/>
+      <material name="black">
+        <color rgba="0.05 0.05 0.05 1.0"/>
       </material>
     </visual>
     <collision>
       <geometry>
-        <cylinder radius="0.038" length="0.04"/>
+        <cylinder radius="${livox_radius}" length="${livox_height}"/>
       </geometry>
     </collision>
     <inertial>
-      <mass value="0.1"/>
-      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+      <mass value="0.265"/>
+      <inertia ixx="0.0002" ixy="0" ixz="0" iyy="0.0002" iyz="0" izz="0.0002"/>
     </inertial>
   </link>
 

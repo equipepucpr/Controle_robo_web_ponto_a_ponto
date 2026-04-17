@@ -79,56 +79,37 @@ h1 { margin: 0 0 12px; font-size: 28px; }
 }
 @keyframes emergency-pulse { from { opacity: 0.7; } to { opacity: 1; } }
 
-/* Painel de obstáculos (LiDAR) */
-.obstacle-panel { background: #111827; border: 1px solid #374151; padding: 12px; border-radius: 8px; margin-bottom: 16px; }
-.obstacle-panel h2 { margin: 0 0 10px; font-size: 16px; }
-
-.obstacle-status { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
-.lidar-badge { padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; background: #374151; color: #9ca3af; }
-.lidar-badge.on { background: #14532d; color: #4ade80; border: 1px solid #16a34a; }
-.lidar-badge.off { background: #374151; color: #9ca3af; }
-.obstacle-closest { font-size: 14px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-
-/* Grade de setores */
-.obstacle-map { display: flex; flex-direction: column; gap: 4px; align-items: center; }
-.obs-sector-row { display: flex; gap: 4px; justify-content: center; width: 100%; }
-.obs-middle-row { align-items: center; }
-.obs-sector { background: #1f2937; border: 1px solid #374151; border-radius: 6px; padding: 6px 10px; min-width: 90px; text-align: center; transition: background 0.3s, border-color 0.3s; }
-.obs-sector.obs-center { min-width: 120px; }
-.obs-label { font-size: 11px; opacity: 0.7; margin-bottom: 2px; }
-.obs-dist { font-size: 18px; font-weight: 700; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-.obs-robot { font-size: 28px; padding: 8px 12px; }
-
-/* Cores por distância */
-.obs-sector.verde  { border-color: #16a34a; background: #052e16; }
-.obs-sector.amarelo { border-color: #ca8a04; background: #1c1400; }
-.obs-sector.vermelho { border-color: #dc2626; background: #2d0000; animation: obs-pulse 0.6s ease-in-out infinite alternate; }
-.obs-dist.verde  { color: #4ade80; }
-.obs-dist.amarelo { color: #facc15; }
-.obs-dist.vermelho { color: #f87171; }
-@keyframes obs-pulse { from { opacity: 0.85; } to { opacity: 1; box-shadow: 0 0 8px rgba(220,38,38,0.5); } }
-
-/* Badge do modo atual (TELEOP / SLAM / NAV2) ao lado do título */
+/* Badge do modo atual */
 .mode-badge { display: inline-block; font-size: 11px; letter-spacing: 0.05em; padding: 3px 8px; border-radius: 4px; background: #243042; color: #aab; vertical-align: middle; margin-left: 8px; }
-.mode-badge.mode-slam  { background: #1e3a8a; color: #dbeafe; }
-.mode-badge.mode-nav2  { background: #065f46; color: #d1fae5; }
-.mode-badge.mode-teleop { background: #3f3f46; color: #e4e4e7; }
 
-/* Painel de mapa (SLAM / Nav2) */
-.map-panel { margin-top: 16px; background: #0b1220; border: 1px solid #243042; padding: 12px; border-radius: 8px; }
-.map-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-.map-header h2 { margin: 0; font-size: 16px; opacity: 0.9; }
-.map-toolbar { display: flex; gap: 8px; align-items: center; }
-.map-status { font-size: 12px; padding: 3px 8px; border-radius: 4px; background: #243042; color: #aab; }
-.map-status.ok { background: #065f46; color: #d1fae5; }
-.map-status.err { background: #7f1d1d; color: #fee2e2; }
-.map-btn { padding: 6px 12px; font-size: 13px; border: 1px solid #374151; background: #1f2937; color: #e5e7eb; border-radius: 4px; cursor: pointer; }
-.map-btn:hover:not(:disabled) { background: #374151; }
-.map-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-.map-info { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: #9ca3af; margin-bottom: 8px; }
-.map-info span { white-space: nowrap; }
-.map-canvas-wrap { background: #000; border: 1px solid #243042; border-radius: 4px; display: flex; justify-content: center; }
-#map-canvas { display: block; max-width: 100%; height: auto; cursor: crosshair; }
+/* Painel de waypoints */
+.waypoint-panel { margin-top: 16px; background: #0b1220; border: 1px solid #243042; padding: 12px; border-radius: 8px; }
+.wp-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
+.wp-header h2 { margin: 0; font-size: 16px; opacity: 0.9; }
+.wp-toolbar { display: flex; gap: 8px; align-items: center; }
+.wp-badge { font-size: 11px; padding: 3px 8px; border-radius: 4px; background: #243042; color: #aab; letter-spacing: 0.05em; font-weight: 700; }
+.wp-badge.on    { background: #065f46; color: #d1fae5; }
+.wp-badge.off   { background: #7f1d1d; color: #fee2e2; }
+.wp-badge.fwd   { background: #1e3a8a; color: #dbeafe; }
+.wp-badge.rev   { background: #5b21b6; color: #ede9fe; }
+.wp-badge.stop  { background: #7f1d1d; color: #fee2e2; }
+.wp-info { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: #9ca3af; margin-bottom: 10px; }
+.wp-info span { white-space: nowrap; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.wp-info strong { color: #e0e7ff; }
+.wp-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.wp-btn { padding: 8px 14px; font-size: 13px; border: 1px solid #374151; background: #1f2937; color: #e5e7eb; border-radius: 6px; cursor: pointer; transition: all 0.15s; }
+.wp-btn:hover:not(:disabled) { background: #374151; border-color: #6366f1; }
+.wp-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.wp-btn-primary { border-color: #6366f1; background: #312e81; color: #e0e7ff; }
+.wp-btn-primary:hover:not(:disabled) { background: #4338ca; }
+.wp-btn-go { border-color: #16a34a; background: #14532d; color: #d1fae5; }
+.wp-btn-go:hover:not(:disabled) { background: #166534; }
+.wp-btn-stop { border-color: #dc2626; background: #7f1d1d; color: #fee2e2; }
+.wp-btn-stop:hover:not(:disabled) { background: #991b1b; }
+.wp-btn-danger { border-color: #b45309; color: #fef3c7; }
+.wp-btn-danger:hover:not(:disabled) { background: #78350f; }
+.wp-canvas-wrap { background: #000; border: 1px solid #243042; border-radius: 4px; display: flex; justify-content: center; }
+#wp-canvas { display: block; max-width: 100%; height: auto; }
 
 /* Log visual de eventos */
 .eventlog { margin-top: 16px; background: #0b1220; border: 1px solid #243042; padding: 12px; border-radius: 8px; }
