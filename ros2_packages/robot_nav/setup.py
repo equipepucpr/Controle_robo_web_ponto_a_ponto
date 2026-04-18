@@ -28,6 +28,7 @@ setup(
             'cmd_vel_to_wheels = robot_nav.cmd_vel_to_wheels:main',
             'waypoint_recorder = robot_nav.waypoint_recorder:main',
             'waypoint_follower = robot_nav.waypoint_follower:main',
+            'relay_controller = robot_nav.relay_controller:main',
         ],
     },
 )

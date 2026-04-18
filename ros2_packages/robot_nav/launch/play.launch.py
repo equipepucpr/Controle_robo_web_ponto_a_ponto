@@ -44,6 +44,10 @@ def generate_launch_description():
     wheel_base_arg = DeclareLaunchArgument('wheel_base', default_value='0.45')
     linear_scale_arg = DeclareLaunchArgument('linear_scale', default_value='400.0')
     angular_scale_arg = DeclareLaunchArgument('angular_scale', default_value='150.0')
+    relay_port_arg = DeclareLaunchArgument(
+        'relay_serial_port', default_value='/dev/ttyUSB1',
+        description='Porta serial do Arduino que controla o relé.'
+    )
 
     robot_description = ParameterValue(
         Command(['xacro ', urdf_file]), value_type=str
@@ -98,7 +102,7 @@ def generate_launch_description():
         condition=IfCondition(LaunchConfiguration('use_lidar')),
     )
 
-    # --- Waypoint recorder + follower ---
+    # --- Waypoint recorder + follower + relay ---
     waypoint_recorder = Node(
         package='robot_nav',
         executable='waypoint_recorder',
@@ -116,6 +120,17 @@ def generate_launch_description():
             'cmd_vel_topic': '/cmd_vel',
         }],
     )
+    relay_controller = Node(
+        package='robot_nav',
+        executable='relay_controller',
+        name='relay_controller',
+        output='screen',
+        parameters=[{
+            'serial_port': LaunchConfiguration('relay_serial_port'),
+            'baud_rate': 9600,
+            'pulse_duration': 1.0,
+        }],
+    )
 
     return LaunchDescription([
         use_lidar_arg,
@@ -123,10 +138,12 @@ def generate_launch_description():
         wheel_base_arg,
         linear_scale_arg,
         angular_scale_arg,
+        relay_port_arg,
         robot_state_publisher,
         odom_publisher,
         cmd_vel_to_wheels,
         lidar_group,
         waypoint_recorder,
         waypoint_follower,
+        relay_controller,
     ])

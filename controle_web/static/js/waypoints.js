@@ -1,7 +1,10 @@
 (() => {
   // Painel de waypoints: escuta pose/waypoints/follower_status via Socket.IO,
   // desenha canvas 2D (triângulo amarelo = robô, círculos numerados = pontos),
-  // amarra botões a eventos record/clear/reset/start/stop/return.
+  // amarra botões a eventos record/clear/reset/start/stop/return/next_round.
+  //
+  // Suporta rounds (seções): waypoints agrupados por round, cores distintas
+  // no canvas, exibição do round atual e do round sendo executado.
   //
   // Bloqueia teclado/gamepad enquanto o follower está ativo pra evitar
   // dois publishers brigando pelo /cmd_vel.
@@ -18,38 +21,67 @@
 
   const poseEl = document.getElementById('wp-pose');
   const countEl = document.getElementById('wp-count');
+  const roundEl = document.getElementById('wp-round');
   const targetEl = document.getElementById('wp-target');
   const distEl = document.getElementById('wp-dist');
   const lioBadge = document.getElementById('wp-lio-badge');
   const followerBadge = document.getElementById('wp-follower-badge');
 
-  const btnReset  = document.getElementById('btn-reset-origin');
-  const btnRecord = document.getElementById('btn-record-wp');
-  const btnClear  = document.getElementById('btn-clear-wp');
-  const btnStart  = document.getElementById('btn-start-follow');
-  const btnReturn = document.getElementById('btn-return-origin');
-  const btnStop   = document.getElementById('btn-stop-follow');
+  const btnReset     = document.getElementById('btn-reset-origin');
+  const btnRecord    = document.getElementById('btn-record-wp');
+  const btnNextRound = document.getElementById('btn-next-round');
+  const btnClear     = document.getElementById('btn-clear-wp');
+  const btnStart     = document.getElementById('btn-start-follow');
+  const btnReturn    = document.getElementById('btn-return-origin');
+  const btnStop      = document.getElementById('btn-stop-follow');
 
   let lastPose = null;       // {x, y, yaw, ts}
   let lastPoseRecv = 0;      // timestamp local da última pose
-  let waypoints = [];        // [{id, x, y, yaw, ts}]
+  let waypoints = [];        // [{id, x, y, yaw, ts, round}]
+  let currentRecordRound = 1;
   let followerState = 'IDLE';
   let followerInfo = {};
 
+  // Cores por round (cíclicas)
+  const ROUND_COLORS = [
+    '#6366f1', // indigo
+    '#f59e0b', // amber
+    '#10b981', // emerald
+    '#ef4444', // red
+    '#8b5cf6', // violet
+    '#06b6d4', // cyan
+    '#f97316', // orange
+    '#ec4899', // pink
+  ];
+
+  function roundColor(r) {
+    return ROUND_COLORS[(r - 1) % ROUND_COLORS.length];
+  }
+
   // ---- Estado do follower controla bloqueio de teclado ----
   function isFollowerActive() {
-    return followerState === 'FORWARD' || followerState === 'REVERSE';
+    return followerState === 'FORWARD' || followerState === 'REVERSE' || followerState === 'ROUND_PAUSE';
   }
   window.isFollowerActive = isFollowerActive;
 
   function updateFollowerBadge() {
     if (!followerBadge) return;
-    followerBadge.textContent = followerState;
+    let label = followerState;
+    if (followerState === 'ROUND_PAUSE') label = 'RELAY';
+    if (followerState === 'FORWARD' && followerInfo.total_rounds > 1) {
+      label = `FWD R${followerInfo.current_round || '?'}/${followerInfo.total_rounds}`;
+    }
+    followerBadge.textContent = label;
     followerBadge.className = 'wp-badge';
     if (followerState === 'FORWARD') followerBadge.classList.add('fwd');
     else if (followerState === 'REVERSE') followerBadge.classList.add('rev');
     else if (followerState === 'STOPPED') followerBadge.classList.add('stop');
+    else if (followerState === 'ROUND_PAUSE') followerBadge.classList.add('rev');
     else if (followerState === 'IDLE') followerBadge.classList.add('on');
+  }
+
+  function updateRoundDisplay() {
+    if (roundEl) roundEl.textContent = currentRecordRound;
   }
 
   // ---- Socket events ----
@@ -57,7 +89,7 @@
     lastPose = data;
     lastPoseRecv = Date.now();
     if (poseEl) {
-      poseEl.textContent = `x=${data.x.toFixed(2)} y=${data.y.toFixed(2)} θ=${(data.yaw * 180 / Math.PI).toFixed(1)}°`;
+      poseEl.textContent = `x=${data.x.toFixed(2)} y=${data.y.toFixed(2)} \u03b8=${(data.yaw * 180 / Math.PI).toFixed(1)}\u00b0`;
     }
     if (lioBadge) {
       lioBadge.textContent = 'pose ok';
@@ -67,7 +99,9 @@
 
   socket.on('waypoints_update', (data) => {
     waypoints = (data && data.waypoints) || [];
+    if (data && data.current_round) currentRecordRound = data.current_round;
     if (countEl) countEl.textContent = waypoints.length;
+    updateRoundDisplay();
   });
 
   socket.on('follower_status', (data) => {
@@ -77,11 +111,11 @@
     updateFollowerBadge();
     if (targetEl) {
       targetEl.textContent = (data.target_id !== undefined && data.target_id !== null)
-        ? `#${data.target_id}` : '—';
+        ? `#${data.target_id}` : '\u2014';
     }
     if (distEl) {
       distEl.textContent = (data.dist_to_target !== undefined && data.dist_to_target !== null)
-        ? `${Number(data.dist_to_target).toFixed(2)} m` : '—';
+        ? `${Number(data.dist_to_target).toFixed(2)} m` : '\u2014';
     }
   });
 
@@ -102,6 +136,7 @@
   // ---- Botões ----
   if (btnReset)  btnReset.addEventListener('click',  () => socket.emit('reset_origin'));
   if (btnRecord) btnRecord.addEventListener('click', () => socket.emit('record_waypoint'));
+  if (btnNextRound) btnNextRound.addEventListener('click', () => socket.emit('next_round'));
   if (btnClear)  btnClear.addEventListener('click',  () => {
     if (confirm('Apagar todos os waypoints gravados?')) socket.emit('clear_waypoints');
   });
@@ -152,7 +187,6 @@
     const rangeY = b.maxY - b.minY;
     const scale = Math.min(W / rangeX, H / rangeY) * 0.9;
     const cx = W / 2 - (b.minX + rangeX / 2) * scale;
-    // Y no mundo aponta pra "frente" — no canvas cresce pra baixo, então invertemos.
     const cy = H / 2 + (b.minY + rangeY / 2) * scale;
 
     function worldToCanvas(x, y) {
@@ -186,30 +220,76 @@
     ctx.font = 'bold 11px system-ui';
     ctx.fillText('0', origin.px - 3, origin.py - 10);
 
-    // Linha conectando waypoints em ordem
-    if (waypoints.length > 0) {
-      ctx.strokeStyle = '#64748b';
-      ctx.lineWidth = 1;
+    // Agrupar waypoints por round para desenhar linhas e pontos
+    const roundsMap = {};
+    waypoints.forEach(w => {
+      const r = w.round || 1;
+      if (!roundsMap[r]) roundsMap[r] = [];
+      roundsMap[r].push(w);
+    });
+    const roundKeys = Object.keys(roundsMap).map(Number).sort((a, b) => a - b);
+
+    // Linha conectando waypoints em ordem, por round (cor do round)
+    roundKeys.forEach(r => {
+      const rWps = roundsMap[r];
+      if (!rWps.length) return;
+      ctx.strokeStyle = roundColor(r);
+      ctx.globalAlpha = 0.4;
+      ctx.lineWidth = 1.5;
       ctx.setLineDash([4, 3]);
       ctx.beginPath();
-      const first = worldToCanvas(0, 0);
-      ctx.moveTo(first.px, first.py);
-      waypoints.forEach(w => {
+      // Primeiro round parte da origem, demais partem do último ponto do round anterior
+      const prevRoundIdx = roundKeys.indexOf(r) - 1;
+      let startPt;
+      if (prevRoundIdx >= 0) {
+        const prevWps = roundsMap[roundKeys[prevRoundIdx]];
+        const lastWp = prevWps[prevWps.length - 1];
+        startPt = worldToCanvas(lastWp.x, lastWp.y);
+      } else {
+        startPt = worldToCanvas(0, 0);
+      }
+      ctx.moveTo(startPt.px, startPt.py);
+      rWps.forEach(w => {
         const p = worldToCanvas(w.x, w.y);
         ctx.lineTo(p.px, p.py);
       });
       ctx.stroke();
       ctx.setLineDash([]);
+      ctx.globalAlpha = 1.0;
+    });
+
+    // Separadores de round (linha grossa entre último ponto de round N e primeiro de N+1)
+    for (let i = 0; i < roundKeys.length - 1; i++) {
+      const rWps = roundsMap[roundKeys[i]];
+      const lastWp = rWps[rWps.length - 1];
+      const nextWps = roundsMap[roundKeys[i + 1]];
+      const firstWp = nextWps[0];
+      const p1 = worldToCanvas(lastWp.x, lastWp.y);
+      const p2 = worldToCanvas(firstWp.x, firstWp.y);
+      // Pequeno marcador de "corte" entre rounds
+      const midX = (p1.px + p2.px) / 2;
+      const midY = (p1.py + p2.py) / 2;
+      ctx.fillStyle = '#fbbf24';
+      ctx.font = 'bold 9px system-ui';
+      ctx.textAlign = 'center';
+      ctx.fillText('\u26a1', midX, midY - 4);
+      ctx.textAlign = 'left';
     }
 
-    // Waypoints
+    // Waypoints — cor por round, destaque se é alvo atual
     waypoints.forEach(w => {
       const p = worldToCanvas(w.x, w.y);
+      const r = w.round || 1;
       const isTarget = followerInfo && followerInfo.target_id != null &&
                        followerInfo.target_id === w.id;
-      ctx.fillStyle = isTarget ? '#f59e0b' : '#6366f1';
+      ctx.fillStyle = isTarget ? '#fff' : roundColor(r);
       ctx.beginPath(); ctx.arc(p.px, p.py, 8, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = '#fff';
+      if (isTarget) {
+        ctx.strokeStyle = '#f59e0b';
+        ctx.lineWidth = 2.5;
+        ctx.beginPath(); ctx.arc(p.px, p.py, 10, 0, Math.PI * 2); ctx.stroke();
+      }
+      ctx.fillStyle = isTarget ? '#000' : '#fff';
       ctx.font = 'bold 10px system-ui';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
@@ -218,12 +298,25 @@
       ctx.textBaseline = 'alphabetic';
     });
 
+    // Legenda de rounds (canto superior direito)
+    if (roundKeys.length > 1) {
+      const legendX = W - 10;
+      let legendY = 16;
+      ctx.font = 'bold 10px system-ui';
+      ctx.textAlign = 'right';
+      roundKeys.forEach(r => {
+        ctx.fillStyle = roundColor(r);
+        ctx.fillText(`R${r} (${roundsMap[r].length}pts)`, legendX, legendY);
+        legendY += 14;
+      });
+      ctx.textAlign = 'left';
+    }
+
     // Robô (triângulo amarelo)
     if (lastPose) {
       const p = worldToCanvas(lastPose.x, lastPose.y);
       ctx.save();
       ctx.translate(p.px, p.py);
-      // Yaw positivo = anti-horário no mundo; invertemos Y ⇒ gira no sentido contrário na tela.
       ctx.rotate(-lastPose.yaw);
       ctx.fillStyle = '#facc15';
       ctx.strokeStyle = '#a16207';
@@ -241,4 +334,5 @@
 
   setInterval(draw, 100);
   draw();
+  updateRoundDisplay();
 })();

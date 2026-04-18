@@ -10,6 +10,7 @@ Responsabilidades:
         record_waypoint()      → /waypoint_recorder/record_waypoint
         clear_waypoints()      → /waypoint_recorder/clear_waypoints
         reset_origin()         → /waypoint_recorder/reset_origin
+        next_round()           → /waypoint_recorder/next_round
         start_follow()         → /waypoint_follower/start
         stop_follow()          → /waypoint_follower/stop
         return_to_origin()     → /waypoint_follower/return_to_origin
@@ -101,6 +102,9 @@ class WaypointBridge:
         self._cli_reset = self._node.create_client(
             Trigger, '/waypoint_recorder/reset_origin'
         )
+        self._cli_next_round = self._node.create_client(
+            Trigger, '/waypoint_recorder/next_round'
+        )
         self._cli_start = self._node.create_client(
             Trigger, '/waypoint_follower/start'
         )
@@ -171,6 +175,7 @@ class WaypointBridge:
             {
                 'waypoints': data.get('waypoints', []),
                 'origin_offset': origin,
+                'current_round': data.get('current_round', 1),
             },
             namespace='/',
         )
@@ -237,6 +242,9 @@ class WaypointBridge:
 
     def reset_origin(self) -> dict:
         return self._call_trigger(self._cli_reset, 'reset_origin')
+
+    def next_round(self) -> dict:
+        return self._call_trigger(self._cli_next_round, 'next_round')
 
     def start_follow(self) -> dict:
         return self._call_trigger(self._cli_start, 'start')

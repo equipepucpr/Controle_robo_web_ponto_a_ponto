@@ -164,6 +164,15 @@ def handle_reset_origin(_data=None):
     emit('wp_ack', {'op': 'reset_origin', **result})
 
 
+@socketio.on('next_round')
+def handle_next_round(_data=None):
+    if not _require_bridge('wp_ack'):
+        return
+    result = waypoint_bridge.next_round()
+    app.logger.info(f"next_round from {request.remote_addr}: {result}")
+    emit('wp_ack', {'op': 'next_round', **result})
+
+
 @socketio.on('start_follow')
 def handle_start_follow(_data=None):
     if not _require_bridge('follow_ack'):

@@ -117,12 +117,14 @@
         <div class="wp-info">
           <span>Pose: <strong id="wp-pose">x=— y=— θ=—</strong></span>
           <span>Pontos: <strong id="wp-count">0</strong></span>
+          <span>Round: <strong id="wp-round">1</strong></span>
           <span>Alvo: <strong id="wp-target">—</strong></span>
           <span>Dist: <strong id="wp-dist">—</strong></span>
         </div>
         <div class="wp-buttons">
           <button id="btn-reset-origin" class="wp-btn">Resetar origem (0)</button>
           <button id="btn-record-wp" class="wp-btn wp-btn-primary">● Salvar ponto</button>
+          <button id="btn-next-round" class="wp-btn" style="background:#7c3aed;color:#fff">▸ Novo Round</button>
           <button id="btn-clear-wp" class="wp-btn wp-btn-danger">Limpar pontos</button>
           <button id="btn-start-follow" class="wp-btn wp-btn-go">▶ Iniciar trajeto</button>
           <button id="btn-return-origin" class="wp-btn">⟲ Voltar ao 0</button>
@@ -145,6 +147,6 @@
     <script src="https://cdn.socket.io/3.1.3/socket.io.min.js"></script>
     <script src="/static/js/client.js?v=6"></script>
     <script src="/static/js/gamepad.js?v=2"></script>
-    <script src="/static/js/waypoints.js?v=1"></script>
+    <script src="/static/js/waypoints.js?v=2"></script>
   </body>
 </html>

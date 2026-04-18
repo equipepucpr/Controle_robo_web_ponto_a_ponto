@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """
 Nó que executa uma sequência de waypoints usando controlador pure-pursuit
-simplificado pra diff-drive.
+simplificado pra diff-drive.  Suporta rounds (seções): ao terminar cada
+round, aciona o relé (relay_controller/pulse) antes de seguir ao próximo.
 
 Entrada:
   /Odometry (nav_msgs/Odometry) — pose ao vivo do FAST-LIO2.
   /waypoints (std_msgs/String JSON, TRANSIENT_LOCAL) — vindo do waypoint_recorder.
 
 Serviços:
-  ~/start             (std_srvs/Trigger) — percorre 1→N e para no último.
+  ~/start             (std_srvs/Trigger) — percorre round 1→N, com relé entre rounds.
   ~/stop              (std_srvs/Trigger) — cmd_vel=0, estado IDLE.
   ~/return_to_origin  (std_srvs/Trigger) — percorre N→...→1→origem(0,0).
 
@@ -67,6 +68,7 @@ STATE_IDLE = 'IDLE'
 STATE_FORWARD = 'FORWARD'
 STATE_REVERSE = 'REVERSE'
 STATE_STOPPED = 'STOPPED'
+STATE_ROUND_PAUSE = 'ROUND_PAUSE'
 
 
 class WaypointFollower(Node):
@@ -105,9 +107,18 @@ class WaypointFollower(Node):
         self._state_reason = ''
         self._waypoints: List[Dict[str, float]] = []
         self._origin_offset = {'x': 0.0, 'y': 0.0, 'yaw': 0.0}
-        self._queue: List[Dict[str, float]] = []   # fila de alvos a atingir
+        self._queue: List[Dict[str, float]] = []   # fila de alvos do round atual
         self._current_target_idx = 0               # 0-based dentro do queue
         self._dist_to_target = float('inf')
+
+        # Rounds
+        self._rounds: List[List[Dict]] = []   # lista de listas de waypoints por round
+        self._current_round_idx = 0           # 0-based no _rounds
+        self._total_rounds = 0
+
+        # Relay (async call)
+        self._relay_future = None
+        self._pre_pause_state = STATE_FORWARD  # lembra se era FORWARD ou REVERSE
 
         self._last_pose: Optional[Dict[str, float]] = None
         self._last_pose_stamp = None
@@ -131,6 +142,11 @@ class WaypointFollower(Node):
         self.create_service(Trigger, '~/stop', self._on_stop)
         self.create_service(Trigger, '~/return_to_origin', self._on_return)
 
+        # Cliente do relé
+        self._cli_relay = self.create_client(
+            Trigger, '/relay_controller/pulse'
+        )
+
         # Timers
         self.create_timer(1.0 / self.control_rate, self._control_tick)
         self.create_timer(1.0 / self.status_rate, self._publish_status)
@@ -139,6 +155,24 @@ class WaypointFollower(Node):
             f'waypoint_follower pronto | odom={self.odom_topic} '
             f'| cmd_vel={self.cmd_vel_topic} | v={self.v_target} m/s'
         )
+
+    # ---------- helpers para rounds ----------
+
+    @staticmethod
+    def _group_by_round(waypoints: List[Dict]) -> List[List[Dict]]:
+        """Agrupa waypoints por campo 'round'. Retorna lista de listas, ordenada por round."""
+        rounds_map: Dict[int, List[Dict]] = {}
+        for wp in waypoints:
+            r = wp.get('round', 1)
+            rounds_map.setdefault(r, []).append(wp)
+        return [rounds_map[k] for k in sorted(rounds_map.keys())]
+
+    def _load_round(self, round_idx: int) -> None:
+        """Carrega os waypoints de um round no _queue."""
+        self._current_round_idx = round_idx
+        self._queue = list(self._rounds[round_idx])
+        self._current_target_idx = 0
+        self._dist_to_target = float('inf')
 
     # ---------- callbacks ----------
 
@@ -176,6 +210,7 @@ class WaypointFollower(Node):
                     'x': float(wp['x']),
                     'y': float(wp['y']),
                     'yaw': float(wp.get('yaw', 0.0)),
+                    'round': int(wp.get('round', 1)),
                 }
                 for wp in data.get('waypoints', [])
             ]
@@ -191,15 +226,25 @@ class WaypointFollower(Node):
                 response.success = False
                 response.message = 'Lista vazia — nada pra seguir.'
                 return response
-            self._queue = list(self._waypoints)  # 1→N
-            self._current_target_idx = 0
+            self._rounds = self._group_by_round(self._waypoints)
+            self._total_rounds = len(self._rounds)
+            self._load_round(0)
             self._state = STATE_FORWARD
-            self._state_reason = f'Iniciando {len(self._queue)} waypoints'
+            self._pre_pause_state = STATE_FORWARD
+            self._relay_future = None
+            self._state_reason = (
+                f'Iniciando round 1/{self._total_rounds} '
+                f'({len(self._queue)} pontos)'
+            )
         self.get_logger().info(
-            f'START — percorrendo {len(self._queue)} waypoints'
+            f'START — {self._total_rounds} rounds, '
+            f'total {len(self._waypoints)} waypoints'
         )
         response.success = True
-        response.message = json.dumps({'count': len(self._waypoints)})
+        response.message = json.dumps({
+            'count': len(self._waypoints),
+            'rounds': self._total_rounds,
+        })
         return response
 
     def _on_stop(self, request, response):
@@ -207,7 +252,9 @@ class WaypointFollower(Node):
             self._state = STATE_IDLE
             self._state_reason = 'stop solicitado'
             self._queue = []
+            self._rounds = []
             self._current_target_idx = 0
+            self._relay_future = None
         self._publish_cmd(0.0, 0.0)
         self.get_logger().info('STOP')
         response.success = True
@@ -220,12 +267,16 @@ class WaypointFollower(Node):
                 # Sem waypoints, ir pra origem direto.
                 self._queue = [{'id': 0, 'x': 0.0, 'y': 0.0, 'yaw': 0.0}]
             else:
-                # N → N-1 → ... → 1 → origem(0,0).
+                # N → N-1 → ... → 1 → origem(0,0). Ignora rounds no retorno.
                 reverse = list(reversed(self._waypoints))
                 reverse.append({'id': 0, 'x': 0.0, 'y': 0.0, 'yaw': 0.0})
                 self._queue = reverse
+            self._rounds = []
+            self._total_rounds = 0
             self._current_target_idx = 0
             self._state = STATE_REVERSE
+            self._pre_pause_state = STATE_REVERSE
+            self._relay_future = None
             self._state_reason = f'Voltando ({len(self._queue)} pontos)'
         self.get_logger().info(
             f'RETURN_TO_ORIGIN — {len(self._queue)} pontos na fila'
@@ -254,6 +305,37 @@ class WaypointFollower(Node):
 
     def _control_tick(self) -> None:
         with self._lock:
+            # --- ROUND_PAUSE: esperando relé terminar ---
+            if self._state == STATE_ROUND_PAUSE:
+                self._publish_cmd(0.0, 0.0)
+                if self._relay_future is None:
+                    # Dispara pulso do relé (async)
+                    if self._cli_relay.service_is_ready():
+                        self._relay_future = self._cli_relay.call_async(
+                            Trigger.Request()
+                        )
+                        self.get_logger().info(
+                            f'Round {self._current_round_idx} concluído — '
+                            f'acionando relé...'
+                        )
+                    else:
+                        # Relé indisponível — pula e segue
+                        self.get_logger().warn(
+                            'relay_controller indisponível — pulando relé'
+                        )
+                        self._advance_to_next_round()
+                elif self._relay_future.done():
+                    try:
+                        result = self._relay_future.result()
+                        self.get_logger().info(
+                            f'Relé: {result.message}'
+                        )
+                    except Exception as e:
+                        self.get_logger().warn(f'Relé falhou: {e}')
+                    self._advance_to_next_round()
+                return
+
+            # --- Estados normais ---
             active = self._state in (STATE_FORWARD, STATE_REVERSE)
             if not active:
                 return
@@ -262,18 +344,34 @@ class WaypointFollower(Node):
                 self._state = STATE_STOPPED
                 self._state_reason = 'pose timeout (FAST-LIO2 parou de publicar)'
                 self._queue = []
+                self._rounds = []
                 self._publish_cmd(0.0, 0.0)
                 self.get_logger().warn(self._state_reason)
                 return
 
             if self._current_target_idx >= len(self._queue):
-                self._state = STATE_IDLE
-                self._state_reason = 'trajeto concluído'
-                self._queue = []
-                self._current_target_idx = 0
-                self._publish_cmd(0.0, 0.0)
-                self.get_logger().info('Trajeto concluído.')
-                return
+                # Queue do round atual acabou.
+                if self._state == STATE_FORWARD and self._rounds and \
+                        self._current_round_idx < self._total_rounds - 1:
+                    # Há mais rounds — pausa pra relé
+                    self._state = STATE_ROUND_PAUSE
+                    self._state_reason = (
+                        f'Round {self._current_round_idx + 1}/{self._total_rounds} '
+                        f'concluído — acionando relé'
+                    )
+                    self._relay_future = None
+                    self._publish_cmd(0.0, 0.0)
+                    return
+                else:
+                    # Último round ou REVERSE — trajeto concluído
+                    self._state = STATE_IDLE
+                    self._state_reason = 'trajeto concluído'
+                    self._queue = []
+                    self._rounds = []
+                    self._current_target_idx = 0
+                    self._publish_cmd(0.0, 0.0)
+                    self.get_logger().info('Trajeto concluído.')
+                    return
 
             pose = self._current_pose_origin_frame()
             if pose is None:
@@ -281,8 +379,14 @@ class WaypointFollower(Node):
                 return
 
             target = self._queue[self._current_target_idx]
-            is_last = (self._current_target_idx == len(self._queue) - 1)
-            tol = self.final_tol if is_last else self.goal_tol
+            is_last_in_queue = (self._current_target_idx == len(self._queue) - 1)
+            # Tolerância mais apertada no último ponto do último round ou retorno
+            is_final = is_last_in_queue and (
+                self._state == STATE_REVERSE or
+                (self._rounds and self._current_round_idx >= self._total_rounds - 1) or
+                not self._rounds
+            )
+            tol = self.final_tol if is_final else self.goal_tol
 
             dx = target['x'] - pose['x']
             dy = target['y'] - pose['y']
@@ -316,6 +420,29 @@ class WaypointFollower(Node):
                 w = self.kp_ang * heading_err
                 self._publish_cmd(v_scaled, w)
 
+    def _advance_to_next_round(self) -> None:
+        """Avança para o próximo round após relé."""
+        next_idx = self._current_round_idx + 1
+        if next_idx < self._total_rounds:
+            self._load_round(next_idx)
+            self._state = self._pre_pause_state
+            self._state_reason = (
+                f'Round {next_idx + 1}/{self._total_rounds} '
+                f'({len(self._queue)} pontos)'
+            )
+            self._relay_future = None
+            self.get_logger().info(
+                f'Iniciando round {next_idx + 1}/{self._total_rounds}'
+            )
+        else:
+            self._state = STATE_IDLE
+            self._state_reason = 'trajeto concluído (todos os rounds)'
+            self._queue = []
+            self._rounds = []
+            self._relay_future = None
+            self._publish_cmd(0.0, 0.0)
+            self.get_logger().info('Todos os rounds concluídos.')
+
     def _publish_cmd(self, linear: float, angular: float) -> None:
         msg = Twist()
         msg.linear.x = float(linear)
@@ -338,6 +465,8 @@ class WaypointFollower(Node):
                 ),
                 'dist_to_target': round(self._dist_to_target, 3)
                 if math.isfinite(self._dist_to_target) else None,
+                'current_round': self._current_round_idx + 1,
+                'total_rounds': self._total_rounds,
                 'ts': time.time(),
             }
         msg = String()
