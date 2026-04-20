@@ -3,8 +3,10 @@
 Sobe o driver do Livox Mid-360 (livox_ros_driver2).
 
 Saídas:
-  /livox/lidar  (sensor_msgs/PointCloud2) em frame "livox_frame"
-  /livox/imu    (sensor_msgs/Imu)         em frame "livox_frame"
+  /livox/lidar  (livox_ros_driver2/msg/CustomMsg) em frame "livox_frame"
+  /livox/imu    (sensor_msgs/Imu)                 em frame "livox_frame"
+
+O FAST-LIO consome CustomMsg nativo (lidar_type=1), por isso xfer_format=1.
 
 O Mid-360 é Ethernet — o PC precisa estar na mesma subnet que o LiDAR
 (default do Mid-360 é 192.168.1.1XX; o PC normalmente vai em 192.168.1.5).
@@ -41,7 +43,7 @@ def generate_launch_description():
         name='livox_driver',
         output='screen',
         parameters=[{
-            'xfer_format': 0,              # 0 = PointCloud2
+            'xfer_format': 1,              # 1 = Livox CustomMsg (casa com fast_lio lidar_type=1)
             'multi_topic': 0,
             'data_src': 0,                 # 0 = LiDAR físico
             'publish_freq': 10.0,

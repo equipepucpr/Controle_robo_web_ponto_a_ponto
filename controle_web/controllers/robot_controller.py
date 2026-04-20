@@ -105,32 +105,40 @@ class EchoController(RobotController):
 
 class ROS2Controller(RobotController):
     """
-    Controlador real que publica cmd_vel via ROS2 para integração com Nav2.
+    Controlador real que publica diretamente em /wheel_vel_setpoints
+    (wheel_msgs/WheelSpeeds) pro driver do hoverboard. Também replica em
+    /cmd_vel (geometry_msgs/Twist) para consumidores Nav2 / waypoint follower.
 
-    Tópico de saída: /cmd_vel (geometry_msgs/Twist)
-    O Nav2 Collision Monitor intercepta /cmd_vel, filtra obstáculos e
-    publica /cmd_vel_filtered. O nó cmd_vel_to_wheels converte para
-    /wheel_vel_setpoints que o driver do hoverboard consome.
+    A conversão cmd_vel → wheel_setpoints é feita inline aqui — não depende
+    mais do nó externo cmd_vel_to_wheels.
 
-    Velocidades em unidades SI:
-        BASE_LINEAR_SPEED  = velocidade linear base (m/s)
-        BASE_ANGULAR_SPEED = velocidade angular base (rad/s)
-
-    Pré-requisito: ROS2 instalado e workspace com robot_nav compilado.
-    Execute antes de iniciar o servidor:
-        source ~/ros2_ws/install/setup.bash
+    Arbitragem /cmd_vel:
+      - Teleop ativo (tecla segurada / stick fora da dead zone): publica
+        teleop em /cmd_vel E escreve nas rodas a 50 Hz.
+      - Teleop idle: inscreve /cmd_vel (pegando o que o waypoint_follower
+        publica) e encaminha pras rodas a 50 Hz — sem republicar /cmd_vel
+        pra não lutar com o follower.
+      - Chave geral (X segurado): força 0,0 nas rodas e chama
+        /waypoint_follower/stop pra abortar qualquer trajeto em andamento.
     """
+
+    # Tempo máximo (s) que um /cmd_vel externo é considerado válido pra forward.
+    EXT_CMD_VEL_TIMEOUT: float = 0.5
 
     # Velocidades base em unidades SI.
     # Multiplicador de velocidade escala esses valores (0.5x–4.0x).
-    # Normal (1.0x) = 0.3 m/s / 0.5 rad/s.
-    # Boost (□ 2.0x) = 0.6 m/s / 1.0 rad/s.
     BASE_LINEAR_SPEED: float = 0.3   # m/s
     BASE_ANGULAR_SPEED: float = 0.5  # rad/s
 
-    # Limites do multiplicador de velocidade
     SPEED_MULT_MIN: float = 0.8
     SPEED_MULT_MAX: float = 4.0
+
+    # Conversão SI → unidades do driver do hoverboard.
+    # right = linear * LINEAR_SCALE + angular * ANGULAR_SCALE
+    # left  = linear * LINEAR_SCALE - angular * ANGULAR_SCALE
+    LINEAR_SCALE: float = 400.0
+    ANGULAR_SCALE: float = 150.0
+    MAX_OUTPUT: float = 1000.0
 
     # Mapeamento tecla → direção semântica
     _KEY_MAP: Dict[str, str] = {
@@ -143,6 +151,9 @@ class ROS2Controller(RobotController):
 
     def __init__(self) -> None:
         import rclpy
+        import time
+        import threading
+        from rclpy.executors import SingleThreadedExecutor
         from rclpy.node import Node
 
         self.pressed: set = set()
@@ -151,27 +162,75 @@ class ROS2Controller(RobotController):
         self._last_gamepad_linear: float = 0.0
         self._last_gamepad_angular: float = 0.0
         self._rclpy = rclpy
+        self._time = time
 
         if not rclpy.ok():
             rclpy.init()
 
         self._node: Node = rclpy.create_node('web_robot_controller')
 
-        # Publica geometry_msgs/Twist para integração com Nav2
         from geometry_msgs.msg import Twist
+        from wheel_msgs.msg import WheelSpeeds
+        from std_srvs.srv import Trigger
         self._Twist = Twist
+        self._WheelSpeeds = WheelSpeeds
+        self._Trigger = Trigger
 
-        self._publisher = self._node.create_publisher(
-            Twist,
-            '/cmd_vel',
-            qos_profile=10,
+        self._publisher = self._node.create_publisher(Twist, '/cmd_vel', qos_profile=10)
+        self._wheels_pub = self._node.create_publisher(
+            WheelSpeeds, '/wheel_vel_setpoints', qos_profile=10
         )
 
-        print("[ROS2Controller] Nó inicializado. Publicando em /cmd_vel (Nav2)")
+        # Republica último setpoint a 50 Hz em thread dedicada — substitui o
+        # republish que o nav2_collision_monitor fazia na arquitetura anterior.
+        # Sem isso, o driver do hoverboard desarma os motores (watchdog).
+        self._last_linear: float = 0.0
+        self._last_angular: float = 0.0
+
+        # Estado de /cmd_vel externo (ex.: waypoint_follower) pra forward às rodas.
+        self._ext_linear: float = 0.0
+        self._ext_angular: float = 0.0
+        self._ext_ts: float = 0.0
+
+        self._lock = threading.Lock()
+        self._stop_event = threading.Event()
+
+        # Subscription em /cmd_vel pra capturar comandos de outros nós
+        # (waypoint_follower) quando teleop estiver idle.
+        self._node.create_subscription(
+            Twist, '/cmd_vel', self._on_external_cmd_vel, 10
+        )
+
+        # Cliente do serviço de parada do follower — chamado pelo botão X.
+        self._cli_follower_stop = self._node.create_client(
+            Trigger, '/waypoint_follower/stop'
+        )
+
+        # Executor próprio pra processar a subscription sem bloquear o Flask.
+        self._executor = SingleThreadedExecutor()
+        self._executor.add_node(self._node)
+        self._spin_thread = threading.Thread(
+            target=self._spin_loop, daemon=True, name='robot_ctl_spin'
+        )
+        self._spin_thread.start()
+
+        self._pub_thread = threading.Thread(
+            target=self._republish_loop, daemon=True, name='cmd_vel_republish'
+        )
+        self._pub_thread.start()
+
+        print("[ROS2Controller] Nó inicializado. Publicando em /cmd_vel e /wheel_vel_setpoints @ 50 Hz")
 
     def shutdown(self) -> None:
         """Encerra o nó ROS2 corretamente."""
         try:
+            self._stop_event.set()
+            if self._pub_thread.is_alive():
+                self._pub_thread.join(timeout=1.0)
+            try:
+                self._executor.shutdown()
+            except Exception:
+                pass
             self._node.destroy_node()
             if self._rclpy.ok():
                 self._rclpy.shutdown()
@@ -179,11 +238,117 @@ class ROS2Controller(RobotController):
         except Exception as e:
             print(f"[ROS2Controller] Erro ao encerrar: {e}")
 
+    def _spin_loop(self) -> None:
+        while not self._stop_event.is_set() and self._rclpy.ok():
+            try:
+                self._executor.spin_once(timeout_sec=0.1)
+            except Exception:
+                break
+
+    def _is_teleop_active(self) -> bool:
+        """True se há tecla pressionada ou stick fora da dead zone."""
+        if self.pressed:
+            return True
+        if abs(self._last_gamepad_linear) > 0.01 or abs(self._last_gamepad_angular) > 0.01:
+            return True
+        return False
+
+    def _on_external_cmd_vel(self, msg) -> None:
+        """Recebe /cmd_vel de outros publishers (ex.: waypoint_follower).
+
+        Só aceita quando teleop estiver idle — evita que o follower lute
+        com o usuário apertando teclas, e evita feedback loop com nossos
+        próprios publishes de teleop.
+        """
+        if self._emergency_stop or self._is_teleop_active():
+            return
+        with self._lock:
+            self._ext_linear = float(msg.linear.x)
+            self._ext_angular = float(msg.angular.z)
+            self._ext_ts = self._time.monotonic()
+
+    def _call_follower_stop(self) -> None:
+        """Dispara /waypoint_follower/stop de forma não-bloqueante."""
+        if not self._cli_follower_stop.service_is_ready():
+            print("[ROS2Controller] /waypoint_follower/stop indisponível — pulando")
+            return
+        try:
+            self._cli_follower_stop.call_async(self._Trigger.Request())
+            print("[ROS2Controller] /waypoint_follower/stop acionado (chave geral)")
+        except Exception as e:
+            print(f"[ROS2Controller] Falha ao chamar follower stop: {e}")
+
+    def _compute_wheels(self, linear: float, angular: float) -> tuple:
+        """
+        Converte (linear m/s, angular rad/s) em (left_wheel_field, right_wheel_field)
+        em unidades do driver do hoverboard, com clamp em MAX_OUTPUT.
+
+        Os fios do hoverboard estão invertidos: o campo left_wheel dirige a roda
+        direita e vice-versa — fazemos o swap aqui pra preservar a convenção ROS
+        (angular.z > 0 = girar à esquerda).
+        """
+        right = linear * self.LINEAR_SCALE + angular * self.ANGULAR_SCALE
+        left = linear * self.LINEAR_SCALE - angular * self.ANGULAR_SCALE
+
+        right = max(-self.MAX_OUTPUT, min(self.MAX_OUTPUT, right))
+        left = max(-self.MAX_OUTPUT, min(self.MAX_OUTPUT, left))
+
+        return float(right), float(left)  # (left_wheel_field, right_wheel_field)
+
+    def _publish_wheels(self, linear: float, angular: float) -> None:
+        left_field, right_field = self._compute_wheels(linear, angular)
+        wmsg = self._WheelSpeeds()
+        wmsg.left_wheel = left_field
+        wmsg.right_wheel = right_field
+        self._wheels_pub.publish(wmsg)
+
+    def _republish_loop(self) -> None:
+        import time
+        period = 0.02  # 50 Hz — replica o comportamento do nav2_collision_monitor
+        while not self._stop_event.is_set():
+            try:
+                if self._emergency_stop:
+                    # Chave geral: força 0,0 nas rodas e no /cmd_vel. O driver
+                    # precisa desse heartbeat pra não sair do modo armado.
+                    self._publish_wheels(0.0, 0.0)
+                    tmsg = self._Twist()
+                    self._publisher.publish(tmsg)
+                elif self._is_teleop_active():
+                    # Teleop dirigindo — publica estado do teleop em ambos.
+                    with self._lock:
+                        linear = self._last_linear
+                        angular = self._last_angular
+                    tmsg = self._Twist()
+                    tmsg.linear.x = linear
+                    tmsg.angular.z = angular
+                    self._publisher.publish(tmsg)
+                    self._publish_wheels(linear, angular)
+                else:
+                    # Idle: encaminha último /cmd_vel externo (follower) pras
+                    # rodas. NÃO republica em /cmd_vel pra não lutar com o
+                    # publisher original.
+                    with self._lock:
+                        age = time.monotonic() - self._ext_ts
+                        if age <= self.EXT_CMD_VEL_TIMEOUT and self._ext_ts > 0:
+                            linear = self._ext_linear
+                            angular = self._ext_angular
+                        else:
+                            linear = 0.0
+                            angular = 0.0
+                    self._publish_wheels(linear, angular)
+            except Exception:
+                break
+            time.sleep(period)
+
     def _publish(self, linear: float, angular: float) -> None:
+        with self._lock:
+            self._last_linear = float(linear)
+            self._last_angular = float(angular)
         msg = self._Twist()
         msg.linear.x = float(linear)
         msg.angular.z = float(angular)
         self._publisher.publish(msg)
+        self._publish_wheels(float(linear), float(angular))
         print(f"[ROS2Controller] cmd_vel → linear={linear:+.3f} m/s  angular={angular:+.3f} rad/s")
 
     @property
@@ -269,16 +434,25 @@ class ROS2Controller(RobotController):
         if etype == 'button':
             btn = event.get('button', '')
             is_pressed = event.get('pressed', False)
-            # Cross (X) = trava de emergência: enquanto segurado, nada se move
+            # Cross (X) = CHAVE GERAL: enquanto segurado, nada se move + aborta
+            # qualquer trajeto do waypoint_follower em andamento.
             if btn == 'cross':
                 self._emergency_stop = is_pressed
                 if is_pressed:
                     self.pressed.clear()
+                    self._last_gamepad_linear = 0.0
+                    self._last_gamepad_angular = 0.0
+                    # Limpa /cmd_vel externo pra não vazar comando stale após soltar
+                    with self._lock:
+                        self._ext_linear = 0.0
+                        self._ext_angular = 0.0
+                        self._ext_ts = 0.0
                     self._publish(0.0, 0.0)
-                    print("[ROS2Controller] TRAVA DE EMERGÊNCIA ATIVADA (X)")
+                    self._call_follower_stop()
+                    print("[ROS2Controller] CHAVE GERAL ATIVADA (X) — follower abortado")
                 else:
                     self._publish(0.0, 0.0)
-                    print("[ROS2Controller] Trava de emergência desativada")
+                    print("[ROS2Controller] Chave geral liberada")
                 return {'command': 'stop', 'action': 'stop', 'linear': 0, 'angular': 0,
                         'left_speed': 0, 'right_speed': 0, 'emergency': is_pressed}
             # Square / Circle = controle de velocidade (tratado no cliente via set_speed)

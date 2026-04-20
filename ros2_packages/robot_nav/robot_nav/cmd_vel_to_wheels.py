@@ -29,11 +29,15 @@ class CmdVelToWheels(Node):
         self.declare_parameter('angular_scale', 150.0)
         self.declare_parameter('cmd_vel_topic', 'cmd_vel')
         self.declare_parameter('max_output', 1000.0)
+        # Empurrão mínimo pra vencer atrito estático do hoverboard.
+        # Saídas não-zero abaixo desse valor são elevadas ao min_output.
+        self.declare_parameter('min_output', 180.0)
 
         self.linear_scale = self.get_parameter('linear_scale').value
         self.angular_scale = self.get_parameter('angular_scale').value
         self.cmd_vel_topic = self.get_parameter('cmd_vel_topic').value
         self.max_output = self.get_parameter('max_output').value
+        self.min_output = self.get_parameter('min_output').value
 
         self.sub = self.create_subscription(
             Twist,
@@ -55,6 +59,13 @@ class CmdVelToWheels(Node):
 
         right = linear * self.linear_scale + angular * self.angular_scale
         left = linear * self.linear_scale - angular * self.angular_scale
+
+        # Kicker: se a saída é não-zero mas abaixo do limiar de atrito estático,
+        # empurra pro min_output preservando o sinal.
+        if 0.0 < abs(right) < self.min_output:
+            right = self.min_output if right > 0 else -self.min_output
+        if 0.0 < abs(left) < self.min_output:
+            left = self.min_output if left > 0 else -self.min_output
 
         # Clamp to safe range
         right = max(-self.max_output, min(self.max_output, right))
